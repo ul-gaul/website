@@ -319,9 +319,9 @@
             }
         }
         .link-danger{
-            color: $danger-color;
+            color: $primary-color;
             &:hover, &:active, &:focus{
-                color: $danger-color;
+                color: $primary-color;
             }
         }
     }

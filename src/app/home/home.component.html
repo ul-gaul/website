@@ -160,31 +160,40 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12">
-                    <h2 class="title">NASA 3D Showcase</h2><br/>
+                    <h2 class="title">3D Showcase</h2><br/>
                     <p class="description">
-                        Some 3D Models, live, in your browser
-                    </p><br/>
-                    <a  routerLink="/showcase" class="btn btn-danger btn-round">View All Models</a>
-                    <a href="https://solarsystem.nasa.gov/" class="btn btn-outline-danger btn-round" target="_blank">NASA's Solar System Exploration </a>
-                </div>
+                        See our 3D cadded desings as well as NASA's official models such as: <br><br>
 
-                <div class="col-lg-6 col-md-12">
-                    <div class="icons-container">
-                        <i class="nc-icon nc-time-alarm"></i>
-                        <i class="nc-icon nc-atom"></i>
-                        <i class="nc-icon nc-camera-compact"></i>
-                        <i class="nc-icon nc-watch-time"></i>
-                        <i class="nc-icon nc-key-25"></i>
-                        <i class="nc-icon nc-diamond"></i>
-                        <i class="nc-icon nc-user-run"></i>
-                        <i class="nc-icon nc-layout-11"></i>
-                        <i class="nc-icon nc-badge"></i>
-                        <i class="nc-icon nc-bulb-63"></i>
-                        <i class="nc-icon nc-favourite-28"></i>
-                        <i class="nc-icon nc-planet"></i>
-                        <i class="nc-icon nc-tie-bow"></i>
-                        <i class="nc-icon nc-zoom-split"></i>
-                        <i class="nc-icon nc-cloud-download-93"></i>
+                        - International Space Station<br>
+                        - Hubble Space Telescope<br>
+                        - Opportunity Mars Rover<br>
+                        - Etc.<br>
+
+                    </p><br/>
+                    <a  routerLink="/showcase" class="btn btn-primary btn-round">View All Models</a>
+                    <a href="https://solarsystem.nasa.gov/" class="btn btn-outline-primary btn-round" target="_blank">NASA's Solar System Exploration </a>
+                </div>
+                    <div class="col-lg-6 col-md-1">
+                        <div class="card page-carousel">
+                            <ngb-carousel>
+                                <ng-template ngbSlide>
+                                    <img src="./assets/gaul/iss-3d.png" alt="ISS">
+                                    <div class="carousel-caption"></div>
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                    <img src="./assets/gaul/hubble-3d.png" alt="Mars">
+                                    <div class="carousel-caption"></div>
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                    <img src="./assets/gaul/atlas-3d.png" alt="Atlas">
+                                    <div class="carousel-caption"></div>
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                    <img src="./assets/gaul/deepspace-3d.png" alt="Deep Space">
+                                    <div class="carousel-caption"></div>
+                                </ng-template>
+                            </ngb-carousel>
+                        </div>
                     </div>
                 </div>
             </div>
