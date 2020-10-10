@@ -12,7 +12,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'Seyfert';
+  title = 'GAUL';
   private _router: Subscription;
   @ViewChild(NavbarComponent) navbar: NavbarComponent;
 
