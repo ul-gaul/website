@@ -16,6 +16,15 @@ npm install
 ```
 ng serve
 ```
+
+### Deploy on firebase
+```
+ng build --prod
+```
+```
+firebase deploy
+```
+
 ## Credits
 
 Generated with [Angular CLI](https://github.com/angular/angular-cli).
