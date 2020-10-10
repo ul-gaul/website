@@ -1,9 +1,21 @@
-# GAUL - Groupe Aérospatiale de l'Université Laval
+# GAUL - Groupe Aérospatial de l'Université Laval
+![GAUL Banner](src/assets/gaul/GAUL_Stratos_Cover_Facebook.png)
 
-## Start development server
+## Project setup
+```
+git clone https://github.com/GuillaumeLandry/UpThere.git
+```
+```
+cd UpThere
+```
+```
+npm install
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
+### Run a development server
+```
+ng serve
+```
 ## Credits
 
 Generated with [Angular CLI](https://github.com/angular/angular-cli).
