@@ -3,10 +3,10 @@
 
 ## Project setup
 ```
-git clone https://github.com/GuillaumeLandry/UpThere.git
+git clone https://github.com/GuillaumeLandry/GAUL.git
 ```
 ```
-cd UpThere
+cd GAUL
 ```
 ```
 npm install
