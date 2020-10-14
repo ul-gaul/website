@@ -29,9 +29,7 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/assets/style/paper-kit.scss",
-              "src/assets/style/gaul.scss",
-              "src/assets/style/nucleo-icons.scss"
+              "src/assets/style/paper-kit.scss"
             ],
             "scripts": []
           },
