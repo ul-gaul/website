@@ -2,7 +2,8 @@ ng-template {
     height: 100px !important;
 }
 
-iframe {
-    width: 100% !important;
-    height: 100% !important;
+#model {
+    height: 500px;
+    width: 1000px;
+    position: relative;
 }
