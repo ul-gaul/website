@@ -2,6 +2,9 @@
     padding: 70px 0;
     position: relative;
     background-color: #FFFFFF;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: justify;
 }
 .section-with-space{
     padding: 60px 0;
@@ -40,6 +43,9 @@
     .info-title,
     .card-plain .card-title{
         color: $white-color !important;
+        padding-left: 8px;
+        padding-right: 8px;
+        text-align: justify;
     }
     .category,
     .description,
