@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'espace', loadChildren: () => import('./espace/espace.module').then(m => m.EspaceModule)},
   { path: 'stratos', loadChildren: () => import('./stratos/stratos.module').then(m => m.StratosModule)},
   { path: 'partenaires', loadChildren: () => import('./partenaires/partenaires.module').then(m => m.PartenairesModule)},
-  { path: 'contact', loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)},
+  //{ path: 'contact', loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)},
   { path: 'showcase', loadChildren: () => import('./showcase/showcase.module').then(m => m.ShowcaseModule)},
 ];
 
