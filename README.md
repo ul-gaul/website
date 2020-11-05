@@ -1,6 +1,6 @@
 # GAUL - Groupe Aérospatial de l'Université Laval
 
-![GAUL Banner](src/assets/general-gaul/logo-gaul.png)
+![GAUL Banner](src/assets/general-gaul/logo-gaul.webp)
 
 ## Guide de développement du site web
 
@@ -46,7 +46,7 @@ git push
 ```
 
 ### Images (Assets)
-* Toujours importer des images ".PNG".
+* Toujours importer des images ".jpg".
 * Les logos de partenaires sont de dimension 800 x 450 pixels.
 * Bien classer les images dans les différents sous-dossiers de "Assets".
 * Nomenclature des images: nom évocateur, lettres minuscules, mots séparés d'un "-". (Pour les logos, toujours ajouter "logo-" comme préfixe)
