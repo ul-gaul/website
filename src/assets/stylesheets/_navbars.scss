@@ -8,7 +8,7 @@
 }
 
 .navbar{
-    border: $none;
+    border: 0;
     font-size: $font-size-base;
     transition: all 0.4s;
     -webkit-transition: all 0.4s;
@@ -107,16 +107,12 @@
        margin: $navbar-margin-btn;
        font-size: $font-size-small;
        i{
-        //    margin-right: 5px !important;
            font-size: 14px;
            line-height: 13px;
        }
     }
     .btn-simple{
         font-size: $font-size-medium;
-    }
-    .caret{
-       @include center-item();
     }
     &.navbar-transparent{
         padding-top: 25px;
@@ -221,61 +217,9 @@
     }
 
 }
-
 .nav-open .nav .caret{
     border-bottom-color: $white-color;
     border-top-color: $white-color;
-}
-
-.navbar-default {
-    .brand{
-        color: $font-color !important;
-    }
-    .navbar-nav{
-        .nav-item .nav-link:not(.btn){
-            color: $dark-gray;
-        }
-
-        .active .nav-link,
-        .active .nav-link:not(.btn):hover,
-        .active .nav-link:not(.btn):focus,
-        .nav-item .nav-link:not(.btn):hover,
-        .nav-item .nav-link:not(.btn):focus {
-            background-color: transparent;
-            border-radius: 3px;
-            color: $info-color;
-            @include opacity(1);
-        }
-
-        .dropdown .nav-link:hover .caret,
-        .dropdown .nav-link:focus .caret {
-            border-bottom-color: $info-color;
-            border-top-color: $info-color;
-
-        }
-
-        .open .nav-link,
-        .open .nav-link:hover,
-        .open .nav-link:focus{
-            background-color: transparent;
-            color: $info-color;
-        }
-
-        .navbar-toggle:hover,.navbar-toggle:focus {
-            background-color: transparent;
-        }
-
-    }
-
-    &:not(.navbar-transparent) .btn-default:hover{
-        color: $info-color;
-        border-color: $info-color;
-    }
-    &:not(.navbar-transparent) .btn-neutral,
-    &:not(.navbar-transparent) .btn-neutral:hover,
-    &:not(.navbar-transparent) .btn-neutral:active{
-            color: $dark-gray;
-        }
 }
 
 /*      Navbar with icons            */
@@ -301,29 +245,10 @@
         }
     }
 }
-
-.navbar-form{
-   @include box-shadow(none);
-   .form-control{
-        @include light-form();
-        height: 22px;
-        font-size: $font-size-navbar;
-        line-height: $line-height-general;
-        color: $light-gray;
-    }
-    .navbar-transparent & .form-control,
-    [class*="bg"] & .form-control{
-        color: $white-color;
-        border: $none;
-        border-bottom: 1px solid rgba($white-color,.6);
-    }
-
-}
-
 .navbar-toggle{
     margin-top: 19px;
     margin-bottom: 19px;
-    border: $none;
+    border: 0;
 
     .icon-bar {
         background-color: $white-color;

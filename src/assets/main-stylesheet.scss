@@ -1,0 +1,32 @@
+/*!
+
+ =========================================================
+ * Paper Kit 2 Angular - v1.3.0
+ =========================================================
+
+ * Product Page: https://www.creative-tim.com/product/stylesheets-2-angular
+ * Copyright 2017 Creative Tim (https://www.creative-tim.com)
+ * Licensed under MIT (https://github.com/timcreative/stylesheets/blob/master/LICENSE.md)
+
+ =========================================================
+
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ */
+
+// CORE
+@import "stylesheets/variables";
+@import "stylesheets/mixins";
+@import "stylesheets/typography";
+@import "stylesheets/responsive";
+@import "stylesheets/website-core";
+
+// COMPONENTS
+@import "stylesheets/buttons";
+@import "stylesheets/cards";
+@import "stylesheets/carousel";
+@import "stylesheets/footers";
+@import "stylesheets/labels";
+@import "stylesheets/navbars";
+@import "stylesheets/sections";
+@import "stylesheets/popovers";
+@import "stylesheets/tabs-navs-pagination";
