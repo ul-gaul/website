@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* 1. Custom variables */
+$danger-color: #CD2D2C;
+$primary-color:  #CD2D2C;
+
+/* 2. Imports */
 /* Importing icons for Facebook and Instagram */
 @import 'https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css';
 
@@ -7,4 +12,15 @@
 @import 'bootstrap/scss/bootstrap';
 
 /* Importing Paper Kit 2 template */
-@import './assets/paper-kit.scss'
+@import './assets/paper-kit.scss';
+
+
+/* 3. Global style/template edit */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  margin-top: 5px!important;
+}
+
+.section-dark {
+  background-color: #000!important;
+}

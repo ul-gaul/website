@@ -1,124 +1,207 @@
-<div class="wrapper">
+<main class="wrapper">
+  <!-- HEADER -->
   <app-header [backgroundImg]="'./assets/img/page-home/earth-horizon.webp'"
     [title]="'./assets/img/page-home/logo-full.webp'"
     [subTitle]="'Groupe Aérospatial de l\'Université Laval'"></app-header>
-  <p class="container">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae dapibus purus. Integer libero ante, posuere
-    quis
-    facilisis at, fringilla sed magna. Cras id cursus turpis. Nulla pharetra odio ac rutrum interdum. Donec et felis
-    fringilla, eleifend dui id, bibendum diam. Donec porta mauris nisl, vitae sagittis sapien molestie sed. Duis
-    condimentum suscipit massa.<br><br>
 
-    In nec sem ut augue mattis mollis eu id erat. Quisque id finibus neque. Donec ultricies velit ultrices justo
-    viverra,
-    ut mattis turpis laoreet. Donec malesuada eleifend leo eget fringilla. Maecenas bibendum magna non aliquet rutrum.
-    Integer sed massa ut justo ullamcorper maximus. Vivamus porttitor urna eget feugiat lobortis.<br><br>
+  <!--À PROPOS-->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="title">
+        <h2>À Propos</h2>
+      </div>
+      <div class="row">
+        <div class="title">
+          <h3>Développement de projets d'envergure reliés aux sciences de l'espace</h3><br>
 
-    Aliquam erat volutpat. Morbi vel augue consequat, auctor tortor vitae, tempor elit. Phasellus nunc tellus, dictum
-    vel
-    odio quis, mattis venenatis erat. Phasellus ut arcu nec nulla malesuada viverra ac non odio. In laoreet mauris sed
-    est
-    pellentesque, ac malesuada quam suscipit. In eu ante lacinia, vulputate magna at, fermentum eros. Vestibulum vel
-    lacus
-    vestibulum, ullamcorper est eu, elementum nibh. Proin at dui quis felis interdum rhoncus id a ligula. Nam et erat
-    nisl. Integer semper dui sed euismod commodo.<br><br>
+          Habités par une soif d'apprendre et un désir d'oeuvrer dans le domaine de l'aérospatiale, les membres
+          du Groupe Aérospatial de l'Université Laval conçoivent, fabriquent et testent divers projets de haute
+          technologie. Que ce soit pour développer des fusées haute puissance, construire des instruments
+          d'observations astronomique ou conçevoir une charge scientifique ayant pour destination la
+          stratosphère, le GAUL saisit chaque occasion de mettre à profit les connaissances et les ressources
+          de ses membres pour accomplir ses différentes missions.<br><br>
 
-    Aenean sed sagittis urna. Curabitur facilisis erat purus, ac ullamcorper ipsum tincidunt quis. Aenean pretium elit
-    sed
-    varius egestas. Aliquam ut mauris at felis eleifend mollis in et diam. Mauris sit amet iaculis sapien, vehicula
-    mollis
-    ex. Sed fringilla eget mi lobortis semper. Aliquam erat volutpat. Ut ultrices sem in tempus imperdiet. Lorem ipsum
-    dolor sit amet, consectetur adipiscing elit. In consectetur, sapien eu fermentum pharetra, augue mauris elementum
-    purus, nec cursus ipsum sapien quis velit.<br><br>
+          <h3>De local à international</h3><br>
 
-    Fusce venenatis sem ut justo ornare sollicitudin. Curabitur in consectetur nulla, nec commodo libero. Quisque
-    interdum
-    in ipsum ac consectetur. Donec ac volutpat arcu. Duis quis risus ut eros dictum tincidunt tincidunt a nisl. Proin
-    euismod malesuada imperdiet. Maecenas facilisis lobortis pellentesque. Duis sit amet massa ut massa mollis
-    iaculis.<br><br>
+          Le GAUL prend part à différents concours offerts aux étudiants universitaires à travers le Canada et à
+          l'international. Ceux-ci permettent aux activités du GAUL de s'étendre sur un plus large spectre, d'avoir
+          un contact direct avec plusieurs acteurs de l'industrie et de participer aux événements spéciaux organisés
+          par ces concours. Il s'agit également d'une opportunité pour les membres de se développer
+          professionnellement et personnellement, de rencontrer d'autres passionnés d'aérospatiale et de vivre
+          des expériences hors du commun.<br><br>
+        </div>
+        <div class="col-md-7">
+          <div class="title">
+            <h3>Les divisions, en bref</h3>
+          </div>
+          <button type="button" class="btn btn-outline-primary btn-round" placement="right"
+            ngbPopover="Design et lancement de fusée haute puissance" popoverTitle="Propulser">
+            Fusée
+          </button><br><br>
+          <button type="button" class="btn btn-outline-primary btn-round" placement="right"
+            ngbPopover="Modernisation et automatisation d'un observatoire" popoverTitle="Observer">
+            Espace
+          </button><br><br>
+          <button type="button" class="btn btn-outline-primary btn-round" placement="right"
+            ngbPopover="Design et lancement de ballon sonde stratosphérique" popoverTitle="Voler">
+            Stratos
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    In nec sem ut augue mattis mollis eu id erat. Quisque id finibus neque. Donec ultricies velit ultrices justo
-    viverra,
-    ut mattis turpis laoreet. Donec malesuada eleifend leo eget fringilla. Maecenas bibendum magna non aliquet rutrum.
-    Integer sed massa ut justo ullamcorper maximus. Vivamus porttitor urna eget feugiat lobortis.<br><br>
+  <!--EN PHOTO-->
+  <section class="section">
+    <div class="container">
+      <div class="title">
+        <h3>En Photo</h3>
+      </div>
+      <div class="row">
+        <div class="mt-2">
+          <div class="card page-carousel">
+            <ngb-carousel>
+              <ng-template ngbSlide>
+                <img src="./assets/img/page-home/carousel1.webp" style="width:100%; height:50%;">
+                <div class="carousel-caption">
+                  <p>GAUL 2023</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img src="./assets/img/page-home/carousel2.webp" style="width:100%; height:50%;">
+                <div class="carousel-caption">
+                  <p>Fusée 2023</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img src="./assets/img/page-home/carousel3.webp" style="width:100%; height:50%;">
+                <div class="carousel-caption">
+                  <p>Fusée 2019</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img src="./assets/img/page-home/carousel4.webp" style="width:100%; height:50%;">
+                <div class="carousel-caption">
+                  <p>Fusée 2018</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img src="./assets/img/page-home/carousel5.webp" style="width:100%; height:50%;">
+                <div class="carousel-caption">
+                  <p>Fusée 2017</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img src="./assets/img/page-home/carousel6.webp" style="width:100%; height:50%;">
+                <div class="carousel-caption">
+                  <p>Fusée 2016</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img src="./assets/img/page-home/carousel7.webp" style="width:100%; height:50%;">
+                <div class="carousel-caption">
+                  <p>Fusée 2015</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img src="./assets/img/page-home/carousel8.webp" style="width:100%; height:50%;">
+                <div class="carousel-caption">
+                  <p>Espace</p>
+                </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img src="./assets/img/page-home/carousel9.webp" style="width:100%; height:50%;">
+                <div class="carousel-caption">
+                  <p>Stratos</p>
+                </div>
+              </ng-template>
+            </ngb-carousel>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    Aliquam erat volutpat. Morbi vel augue consequat, auctor tortor vitae, tempor elit. Phasellus nunc tellus, dictum
-    vel
-    odio quis, mattis venenatis erat. Phasellus ut arcu nec nulla malesuada viverra ac non odio. In laoreet mauris sed
-    est
-    pellentesque, ac malesuada quam suscipit. In eu ante lacinia, vulputate magna at, fermentum eros. Vestibulum vel
-    lacus
-    vestibulum, ullamcorper est eu, elementum nibh. Proin at dui quis felis interdum rhoncus id a ligula. Nam et erat
-    nisl. Integer semper dui sed euismod commodo.<br><br>
 
-    Aenean sed sagittis urna. Curabitur facilisis erat purus, ac ullamcorper ipsum tincidunt quis. Aenean pretium elit
-    sed
-    varius egestas. Aliquam ut mauris at felis eleifend mollis in et diam. Mauris sit amet iaculis sapien, vehicula
-    mollis
-    ex. Sed fringilla eget mi lobortis semper. Aliquam erat volutpat. Ut ultrices sem in tempus imperdiet. Lorem ipsum
-    dolor sit amet, consectetur adipiscing elit. In consectetur, sapien eu fermentum pharetra, augue mauris elementum
-    purus, nec cursus ipsum sapien quis velit.<br><br>
+  <!--HISTOIRE-->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="title">
+        <h2>Histoire</h2>
+      </div>
+      <div class="row">
+        <div class="title">
+          <h3>Depuis sa fondation, en 1993...</h3><br>
 
-    Fusce venenatis sem ut justo ornare sollicitudin. Curabitur in consectetur nulla, nec commodo libero. Quisque
-    interdum
-    in ipsum ac consectetur. Donec ac volutpat arcu. Duis quis risus ut eros dictum tincidunt tincidunt a nisl. Proin
-    euismod malesuada imperdiet. Maecenas facilisis lobortis pellentesque. Duis sit amet massa ut massa mollis
-    iaculis.<br><br>
+          Le GAUL (Groupe Aérospatial de l'Université Laval) fût fondé en 1993 par un étudiant de génie mécanique
+          passionné par le domaine aérospatial. Ce dernier a regroupé des étudiants de la Faculté des sciences et
+          de génie qui partageaient eux aussi un intérêt envers cette science. C'est à cette période que se créa
+          un partenariat avec le Centre de Recherche et de Développement de la Défense du Canada à Valcartier qui
+          dura plusieurs années. Le groupe est resté actif jusqu'en 2008 avant d'être repris par des étudiants en
+          2012 et continue ses activités jusqu'à ce jour. Les étudiants participant aux divers projets proposés
+          par le GAUL sont amenés à concevoir et à fabriquer une fusée haute puissance, à participer à un projet
+          de ballon sonde ainsi qu'à effectuer la mise à jour d'un observatoire astronomique.<br><br>
 
-    In nec sem ut augue mattis mollis eu id erat. Quisque id finibus neque. Donec ultricies velit ultrices justo
-    viverra,
-    ut mattis turpis laoreet. Donec malesuada eleifend leo eget fringilla. Maecenas bibendum magna non aliquet rutrum.
-    Integer sed massa ut justo ullamcorper maximus. Vivamus porttitor urna eget feugiat lobortis.<br><br>
+          Ces projets multidisciplinaires permettent aux étudiants de différents programmes de collaborer et de
+          mettre en valeur leurs connaissances spécifiques. Le GAUL offre l'opportunité à ses membres d'appliquer
+          leurs connaissances acquises dans les cours durant leur parcours universitaire tout en développant des
+          habiletés essentielles à l'ingénierie et à la recherche telles que l'esprit d'équipe, la résolution de
+          problèmes et la gestion de projets.<br><br>
 
-    Aliquam erat volutpat. Morbi vel augue consequat, auctor tortor vitae, tempor elit. Phasellus nunc tellus, dictum
-    vel
-    odio quis, mattis venenatis erat. Phasellus ut arcu nec nulla malesuada viverra ac non odio. In laoreet mauris sed
-    est
-    pellentesque, ac malesuada quam suscipit. In eu ante lacinia, vulputate magna at, fermentum eros. Vestibulum vel
-    lacus
-    vestibulum, ullamcorper est eu, elementum nibh. Proin at dui quis felis interdum rhoncus id a ligula. Nam et erat
-    nisl. Integer semper dui sed euismod commodo.<br><br>
+          Le GAUL fait maintenant partie d'une communauté canadienne grandissante de projets étudiants reliés à
+          l'espace tout en bénéficiant d'un partenariat exceptionnel avec de nombreux commanditaires qui supportent
+          le groupe.<br><br>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    Aenean sed sagittis urna. Curabitur facilisis erat purus, ac ullamcorper ipsum tincidunt quis. Aenean pretium elit
-    sed
-    varius egestas. Aliquam ut mauris at felis eleifend mollis in et diam. Mauris sit amet iaculis sapien, vehicula
-    mollis
-    ex. Sed fringilla eget mi lobortis semper. Aliquam erat volutpat. Ut ultrices sem in tempus imperdiet. Lorem ipsum
-    dolor sit amet, consectetur adipiscing elit. In consectetur, sapien eu fermentum pharetra, augue mauris elementum
-    purus, nec cursus ipsum sapien quis velit.<br><br>
+  <!--NASA SHOWCASE-->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <h2 class="title">Modèles 3D</h2>
+          <p class="description">
+            Cette vitrine permettet d'interagir avec certains modèles
+            développés par le GAUL ainsi que des modèles officiels
+            de la NASA. Voyez et explorez des objets tels que:<br><br>
 
-    Fusce venenatis sem ut justo ornare sollicitudin. Curabitur in consectetur nulla, nec commodo libero. Quisque
-    interdum
-    in ipsum ac consectetur. Donec ac volutpat arcu. Duis quis risus ut eros dictum tincidunt tincidunt a nisl. Proin
-    euismod malesuada imperdiet. Maecenas facilisis lobortis pellentesque. Duis sit amet massa ut massa mollis
-    iaculis.<br><br>
+            - Station Spatiale Internationale<br>
+            - Sondes Spirit et Opportunity<br>
+            - Téléscope Spatial Hubble<br>
+            - Etc.<br>
 
-    In nec sem ut augue mattis mollis eu id erat. Quisque id finibus neque. Donec ultricies velit ultrices justo
-    viverra,
-    ut mattis turpis laoreet. Donec malesuada eleifend leo eget fringilla. Maecenas bibendum magna non aliquet rutrum.
-    Integer sed massa ut justo ullamcorper maximus. Vivamus porttitor urna eget feugiat lobortis.<br><br>
+          </p>
+          <a routerLink="/showcase" class="btn btn-primary btn-round mt-2">Explorez les modèles</a>
+          <a href="https://solarsystem.nasa.gov/" class="btn btn-outline-primary btn-round mt-2" target="_blank">
+            NASA's Solar System Exploration
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-12 mt-3">
+          <div class="card page-carousel">
+            <ngb-carousel>
+              <ng-template ngbSlide>
+                <img src="./assets/img/page-home/3d-iss.webp" style="width:100%; height:50%;">
+                <div class="carousel-caption"></div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img src="./assets/img/page-home/3d-hubble.webp" style="width:100%; height:50%;">
+                <div class="carousel-caption"></div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img src="./assets/img/page-home/3d-atlas.webp" style="width:100%; height:50%;">
+                <div class="carousel-caption"></div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <img src="./assets/img/page-home/3d-deepspace.webp" style="width:100%; height:50%;">
+                <div class="carousel-caption"></div>
+              </ng-template>
+            </ngb-carousel>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    Aliquam erat volutpat. Morbi vel augue consequat, auctor tortor vitae, tempor elit. Phasellus nunc tellus, dictum
-    vel
-    odio quis, mattis venenatis erat. Phasellus ut arcu nec nulla malesuada viverra ac non odio. In laoreet mauris sed
-    est
-    pellentesque, ac malesuada quam suscipit. In eu ante lacinia, vulputate magna at, fermentum eros. Vestibulum vel
-    lacus
-    vestibulum, ullamcorper est eu, elementum nibh. Proin at dui quis felis interdum rhoncus id a ligula. Nam et erat
-    nisl. Integer semper dui sed euismod commodo.<br><br>
-
-    Aenean sed sagittis urna. Curabitur facilisis erat purus, ac ullamcorper ipsum tincidunt quis. Aenean pretium elit
-    sed
-    varius egestas. Aliquam ut mauris at felis eleifend mollis in et diam. Mauris sit amet iaculis sapien, vehicula
-    mollis
-    ex. Sed fringilla eget mi lobortis semper. Aliquam erat volutpat. Ut ultrices sem in tempus imperdiet. Lorem ipsum
-    dolor sit amet, consectetur adipiscing elit. In consectetur, sapien eu fermentum pharetra, augue mauris elementum
-    purus, nec cursus ipsum sapien quis velit.<br><br>
-
-    Fusce venenatis sem ut justo ornare sollicitudin. Curabitur in consectetur nulla, nec commodo libero. Quisque
-    interdum
-    in ipsum ac consectetur. Donec ac volutpat arcu. Duis quis risus ut eros dictum tincidunt tincidunt a nisl. Proin
-    euismod malesuada imperdiet. Maecenas facilisis lobortis pellentesque. Duis sit amet massa ut massa mollis
-    iaculis.<br><br>
-  </p>
-</div>
+</main>
