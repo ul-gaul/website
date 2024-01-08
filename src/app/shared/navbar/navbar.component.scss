@@ -1,0 +1,19 @@
+.navbar {
+  .navbar-brand {
+    // GAUL plus grand
+    font-size: 25px;
+  }
+
+  .navbar-nav {
+    // Overwrite height: 100%
+    height: auto;
+  }
+}
+
+// Large breakpoint bootstrap 5
+@media (max-width: 991px) {
+  .navbar-collapse {
+    flex-direction: column;
+    align-items: start;
+  }
+}

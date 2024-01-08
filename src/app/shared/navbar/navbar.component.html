@@ -1,0 +1,55 @@
+<!-- <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500"> -->
+<nav class="navbar navbar-expand-lg fixed-top" color-on-scroll="500">
+  <div class="container text-dark">
+    <div class="navbar-translate">
+      <a class="navbar-brand" routerLink="/home">
+        <img src="./assets/img/logo-small.webp" height="48" alt="GAUL icon" class="me-2">GAUL
+      </a>
+      <button class="navbar-toggler navbar-burger border-0 shadow-none" (click)="sidebarToggle()">
+        <span class="navbar-toggler-bar"></span>
+        <span class="navbar-toggler-bar"></span>
+        <span class="navbar-toggler-bar"></span>
+      </button>
+    </div>
+
+    <div class="navbar-collapse d-flex justify-content-between" id="navbarToggler">
+      <ul class="navbar-nav ms-0">
+        <li class="nav-item">
+          <a routerLink="/fusee" class="nav-link">Fusée</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/espace" class="nav-link">Espace</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/stratos" class="nav-link">Stratos</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-0">
+        <li class="nav-item">
+          <a class="nav-link" title="Page Facebook" href="https://www.facebook.com/groupeaerospatialul" target="_blank">
+            <i class="fa fa-facebook-square"></i>
+            <p class="d-lg-none mt-1">Facebook</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" title="Suivre sur Instagram" href="https://www.instagram.com/gaul.ul/" target="_blank">
+            <i class="fa fa-instagram"></i>
+            <p class="d-lg-none mt-1">Instagram</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/partenaires" class="nav-link d-flex">
+            <i class="fa fa-bookmark"></i>
+            <div class="mt-1">Partenaires</div>
+          </a>
+        </li>
+        <!-- <li class="nav-item">
+          <a routerLink="/contact" class="nav-link d-flex">
+            <i class="fa fa-phone"></i>
+            <div class="mt-1">Contact</div>
+          </a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
