@@ -15,7 +15,7 @@ export class AppComponent {
   // État de la sidebar (true = ouverte, false = fermée)
   // Pour ouvrir la sidebar, <app-route> doit avoir la classe 'nav-open'
   // La variable a un bind avec la classe 'nav-open' sur <app-route>
-  sidebarVisible = false;
+  public sidebarVisible = false;
 
   // Gère l'ouverture de la sidebar
   // Ajuste la valeur de la variable avec celle du NavBarComponent
