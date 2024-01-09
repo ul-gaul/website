@@ -11,5 +11,6 @@ export class HeaderComponent {
   @Input() title = "";
   @Input() subTitle = "";
   @Input() backgroundImg = "";
+  @Input() logoUlaval = false;
 
 }
