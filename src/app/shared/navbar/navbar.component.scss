@@ -11,10 +11,11 @@
 }
 
 // Large breakpoint bootstrap 5
-@media (max-width: 991px) {
+@media screen and (max-width: 991px) {
   .navbar-collapse {
     flex-direction: column;
     align-items: start;
     padding-bottom: 15px;
+    background-color: #999!important;
   }
 }
