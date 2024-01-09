@@ -1,0 +1,17 @@
+div {
+  position: absolute;
+  top: 0;
+  left: 10vw;
+  width: 80vw;
+  height: 80vh;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+  color: #999;
+}
+
+a:hover {
+  color: #777;
+}
