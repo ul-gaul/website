@@ -1,0 +1,22 @@
+.img-right {
+  float: right;
+  padding: 25px 0px 25px 30px;
+}
+
+.img-left {
+  float: left;
+  padding: 25px 30px 25px 0px;
+}
+
+.fusee-text {
+  justify-content: center;
+  padding: 10px;
+}
+
+.grid{
+  max-width: 1200px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
