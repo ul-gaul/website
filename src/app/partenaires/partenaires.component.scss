@@ -1,0 +1,16 @@
+.grid{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, 400px);
+}
+
+.card {
+  margin: 0 40px 40px 40px;
+  width: 320px;
+
+  img {
+    width: 320px;
+    height: 180px;
+  }
+}
