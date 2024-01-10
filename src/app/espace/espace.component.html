@@ -1,97 +1,93 @@
-<main class="wrapper">
-  <!-- HEADER -->
-  <app-header [backgroundImg]="'./assets/img/page-espace/main-espace.webp'" [title]="'Division Espace'"></app-header>
+<!-- HEADER -->
+<app-header [backgroundImg]="'./assets/img/page-espace/main-espace.webp'" [title]="'Division Espace'"></app-header>
 
-  <!--INTRODUCTION-->
-  <section class="section section-dark">
-    <div class="container">
-      <div class="row">
-        <div class="title">
-          <h5>
-            La division Espace est une nouvelle division du GAUL qui a pour objectif de faire découvrir l'espace à toute
-            personne intéressée.<br><br>
-
-            Le but à long terme est de réaliser des soirées d'observation avec le matériel conçu et fabriqué par
-            l'équipe de la division. Ainsi, il est question d'éduquer sur l'espace, mais aussi d'utiliser le matériel du
-            GAUL pour proposer des soirées d'observation complètement conceptualisées à l'Université Laval. Ces
-            activités seront réalisées en collaboration avec différents observatoires dans la région de Québec.<br><br>
-
-            Contrairement aux autres divisions du GAUL, la mission que se donne l'équipe de la division Espace est
-            davantage axée sur l'apprentissage que sur la compétition. Cette nouvelle approche permet au GAUL d'élargir
-            ses horizons et d'aller chercher un nouveau public. De plus, cette division multidisciplinaire permet aux
-            membres de développer des aptitudes tant pédagogiques que pratiques.<br><br>
-          </h5>
-          <img class="d-block ms-auto me-auto mt-3 border" width="500" alt="Télescope"
-            src="./assets/img/page-espace/telescope.webp">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--OBJECTIFS GLOBAUX-->
-  <section class="section">
-    <div class="container">
+<!--INTRODUCTION-->
+<section class="section section-dark">
+  <div class="container">
+    <div class="row">
       <div class="title">
-        <h2>Objectifs Globaux</h2>
-      </div>
-      <div class="row">
-        <div class="title">
-          La division concentre ses activités autour de l'organisation de soirées d'observations ainsi que dans la
-          fabrication d'instruments d'observation. Ces différents volets permettent à la division de toucher un aspect
-          éducatif et un aspect de conception qui rendent la division multifonctions.<br>
-        </div>
-      </div>
+        <h5>
+          La division Espace est une nouvelle division du GAUL qui a pour objectif de faire découvrir l'espace à toute
+          personne intéressée.<br><br>
 
-      <div class="nav-tabs-navigation">
-        <div class="nav-tabs-wrapper">
-          <ul ngbNav #nav="ngbNav" class="nav-tabs">
-            <li [ngbNavItem]="1">
-              <button ngbNavLink>Soirées d'observation</button>
-              <ng-template ngbNavContent>
-                <p class="text-start">
-                  Cette division a donc pour objectif d'organiser des activités d'observation et de collaborer avec
-                  d'autres groupes de personnes passionnées par l'astronomie. Ces séances nous offrent l'occasion de
-                  tester nos nouveaux outils d'observation, de partager notre passion et surtout d'apprendre des travaux
-                  de nos collègues. En somme, ces événements contribuent à rendre nos télescopes amateurs plus
-                  performants tout en renforçant notre engagement envers l'observation de l'espace.
-                </p>
-              </ng-template>
-            </li>
-            <li [ngbNavItem]="2">
-              <button ngbNavLink>Fabrication d'instrument d'observation</button>
-              <ng-template ngbNavContent>
-                <p class="text-start">
-                  Parmi les outils d'observation que nous concevons, il y a évidemment les télescopes, mais aussi tous
-                  les autres instruments qui rendent l'observation spatiale intéressante et amusante. Nous travaillons
-                  actuellement sur un télescope de type lunette astronomique de 1,5m de longueur, ainsi que sur un
-                  trépied automatisé.
-                </p>
-              </ng-template>
-            </li>
-          </ul>
-          <div [ngbNavOutlet]="nav" class="mt-2"></div>
-        </div>
+          Le but à long terme est de réaliser des soirées d'observation avec le matériel conçu et fabriqué par
+          l'équipe de la division. Ainsi, il est question d'éduquer sur l'espace, mais aussi d'utiliser le matériel du
+          GAUL pour proposer des soirées d'observation complètement conceptualisées à l'Université Laval. Ces
+          activités seront réalisées en collaboration avec différents observatoires dans la région de Québec.<br><br>
+
+          Contrairement aux autres divisions du GAUL, la mission que se donne l'équipe de la division Espace est
+          davantage axée sur l'apprentissage que sur la compétition. Cette nouvelle approche permet au GAUL d'élargir
+          ses horizons et d'aller chercher un nouveau public. De plus, cette division multidisciplinaire permet aux
+          membres de développer des aptitudes tant pédagogiques que pratiques.<br><br>
+        </h5>
+        <img class="d-block ms-auto me-auto mt-3 border" alt="Télescope" src="./assets/img/page-espace/telescope.webp">
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!--MISSION ÉDUCATIVE-->
-  <section class="section section-dark">
-    <div class="container">
+<!--OBJECTIFS GLOBAUX-->
+<section class="section">
+  <div class="container">
+    <div class="title">
+      <h2>Objectifs Globaux</h2>
+    </div>
+    <div class="row">
       <div class="title">
-        <h2>Une mission éducative et scientifique</h2>
-      </div>
-      <div class="row">
-        <div class="title">
-          La division Espace a comme mission de permettre aux étudiants de tous les niveaux d'acquérir de l'expérience
-          enrichissante dans le domaine, tout en leur transmettant la passion pour l'astronomie et
-          l'astrophysique.<br><br>
-        </div>
-      </div>
-      <div class="d-flex justify-content-center">
-        <img src="./assets/img/page-espace/galaxy.webp" class="border" height="300" alt="Galaxy">
+        La division concentre ses activités autour de l'organisation de soirées d'observations ainsi que dans la
+        fabrication d'instruments d'observation. Ces différents volets permettent à la division de toucher un aspect
+        éducatif et un aspect de conception qui rendent la division multifonctions.<br>
       </div>
     </div>
-  </section>
 
-</main>
+    <div class="nav-tabs-navigation">
+      <div class="nav-tabs-wrapper">
+        <ul ngbNav #nav="ngbNav" class="nav-tabs">
+          <li [ngbNavItem]="1">
+            <button ngbNavLink>Soirées d'observation</button>
+            <ng-template ngbNavContent>
+              <p class="text-start">
+                Cette division a donc pour objectif d'organiser des activités d'observation et de collaborer avec
+                d'autres groupes de personnes passionnées par l'astronomie. Ces séances nous offrent l'occasion de
+                tester nos nouveaux outils d'observation, de partager notre passion et surtout d'apprendre des travaux
+                de nos collègues. En somme, ces événements contribuent à rendre nos télescopes amateurs plus
+                performants tout en renforçant notre engagement envers l'observation de l'espace.
+              </p>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="2">
+            <button ngbNavLink>Fabrication d'instrument d'observation</button>
+            <ng-template ngbNavContent>
+              <p class="text-start">
+                Parmi les outils d'observation que nous concevons, il y a évidemment les télescopes, mais aussi tous
+                les autres instruments qui rendent l'observation spatiale intéressante et amusante. Nous travaillons
+                actuellement sur un télescope de type lunette astronomique de 1,5m de longueur, ainsi que sur un
+                trépied automatisé.
+              </p>
+            </ng-template>
+          </li>
+        </ul>
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--MISSION ÉDUCATIVE-->
+<section class="section section-dark">
+  <div class="container">
+    <div class="title">
+      <h2>Une mission éducative et scientifique</h2>
+    </div>
+    <div class="row">
+      <div class="title">
+        La division Espace a comme mission de permettre aux étudiants de tous les niveaux d'acquérir de l'expérience
+        enrichissante dans le domaine, tout en leur transmettant la passion pour l'astronomie et
+        l'astrophysique.<br><br>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <img src="./assets/img/page-espace/galaxy.webp" class="border" alt="Galaxy">
+    </div>
+  </div>
+</section>

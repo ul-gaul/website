@@ -1,66 +1,63 @@
-<main class="wrapper">
-  <!-- HEADER -->
-  <app-header [backgroundImg]="'./assets/img/page-espace/main-espace.webp'" [title]="'Modèles 3D'"></app-header>
+<!-- HEADER -->
+<app-header [backgroundImg]="'./assets/img/page-espace/main-espace.webp'" [title]="'Modèles 3D'"></app-header>
 
-  <section class="section">
-    <div class="container">
-      <div class="nav-tabs-navigation">
-        <div class="nav-tabs-wrapper">
-          <ul ngbNav #nav="ngbNav" class="nav-tabs justify-content-center">
-            <li [ngbNavItem]="1">
-              <button ngbNavLink>SSI</button>
-              <ng-template ngbNavContent>
-                <p>Station Spatiale Internationale</p>
-                <iframe src="https://solarsystem.nasa.gov/gltf_embed/2378" frameborder="0" scrolling="no"></iframe>
-              </ng-template>
-            </li>
-            <li [ngbNavItem]="2">
-              <button ngbNavLink>Hubble</button>
-              <ng-template ngbNavContent>
-                <p>Téléscope Spatial Hubble</p>
-                <iframe src="https://solarsystem.nasa.gov/gltf_embed/2383" frameborder="0" scrolling="no"></iframe>
-              </ng-template>
-            </li>
-            <li [ngbNavItem]="3">
-              <button ngbNavLink>Mars</button>
-              <ng-template ngbNavContent>
-                <p>Mars, la planète rouge</p>
-                <iframe src="https://solarsystem.nasa.gov/gltf_embed/2372" frameborder="0" scrolling="no"></iframe>
-              </ng-template>
-            </li>
-            <li [ngbNavItem]="4">
-              <button ngbNavLink>Sonde planétaire</button>
-              <ng-template ngbNavContent>
-                <p>Sondes jumelles d'exploration martienne: Spirit et Opportunity</p>
-                <iframe src="https://solarsystem.nasa.gov/gltf_embed/2370" frameborder="0" scrolling="no"></iframe>
-              </ng-template>
-            </li>
-            <li [ngbNavItem]="5">
-              <button ngbNavLink>Atlas V</button>
-              <ng-template ngbNavContent>
-                <p>Fusée Atlas V</p>
-                <iframe src="https://solarsystem.nasa.gov/gltf_embed/2405" frameborder="0" scrolling="no"></iframe>
-              </ng-template>
-            </li>
-            <li [ngbNavItem]="6">
-              <button ngbNavLink>Parker</button>
-              <ng-template ngbNavContent>
-                <p>Sonde solaire Parker</p>
-                <iframe src="https://solarsystem.nasa.gov/gltf_embed/2356" frameborder="0" scrolling="no"></iframe>
-              </ng-template>
-            </li>
-            <li [ngbNavItem]="7">
-              <button ngbNavLink>Terre</button>
-              <ng-template ngbNavContent>
-                <p>Notre planète, la Terre</p>
-                <iframe src="https://solarsystem.nasa.gov/gltf_embed/2392" frameborder="0" scrolling="no"></iframe>
-              </ng-template>
-            </li>
-          </ul>
-          <div [ngbNavOutlet]="nav" class="mt-2"></div>
-        </div>
+<section class="section">
+  <div class="container">
+    <div class="nav-tabs-navigation">
+      <div class="nav-tabs-wrapper">
+        <ul ngbNav #nav="ngbNav" class="nav-tabs justify-content-center">
+          <li [ngbNavItem]="1">
+            <button ngbNavLink>SSI</button>
+            <ng-template ngbNavContent>
+              <p>Station Spatiale Internationale</p>
+              <iframe src="https://solarsystem.nasa.gov/gltf_embed/2378" frameborder="0" scrolling="no"></iframe>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="2">
+            <button ngbNavLink>Hubble</button>
+            <ng-template ngbNavContent>
+              <p>Téléscope Spatial Hubble</p>
+              <iframe src="https://solarsystem.nasa.gov/gltf_embed/2383" frameborder="0" scrolling="no"></iframe>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="3">
+            <button ngbNavLink>Mars</button>
+            <ng-template ngbNavContent>
+              <p>Mars, la planète rouge</p>
+              <iframe src="https://solarsystem.nasa.gov/gltf_embed/2372" frameborder="0" scrolling="no"></iframe>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="4">
+            <button ngbNavLink>Sonde planétaire</button>
+            <ng-template ngbNavContent>
+              <p>Sondes jumelles d'exploration martienne: Spirit et Opportunity</p>
+              <iframe src="https://solarsystem.nasa.gov/gltf_embed/2370" frameborder="0" scrolling="no"></iframe>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="5">
+            <button ngbNavLink>Atlas V</button>
+            <ng-template ngbNavContent>
+              <p>Fusée Atlas V</p>
+              <iframe src="https://solarsystem.nasa.gov/gltf_embed/2405" frameborder="0" scrolling="no"></iframe>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="6">
+            <button ngbNavLink>Parker</button>
+            <ng-template ngbNavContent>
+              <p>Sonde solaire Parker</p>
+              <iframe src="https://solarsystem.nasa.gov/gltf_embed/2356" frameborder="0" scrolling="no"></iframe>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="7">
+            <button ngbNavLink>Terre</button>
+            <ng-template ngbNavContent>
+              <p>Notre planète, la Terre</p>
+              <iframe src="https://solarsystem.nasa.gov/gltf_embed/2392" frameborder="0" scrolling="no"></iframe>
+            </ng-template>
+          </li>
+        </ul>
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
       </div>
     </div>
-  </section>
-
-</main>
+  </div>
+</section>

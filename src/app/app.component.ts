@@ -22,4 +22,9 @@ export class AppComponent {
   updateSidebarVisible(newSidebarVisible: boolean) {
     this.sidebarVisible = newSidebarVisible;
   }
+
+  // Ferme la sidebar quand on clique sur la page
+  closeSidebar() {
+    this.sidebarVisible = false;
+  }
 }

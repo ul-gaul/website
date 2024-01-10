@@ -1,5 +1,7 @@
 <div [ngClass]="{ 'nav-open': sidebarVisible }">
   <app-navbar (toggleSidebarEvent)="updateSidebarVisible($event)"></app-navbar>
-  <router-outlet></router-outlet>
-  <app-footer></app-footer>
+  <main (click)="closeSidebar()" class="wrapper">
+    <router-outlet></router-outlet>
+  </main>
+  <app-footer (click)="closeSidebar()"></app-footer>
 </div>
