@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Scroll, Router, RouterOutlet } from '@angular/router';
+import { filter } from 'rxjs';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
@@ -17,10 +18,11 @@ export class AppComponent {
   // La variable a un bind avec la classe 'nav-open' sur <app-route>
   public sidebarVisible = false;
 
-  // Gère l'ouverture de la sidebar
-  // Ajuste la valeur de la variable avec celle du NavBarComponent
-  updateSidebarVisible(newSidebarVisible: boolean) {
-    this.sidebarVisible = newSidebarVisible;
+  // Ferme la sidebar quand on change de page
+  // .pipe ne garde que les event de type Scroll (quand on interagit avec RouterLink)
+  constructor(private router: Router) {
+    // this.router.events.subscribe(console.log);
+    this.router.events.pipe(filter((event) => event instanceof Scroll)).subscribe(() => { this.sidebarVisible = false });
   }
 
   // Ferme la sidebar quand on clique sur la page

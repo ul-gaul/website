@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -12,13 +12,14 @@ import { RouterLink } from '@angular/router';
 export class NavbarComponent {
   // Variable qui contrôle l'ouverture de la sidebar
   // Bind avec la classe 'nav-open'
+  // @Input pour recevoir la variable du parent si elle change
   // Voir sidebarToggle()
-  public sidebarVisible = false;
+  @Input() navSidebarVisible = false;
 
-  // EventEmitter pour envoier la variable sidebarVisible aux parents
+  // EventEmitter pour envoier la variable navSidebarVisible aux parents
   // lorsque la fonction sidebarToggle() est appelée
   // Voir sidebarToggle()
-  @Output() toggleSidebarEvent = new EventEmitter<boolean>();
+  @Output() navSidebarVisibleChange = new EventEmitter<boolean>();
 
   // Variable qui contrôle la transparence de la navbar
   // Bind avec la classe 'navbar-transparent'
@@ -35,8 +36,8 @@ export class NavbarComponent {
   sidebarToggle() {
     // Inverse la variable (true -> false) (false -> true)
     // pour ouvrir ou fermer la sidebar
-    this.sidebarVisible = !this.sidebarVisible;
+    this.navSidebarVisible = !this.navSidebarVisible;
     // Envoie la variable sidebarVisible aux parents
-    this.toggleSidebarEvent.emit(this.sidebarVisible);
+    this.navSidebarVisibleChange.emit(this.navSidebarVisible);
   };
 }
