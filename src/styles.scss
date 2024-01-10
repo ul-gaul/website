@@ -17,15 +17,53 @@ $bg-nude: #FFF;
 
 
 /* 3. Global style/template edit */
+// Taille de texte plus grand pour les paragraphes
 p {
   font-size: 1rem;
 }
 
+/* _carousel.scss */
+// Ajustement des flèches pour les carrousels de photos
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   margin-top: 5px;
 }
 
+/* _sections.scss */
+// Ajustement de la couleur des sections noires
 .section-dark {
   background-color: #000;
 }
+
+/* _navbars.scss */
+// Ajustement des couleurs des onglets dans les pages
+.nav-tabs .nav-item .nav-link {
+  color: #BBB;
+
+  &.active {
+    color: #888;
+  }
+
+  &:hover {
+    color: #888;
+  }
+}
+
+.nav-tabs {
+  border-bottom-color: #FFF;
+
+  .nav-item {
+    .nav-link.active,
+    .nav-link.active:hover,
+    .nav-link.active:focus {
+      &:after{
+        border-bottom: 11px solid #FFF;
+      }
+
+      &:before{
+        border-bottom: 11px solid #FFF;
+      }
+    }
+  }
+}
+
