@@ -1,0 +1,11 @@
+iframe {
+  position: relative;
+  width: 80%;
+  aspect-ratio: 2 / 1;
+
+  // fallback
+  @supports not (aspect-ratio: 2 / 1) {
+    height: 500px;
+    width: 1000px;
+  }
+}
