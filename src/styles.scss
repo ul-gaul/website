@@ -17,11 +17,15 @@ $bg-nude: #FFF;
 
 
 /* 3. Global style/template edit */
+p {
+  font-size: 1rem;
+}
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  margin-top: 5px!important;
+  margin-top: 5px;
 }
 
 .section-dark {
-  background-color: #000!important;
+  background-color: #000;
 }
