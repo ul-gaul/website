@@ -1,0 +1,26 @@
+<header class="page-header section-dark" style="background-image: url('{{backgroundImg}}')">
+  <div class="filter"></div>
+  <div class="content-center">
+    <div class="container">
+      <div class="title-brand">
+        @if (title.includes("webp")) {
+        <div class="gaul-logo">
+          <img src="{{title}}" alt="GAUL logo">
+        </div>
+        } @else {
+        <h1 class="presentation-title">{{title}}</h1>
+        }
+      </div>
+      @if (subTitle) {
+      <h1 class="presentation-subtitle text-center">{{subTitle}}</h1>
+      }
+    </div>
+  </div>
+  @if (logoUlaval) {
+  <h6 class="category-absolute ml-auto mr-auto">
+    <a href="https://www.ulaval.ca/" target="_blank">
+      <img src="./assets/img/shared/ulaval-full-white.svg" class="uni-laval-logo">
+    </a>
+  </h6>
+  }
+</header>

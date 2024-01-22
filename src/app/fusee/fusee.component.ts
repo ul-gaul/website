@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { HeaderComponent } from '../shared/header/header.component';
 
 @Component({
   selector: 'app-fusee',
+  standalone: true,
+  imports: [HeaderComponent],
   templateUrl: './fusee.component.html',
-  styleUrls: ['./fusee.component.scss']
+  styleUrl: './fusee.component.scss'
 })
-export class FuseeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class FuseeComponent {
 
 }

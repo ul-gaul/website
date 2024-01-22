@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { HeaderComponent } from '../shared/header/header.component';
 
 @Component({
   selector: 'app-partenaires',
+  standalone: true,
+  imports: [HeaderComponent],
   templateUrl: './partenaires.component.html',
-  styleUrls: ['./partenaires.component.scss']
+  styleUrl: './partenaires.component.scss'
 })
-export class PartenairesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class PartenairesComponent {
 
 }

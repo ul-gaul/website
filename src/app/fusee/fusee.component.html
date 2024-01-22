@@ -1,142 +1,113 @@
-<div class="page-header section-dark" style="background-image: url('./assets/page-fusee/main-fusee.webp')">
-    <div class="filter"></div>
-    <div class="content-center">
-        <div class="container">
-            <div class="title-brand">
-                <h1 class="presentation-title">Division Fusée</h1>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- HEADER -->
+<app-header [backgroundImg]="'./assets/img/page-fusee/main-fusee.webp'" [title]="'Division Fusée'"></app-header>
 
-<div class="main">
-    <!--INTRODUCTION-->
-    <div class="section section">
-        <div class="container">
-            <div class="row">
-                <div class="title">
-                    <h5>
-                        L’objectif principal de cette division est de concevoir et de fabriquer une fusée haute puissance 
-                        tout en respectant les critères des compétitions auxquelles le groupe participe. Depuis sa reprise 
-                        en 2012 jusqu’en 2019, le groupe participait aux compétitions organisées par la « Experimental 
-                        Sounding Rocket Assiciation » en Utah et au Nouveau-Mexique. La communauté étudiante de 
-                        fuséonautique étant en pleine croissance au Canada, le GAUL prend maintenant part à la nouvelle 
-                        compétition canadienne « Launch Canada Challenge » qui débute en 2021.<br><br>
+<!--INTRODUCTION-->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="title">
+        <h5>
+          L'objectif principal de cette division est de concevoir et de fabriquer une fusée haute puissance tout en
+          respectant les critères des compétitions auxquelles le groupe participe. Depuis sa reprise en 2012 jusqu'en
+          2019, le groupe participait aux compétitions organisées par la « Experimental Sounding Rocket Assiciation »
+          en Utah et au Nouveau-Mexique. Depuis 2023, le GAUL participe à la compétition nationale « Launch Canada
+          ».<br><br>
 
-                        C’est dans le contexte de cette compétition que le GAUL conçoit actuellement sa 7e fusée haute 
-                        puissance depuis 2012. Bien que les impacts de la COVID-19 ont eu pour effet l’annulation des 
-                        compétitions de l’été 2020, le groupe est motivé à viser haut pour le prochain événement. 
-                        Le GAUL a l’objectif de lancer son premier moteur conçu et fabriqué par des étudiants 
-                        l’été prochain.​​<br><br>
-                    </h5>
-                </div>
-            </div>
-        </div>
+          C'est dans le cadre de ces deux compétitions que la division Fusée du GAUL développe ses fusées haute
+          puissance. Bien que les impacts de la COVID-19 n'ont pas épargné le GAUL, nos équipes sont motivées à viser
+          haut pour nos prochaines compétitions!<br><br>
+        </h5>
+      </div>
     </div>
-    <!--SOUS-SYSTÈMES-->
-    <div class="section section-dark">
-        <div class="container">
-            <div class="title">
-                <h2>Sous-Systèmes</h2>
-            </div>
-            <div class="row">
-                <div class="title">
-                    <div>
-                        <img class="img-right" src="./assets/page-fusee/excelsior-liftoff.webp" alt="" height="500px">
-                        
-                        <h3>Aérostructure</h3><br>
-                        Le groupe Aérostructure est responsable de la conception et de la fabrication des composantes 
-                        structurelles et de l’intégration des autres composantes dans la fusée. Les membres se consacrent 
-                        au design et à la fabrication du fuselage en composite, des ailerons, de la baie avionique et 
-                        du système de récupération tel que le déploiement des parachutes et les parachutes eux-mêmes. 
-                        Ce groupe chapeaute également l’analyse des performances de vol par simulation et l’optimisation 
-                        de la masse. Les étudiants sont amenés à se familiariser avec des logiciels d’analyse et 
-                        de conception 3D.<br><br>
-                        
-                        <img class="img-left" src="./assets/page-fusee/launchpad-highv.webp" alt="" height="500px">
+  </div>
+</section>
 
-                        <h3>Avionique</h3><br>
-                        Le groupe Avionique est responsable de la conception des circuit électroniques présents dans 
-                        la fusée et au sol. Les membres ont la charge de concevoir et de fabriquer un système 
-                        d’acquisition des données du vol et des tests au sol, de les transmettre au sol et de fabriquer 
-                        une station ayant la capacité de recevoir et d’afficher ces informations. Le système embarqué 
-                        contrôle le moteur par l’ouverture et par la fermeture de valves. Les étudiants conçoivent 
-                        également un système de déploiement des parachutes pour un retour sécuritaire au sol 
-                        de la fusée.<br><br>
+<!--SOUS-SYSTÈMES-->
+<section class="section section-dark">
+  <div class="container">
+    <div class="title">
+      <h2>Sous-Systèmes</h2>
+    </div>
+    <div class="row">
+      <div class="title">
+        <div>
+          <aside class="img-right border">
+            <img src="./assets/img/page-fusee/excelsior-liftoff.webp" alt="Excelsior! en vol" height="450">
+          </aside>
 
-                        <h3>Propulsion</h3><br>
-                        Le groupe Propulsion a comme mandat la conception et la fabrication du nouveau moteur hybride 
-                        (liquide / solide) OBÉLIX. Ce projet inclue la fabrication d’un banc de test ainsi que de 
-                        nombreux essais au sol afin de caractériser et optimiser les performances du moteur dans 
-                        le but ultime de le lancer lors de la compétition de 2021.<br><br>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--ANCIENNES COMPÉTITIONS-->
-    <div class="section section">
-        <div class="container">
-            <div class="title">
-                <h2>Anciennes Compétitions<img src="./assets/logos-partenaires/logo-spac.webp" alt=""></h2>
-            </div>
-            <div class="container grid">
-                <div>
-                    <img class="fusee-img" src="./assets/page-fusee/fusee1.webp" alt="" height="600px"><br>
-                    <h6 class="fusee-text">2015<br>Blackbird<br>Classement: N/A<br>Altitude: 11 554'</h6>
-                </div>
-                <div>
-                    <img class="fusee-img" src="./assets/page-fusee/fusee2.webp" alt="" height="600px"><br>
-                    <h6 class="fusee-text">2016<br>Ragnarök<br>Classement: 4<br>Altitude: 10 086'</h6>
-                </div>
-                <div>
-                    <img class="fusee-img" src="./assets/page-fusee/fusee3.webp" alt="" height="600px"><br>
-                    <h6 class="fusee-text">2017<br>Menhir<br>Classement: 16<br>Altitude: 8 015'</h6>
-                </div>
-                <div>
-                    <img class="fusee-img" src="./assets/page-fusee/fusee4.webp" alt="" height="600px"><br>
-                    <h6 class="fusee-text">2018<br>High V<br>Classement: 5<br>Altitude: 9 517'</h6>
-                </div>
-                <div>
-                    <img class="fusee-img" src="./assets/page-fusee/fusee5.webp" alt="" height="600px"><br>
-                    <h6 class="fusee-text">2019<br>Excelsior!<br>Classement: 7<br>Altitude: 22 000'</h6>
-                </div>
-                <div>
-                    <img class="fusee-img" src="./assets/page-fusee/fusee6.webp" alt="" height="600px"><br>
-                    <h6 class="fusee-text">2020-2021<br><br>À Venir<br></h6>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--À VENIR-->
-    <div class="section section-dark">
-        <div class="container">
-            <div class="title">
-                <h2>Prochain Objectif?<img src="./assets/logos-partenaires/logo-launchcan.webp" alt=""></h2>
-            </div>
-            <div class="row">
-                <div class="title">
-                    Pour des raisons de sécurité, la compétition Launch Canada 2020 a dû être reportée en 2021. 
-                    Malgré ce changement de programme, les membres de la Division Fusée sont motivés à atteindre 
-                    leur objectif de réaliser leur premier lancement SRAD (Student Research And Developped). 
-                    Auparavant, les lancements s’effectuaient avec des moteurs commerciaux, mais la prochaine fusée 
-                    sera le fruit d’années de recherche : un moteur conçu et fabriqué par les membres de la divison. 
-                    La prochaine compétition aura lieu à l’été 2021 et se tiendra au Canada.<br><br>
-                    
-                    Launch Canada est une compétition de très haut calibre mettant à l’épreuve les universités canadiennes 
-                    à concevoir et démontrer leur lanceur expérimental de haute puissance. Cela représente pour le GAUL 
-                    une excellente opportunité de se démarquer avec le lancement de Skylark, la nouvelle fusée mettant 
-                    en vedette le moteur développé par les membres, OBÉLIX. Celui-ci est en conception depuis plus de 
-                    quatre ans et le GAUL est fier d’être arrivé à ce point.<br><br>
+          <h3>Aérostructure</h3><br>
+          Le groupe Aérostructure est responsable de la conception et de la fabrication des composantes structurelles
+          et de l'intégration des autres composantes dans la fusée. Les membres se consacrent au design et à la
+          fabrication du fuselage en composite, des ailerons, de l'intégration de la baie avionique, et du système de
+          récupération, c'est-à-dire le système de déploiement des parachutes et les parachutes eux-mêmes. Ce groupe
+          chapeaute également l'analyse des performances de vol par simulation et l'optimisation de la masse. Les
+          étudiants sont amenés à se familiariser avec divers logiciels d'analyse et de conception 3D.<br><br>
 
-                    <h3>Moteur OBÉLIX</h3><br>
-                    OBÉLIX est un moteur hybride, c’est-à-dire qu’un carburant solide réagit avec un comburant liquide 
-                    pour obtenir la combustion. Le carburant solide est un mélange de paraffine et de différents additifs 
-                    et le comburant liquide est du protoxyde d’azote. Lorsque les deux sont mélangés dans la chambre de 
-                    combustion dans des conditions spécifiques, la réaction produit la poussée nécessaire afin que la 
-                    fusée prenne son envol.
-                </div>
-            </div>
+          <aside class="img-left border">
+            <img src="./assets/img/page-fusee/launchpad-highv.webp" alt="High V au lancement" height="450">
+          </aside>
+
+          <h3>Avionique</h3><br>
+          Le groupe Avionique est responsable de la conception des circuits électroniques présents dans la fusée et au
+          sol. Les membres ont la charge de concevoir et de fabriquer un système d'acquisition des données de vol, un
+          système de transmission des données au sol et de fabriquer une station ayant la capacité de recevoir et
+          d'afficher ces informations. Les étudiants conçoivent également un système de déploiement des parachutes
+          pour un retour sécuritaire au sol de la fusée.<br><br>
+
+          <h3>Propulsion</h3><br>
+          Le groupe Propulsion a comme mandat le choix du moteur commercial à utiliser pour chaque fusée. Les membres
+          de cette division analysent les besoins et s'assurent que le moteur choisi répond aux exigences de la
+          mission. Ils s'occupent ensuite d'établir la méthode d'intégration du moteur et de son assemblage dans la
+          fusée.<br><br>
+          Cette division est également responsable d'un des projets les plus ambitieux du GAUL : la conception et la
+          fabrication d'un moteur à carburant liquide. Ce projet a pour but le design et la simulation par ordinateur
+          des pièces composant le moteur afin d'en caractériser et d'optimiser ses performances. Si ce projet aboutit,
+          un banc de tests pourra alors être fabriqué pour réaliser des essais au sol.<br><br>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+</section>
+
+<!--ANCIENNES COMPÉTITIONS-->
+<section class="section">
+  <div class="container">
+    <div class="title">
+      <h2>
+        Anciennes Compétitions
+        <img src="./assets/img/page-fusee/logo-spac.webp" height="84" alt="Logo Spaceport America Cup">
+        <img src="./assets/img/page-fusee/logo-launchcan.webp" height="84" alt="Logo Launch Canada">
+      </h2>
+    </div>
+    <div class="container grid">
+      <div>
+        <img class="fusee-img" src="./assets/img/page-fusee/fusee1.webp" alt="Fusée Blackbird" height="600px"><br>
+        <h6 class="fusee-text">2015<br>Blackbird<br>Classement: N/A<br>Altitude: 11 554'</h6>
+      </div>
+      <div>
+        <img class="fusee-img" src="./assets/img/page-fusee/fusee2.webp" alt="Fusée Ragnarök" height="600px"><br>
+        <h6 class="fusee-text">2016<br>Ragnarök<br>Classement: 4<br>Altitude: 10 086'</h6>
+      </div>
+      <div>
+        <img class="fusee-img" src="./assets/img/page-fusee/fusee3.webp" alt="Fusée Menhir" height="600px"><br>
+        <h6 class="fusee-text">2017<br>Menhir<br>Classement: 16<br>Altitude: 8 015'</h6>
+      </div>
+      <div>
+        <img class="fusee-img" src="./assets/img/page-fusee/fusee4.webp" alt="Fusée High V" height="600px"><br>
+        <h6 class="fusee-text">2018<br>High V<br>Classement: 5<br>Altitude: 9 517'</h6>
+      </div>
+      <div>
+        <img class="fusee-img" src="./assets/img/page-fusee/fusee5.webp" alt="Fusée Excelsior!" height="600px"><br>
+        <h6 class="fusee-text">2019<br>Excelsior!<br>Classement: 7<br>Altitude: 22 000'</h6>
+      </div>
+      <div>
+        <img class="fusee-img" src="./assets/img/page-fusee/fusee6.webp" alt="Fusée Nebula" height="600px"><br>
+        <h6 class="fusee-text">2023<br>Nebula<br>Classement: 3<br>Altitude: 10 785'</h6>
+      </div>
+      <div>
+        <img class="fusee-img" src="./assets/img/page-fusee/fusee7.webp" alt="Fusée à venir" height="600px"><br>
+        <h6 class="fusee-text">2024-2025<br><br>À venir<br></h6>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { HeaderComponent } from '../shared/header/header.component';
+import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-espace',
+  standalone: true,
+  imports: [HeaderComponent, NgbNavModule],
   templateUrl: './espace.component.html',
-  styleUrls: ['./espace.component.scss']
+  styleUrl: './espace.component.scss'
 })
-export class EspaceComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class EspaceComponent {
 
 }

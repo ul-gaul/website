@@ -1,50 +1,43 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
-import { Location } from '@angular/common';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
-    selector: 'app-navbar',
-    templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.scss']
+  selector: 'app-navbar',
+  standalone: true,
+  imports: [CommonModule, RouterLink],
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
-    private toggleButton: any;
-    private sidebarVisible: boolean;
+export class NavbarComponent {
+  // Variable qui contrôle l'ouverture de la sidebar
+  // Bind avec la classe 'nav-open'
+  // @Input pour recevoir la variable du parent si elle change
+  // Voir sidebarToggle()
+  @Input() navSidebarVisible = false;
 
-    constructor(public location: Location, private element : ElementRef) {
-        this.sidebarVisible = false;
+  // EventEmitter pour envoier la variable navSidebarVisible aux parents
+  // lorsque la fonction sidebarToggle() est appelée
+  // Voir sidebarToggle()
+  @Output() navSidebarVisibleChange = new EventEmitter<boolean>();
+
+  // Variable qui contrôle la transparence de la navbar
+  // Bind avec la classe 'navbar-transparent'
+  // Voir window.onscroll
+  public navbarTransparent = true;
+
+  constructor() {
+    // Fonction appelée à chaque fois que l'utilisateur scroll
+    window.onscroll = () => {
+      this.navbarTransparent = window.scrollY < 150
     }
+  }
 
-    ngOnInit() {
-        const navbar: HTMLElement = this.element.nativeElement;
-        this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
-    }
-    sidebarOpen() {
-        const toggleButton = this.toggleButton;
-        const html = document.getElementsByTagName('html')[0];
-        // console.log(html);
-        // console.log(toggleButton, 'toggle');
-
-        setTimeout(function(){
-            toggleButton.classList.add('toggled');
-        }, 500);
-        html.classList.add('nav-open');
-
-        this.sidebarVisible = true;
-    };
-    sidebarClose() {
-        const html = document.getElementsByTagName('html')[0];
-        // console.log(html);
-        this.toggleButton.classList.remove('toggled');
-        this.sidebarVisible = false;
-        html.classList.remove('nav-open');
-    };
-    sidebarToggle() {
-        // const toggleButton = this.toggleButton;
-        // const body = document.getElementsByTagName('body')[0];
-        if (this.sidebarVisible === false) {
-            this.sidebarOpen();
-        } else {
-            this.sidebarClose();
-        }
-    };
+  sidebarToggle() {
+    // Inverse la variable (true -> false) (false -> true)
+    // pour ouvrir ou fermer la sidebar
+    this.navSidebarVisible = !this.navSidebarVisible;
+    // Envoie la variable sidebarVisible aux parents
+    this.navSidebarVisibleChange.emit(this.navSidebarVisible);
+  };
 }

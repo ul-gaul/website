@@ -1,9 +1,16 @@
-ng-template {
-    height: 100px !important;
-}
+iframe {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 1;
 
-#model {
+  // fallback
+  @supports not (aspect-ratio: 2 / 1) {
     height: 500px;
     width: 1000px;
-    position: relative;
+  }
+
+  // smaller iframe on large screen (bootstrap breakpoint)
+  @media (min-width: 992px) {
+    width: 80%;
+  }
 }

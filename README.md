@@ -1,6 +1,7 @@
 # GAUL - Groupe Aérospatial de l'Université Laval
 
-![GAUL Banner](src/assets/page-home/logo-gaul.webp)
+![GAUL Banner](src/assets/img/page-home/logo-full.webp)
+
 
 ## Guide de développement du site web
 
@@ -42,6 +43,14 @@ ng serve --open
 L'application web est hébergée sur Google Firebase. Le compte utilisé présentement est un compte personnel.
 Pour toutes questions relatives à l'hébergement ou au site web en général, communiquer avec Guillaume Landry.
 
+
+## Explications de la reconstruction
+[Guide de reconstruction du site](REBUILD.md)
+
+
 ## Crédits
+Repo initial: [ul-gaul/website](https://github.com/ul-gaul/website)
+
 Généré avec [Angular CLI](https://github.com/angular/angular-cli).
-Basé sur un template par [Creative Tim](https://www.creative-tim.com/).
+
+Basé sur le template [Paper Kit 2](https://www.creative-tim.com/product/paper-kit-2-angular) par [Creative Tim](https://www.creative-tim.com/).
