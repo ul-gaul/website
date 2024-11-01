@@ -13,10 +13,9 @@
   padding: 10px;
 }
 
-.grid{
-  max-width: 1200px;
+.grid {
   display: grid;
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  justify-items: center;
+  // align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
