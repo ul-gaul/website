@@ -1,25 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* 1. Custom variables */
-$danger-color: #CD2D2C;
-$primary-color:  #CD2D2C;
-$bg-nude: #FFF;
+$danger-color: #cd2d2c;
+$primary-color: #cd2d2c;
+$bg-nude: #fff;
 
 /* 2. Imports */
 /* Importing icons for Facebook and Instagram */
-@import 'https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css';
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css";
 
 /* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
+@import "bootstrap/scss/bootstrap";
 
 /* Importing Paper Kit 2 template */
-@import './assets/paper-kit.scss';
-
+@import "./assets/paper-kit.scss";
 
 /* 3. Global style/template edit */
 // Taille de texte plus grand pour les paragraphes
 p {
   font-size: 1rem;
+}
+
+// Texte justifié
+body {
+  text-align: justify;
+
+  h2,
+  h3 {
+    text-align: left;
+  }
 }
 
 /* _carousel.scss */
@@ -38,7 +47,7 @@ p {
 /* _navbars.scss */
 // Ajustement des couleurs des onglets dans les pages
 .nav-tabs .nav-item .nav-link {
-  color: #BBB;
+  color: #bbb;
 
   &.active {
     color: #888;
@@ -50,20 +59,19 @@ p {
 }
 
 .nav-tabs {
-  border-bottom-color: #FFF;
+  border-bottom-color: #fff;
 
   .nav-item {
     .nav-link.active,
     .nav-link.active:hover,
     .nav-link.active:focus {
-      &:after{
-        border-bottom: 11px solid #FFF;
+      &:after {
+        border-bottom: 11px solid #fff;
       }
 
-      &:before{
-        border-bottom: 11px solid #FFF;
+      &:before {
+        border-bottom: 11px solid #fff;
       }
     }
   }
 }
-

@@ -1,10 +1,72 @@
+// Carousel
+@media screen and (min-width: 992px) {
+  .w-lg-75 {
+    width: 75%;
+  }
+}
+
+// Partenaires
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#btn-partenaires {
+  font-size: medium;
+  font-weight: bold;
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+  }
+}
+
+// Showcase
 .card img {
   width: 100%;
   height: 50%;
 }
 
-@media screen and (min-width: 992px) {
-  .w-lg-75 {
-    width: 75%;
+// Photos divisions
+#divisions {
+  @media screen and (max-width: 300px) {
+    .col-xs-12 {
+      width: 100%;
+    }
+  }
+
+  .mycard {
+    position: relative;
+    margin-bottom: 1rem;
+    transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1); // bootstrap easing
+
+    .hover {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .mycard:hover {
+    transform: translateY(-10px);
+  }
+
+  h1 {
+    color: #eee;
+    font-size: 2.5em;
+    font-weight: 700;
+    font-family: "Montserrat", "Helvetica", Arial, sans-serif;
+    text-shadow: 3px 3px 10px #555;
+
+    @media screen and (max-width: 500px) {
+      font-size: 1.5em;
+    }
+  }
+
+  img {
+    border: 1px solid #eee;
+    aspect-ratio: 16/9;
+    object-fit: cover;
   }
 }

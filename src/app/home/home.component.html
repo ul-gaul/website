@@ -29,35 +29,29 @@
         professionnellement et personnellement, de rencontrer d'autres passionnés d'aérospatiale et de vivre
         des expériences hors du commun.<br><br>
       </div>
-      <div>
+      <div id="divisions">
         <div class="title">
-          <h3>Les divisions, en bref</h3>
+          <h3>Les divisions</h3>
         </div>
-        <div class="nav-tabs-navigation">
-          <div class="nav-tabs-wrapper">
-            <ul ngbNav #nav="ngbNav" class="nav-tabs">
-              <li [ngbNavItem]="1">
-                <button ngbNavLink>Fusée</button>
-                <ng-template ngbNavContent>
-                  <p class="text-white">Design et lancement de fusée haute puissance</p>
-                </ng-template>
-              </li>
-              <li [ngbNavItem]="2">
-                <button ngbNavLink>Espace</button>
-                <ng-template ngbNavContent>
-                  <p class="text-white">Organisation de soirées d'observation et conception d'instruments atronomiques
-                  </p>
-                </ng-template>
-              </li>
-              <li [ngbNavItem]="3">
-                <button ngbNavLink>Stratos</button>
-                <ng-template ngbNavContent>
-                  <p class="text-white">Design et lancement de ballon sonde stratosphérique</p>
-                </ng-template>
-              </li>
-            </ul>
-            <div [ngbNavOutlet]="nav" class="mt-2"></div>
-          </div>
+        <div class="row">
+          <a class="col-6 col-xs-12 col-md-4 mycard" routerLink="/fusee">
+            <div class="hover">
+              <h1>FUSÉE</h1>
+            </div>
+            <img src="./assets/img/page-fusee/main-fusee-2024.webp" alt="Division Fusée" class="img-rounded img-responsive">
+          </a>
+          <a class="col-6 col-xs-12 col-md-4 mycard" routerLink="/espace">
+            <div class="hover">
+              <h1>ESPACE</h1>
+            </div>
+            <img src="./assets/img/page-espace/main-espace.webp" alt="Division Fusée" class="img-rounded img-responsive">
+          </a>
+          <a class="col-6 col-xs-12 col-md-4 mycard" routerLink="/stratos">
+            <div class="hover">
+              <h1>STRATOS</h1>
+            </div>
+            <img src="./assets/img/page-stratos/main-stratos.webp" alt="Division Fusée" class="img-rounded img-responsive">
+          </a>
         </div>
       </div>
     </div>
@@ -152,8 +146,28 @@
 </section>
 
 
-<!--HISTOIRE-->
+<!--PARTENAIRES-->
 <section class="section section-dark">
+  <div class="container">
+    <div class="title">
+      <h2>Partenaires</h2>
+    </div>
+    <div class="row">
+      <div class="title">
+        Le Groupe Aérospatial de l'Université Laval ne peut évidemment pas construire d'instruments d'observation, de ballons stratosphériques ou
+        de fusées pour représenter l'Université Laval dans des compétitions internationales sans l'aide précieuse de ses partenaires. Grâce à leur
+        générosité et à leur confiance, nous pouvons nourrir la passion des étudiants pour l'espace. Leur appui joue un rôle crucial dans la formation
+        de la prochaine génération d'ingénieurs et de chercheurs passionnés, tout en contribuant à renforcer l'expertise québécoise et canadienne
+        dans un secteur clé de haute technologie. Merci de nous accompagner dans cette mission ambitieuse et visionnaire !
+      </div>
+      <div class="center">
+        <button id="btn-partenaires" class="btn btn-primary btn-round mt-2" routerLink="/partenaires">Liste des partenaires</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!--HISTOIRE-->
+<section class="section">
   <div class="container">
     <div class="title">
       <h2>Histoire</h2>
@@ -186,7 +200,7 @@
 </section>
 
 <!--NASA SHOWCASE-->
-<section class="section">
+<!-- <section class="section">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-12">
@@ -227,4 +241,4 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
