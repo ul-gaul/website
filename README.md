@@ -12,27 +12,46 @@ URL : https://gaulspace.web.app
 - Git: https://git-scm.com/
 - Angular CLI:
 
-```
+```bash
 npm install -g @angular/cli
+```
+
+- Firebase CLI:
+
+```bash
+npm install -g firebase-tools
 ```
 
 ### Cloner et travailler sur un serveur local
 
-```
+```bash
 git clone https://github.com/ul-gaul/website.git
 ```
 
-```
+```bash
 cd website
 ```
 
-```
+```bash
 npm install
 ```
 
-```
+```bash
 ng serve --open
 ```
+
+### Déployer sur Firebase
+
+L'application web est hébergée sur [Google Firebase](https://firebase.google.com/products/hosting). Le compte Google du GAUL (groupe.aerospatial.ul@gmail.com) ou le compte personnel de Guillaume Landry sont utilisés pour l'accès à l'hébergement.
+
+```bash
+firebase login
+```
+
+```bash
+firebase deploy
+```
+
 
 ### Images (Assets)
 
@@ -45,14 +64,6 @@ ng serve --open
 
 - Converstion de fichier et redimensionnement: https://www.iloveimg.com/fr
 - Équivalent en ligne de Photoshop: https://www.photopea.com/
-
-### Questions et soutien
-
-L'application web est hébergée sur Google Firebase. Le compte Google du GAUL (groupe.aerospatial.ul@gmail.com) ou le compte personnel de Guillaume Landry sont utilisés pour l'accès à l'hébergement.
-
-## Explications de la reconstruction
-
-[Guide de reconstruction du site](REBUILD.md)
 
 ## Crédits
 

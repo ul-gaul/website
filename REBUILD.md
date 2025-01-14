@@ -1,5 +1,6 @@
-# Guide de reconstruction du site sur Angular v17
+# Reconstruction du site sur Angular v17
 
+Comment le site a été initialisé en détail
 
 ## Prérequis
 
