@@ -1,8 +1,10 @@
+@use "variables";
+
 .card{
-    border-radius: $border-radius-extreme;
+    border-radius: variables.$border-radius-extreme;
     box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
     background-color: #FFFFFF;
-    color: $card-black-color;
+    color: variables.$card-black-color;
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
@@ -65,7 +67,7 @@
 .section-dark{
     .card-profile.card-plain{
         .card-title{
-            color: $white-color !important;
+            color: variables.$white-color !important;
         }
         .card-description{
             color: rgba(255, 255, 255, 0.7);
@@ -81,7 +83,7 @@
         height: 130px;
         background-position: center center;
         background-size: cover;
-        border-radius: $border-radius-extreme $border-radius-extreme 0 0;
+        border-radius: variables.$border-radius-extreme variables.$border-radius-extreme 0 0;
     }
 
     .card-block{
@@ -106,10 +108,10 @@
             height: auto;
         }
         &.border-white{
-            border: 4px solid $white-color;
+            border: 4px solid variables.$white-color;
         }
         &.border-gray{
-            border: 4px solid $card-muted-color;
+            border: 4px solid variables.$card-muted-color;
         }
     }
 

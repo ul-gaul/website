@@ -1,28 +1,32 @@
+@use "mixins/inputs";
+@use "mixins/vendor-prefixes";
+@use "variables";
+
 .form-control::-moz-placeholder{
-   @include placeholder($placeholder-gray,1);
+   @include inputs.placeholder(variables.$placeholder-gray,1);
 }
 .form-control:-moz-placeholder{
-   @include placeholder($placeholder-gray,1);
+   @include inputs.placeholder(variables.$placeholder-gray,1);
 }
 .form-control::-webkit-input-placeholder{
-   @include placeholder($placeholder-gray,1);
+   @include inputs.placeholder(variables.$placeholder-gray,1);
 }
 .form-control:-ms-input-placeholder{
-   @include placeholder($placeholder-gray,1);
+   @include inputs.placeholder(variables.$placeholder-gray,1);
 }
 
 .form-control {
-    background-color: $white-bg;
-    border: 1px solid $medium-gray;
-    border-radius: $border-radius-base;
-    color: $font-color;
-    font-size: $font-size-base;
-    @include input-size($padding-base-vertical, $padding-label-horizontal, $height-base);
-    @include box-shadow(none);
+    background-color: variables.$white-bg;
+    border: 1px solid variables.$medium-gray;
+    border-radius: variables.$border-radius-base;
+    color: variables.$font-color;
+    font-size: variables.$font-size-base;
+    @include inputs.input-size(variables.$padding-base-vertical, variables.$padding-label-horizontal, variables.$height-base);
+    @include vendor-prefixes.box-shadow(none);
     &:focus{
-           background-color: $white-bg;
-           border: 1px solid $dark-gray;
-           @include box-shadow(none);
+           background-color: variables.$white-bg;
+           border: 1px solid variables.$dark-gray;
+           @include vendor-prefixes.box-shadow(none);
            outline: 0 !important;
     }
 
@@ -34,57 +38,57 @@
     .has-error &,
     .has-success &:focus,
     .has-error &:focus{
-        @include box-shadow(none);
+        @include vendor-prefixes.box-shadow(none);
     }
 
     .has-success &{
-        border: 1px solid $table-line-color;
-        color: $font-color;
+        border: 1px solid variables.$table-line-color;
+        color: variables.$font-color;
     }
     .has-success &:focus{
-        border: 1px solid $success-color;
-        color: $success-color;
+        border: 1px solid variables.$success-color;
+        color: variables.$success-color;
     }
     .has-danger &{
-        background-color: $danger-input-bg;
-        border: 1px solid $danger-color;
-        color: $danger-color;
+        background-color: variables.$danger-input-bg;
+        border: 1px solid variables.$danger-color;
+        color: variables.$danger-color;
     }
     .has-danger &:focus{
-        background-color: $white-color;
-        border: 1px solid $danger-color;
+        background-color: variables.$white-color;
+        border: 1px solid variables.$danger-color;
     }
 
     & + .form-control-feedback{
-        border-radius: $border-radius-large;
-        font-size: $font-size-base;
-        color: $danger-color;
+        border-radius: variables.$border-radius-large;
+        font-size: variables.$font-size-base;
+        color: variables.$danger-color;
         font-size: .8rem;
         position: absolute;
         top: 100%;
-        padding-left: $padding-label-horizontal;
+        padding-left: variables.$padding-label-horizontal;
         vertical-align: middle;
     }
 
     .open &{
-        border-radius: $border-radius-base $border-radius-base 0 0;
+        border-radius: variables.$border-radius-base variables.$border-radius-base 0 0;
         border-bottom-color: transparent;
     }
 }
 
 .input-lg{
     height: 55px;
-    padding: $padding-large-vertical $padding-large-horizontal;
+    padding: variables.$padding-large-vertical variables.$padding-large-horizontal;
 }
 
 .has-error{
     .form-control-feedback, .control-label{
-        color: $danger-color;
+        color: variables.$danger-color;
     }
 }
 .has-success{
     .form-control-feedback, .control-label{
-        color: $success-color;
+        color: variables.$success-color;
     }
 }
 
@@ -100,17 +104,17 @@
     border-left: 0 none;
 }
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
-    background-color: $light-gray;
-    color: $default-color;
+    background-color: variables.$light-gray;
+    color: variables.$default-color;
     cursor: not-allowed;
 }
 
 .input-group-btn .btn{
-    border-width: $border-thin;
-    padding: $padding-round-vertical $padding-base-horizontal;
+    border-width: variables.$border-thin;
+    padding: variables.$padding-round-vertical variables.$padding-base-horizontal;
 }
 .input-group-btn .btn-default:not(.btn-fill){
-    border-color: $medium-gray;
+    border-color: variables.$medium-gray;
 }
 
 .input-group-btn:last-child > .btn{
@@ -143,41 +147,41 @@ textarea.form-control{
     }
 }
 .input-group{
-  background: $white-color;
+  background: variables.$white-color;
   .input-group-append .input-group-text{
     background: transparent;
     border: 1px solid #DDDDDD;
     border-left: none;
-    @include transition(300ms, linear);
+    @include vendor-prefixes.transition(300ms, linear);
 
   }
   .input-group-prepend .input-group-text{
     margin-right: 0;
     background: transparent;
     border: 1px solid #DDDDDD;
-    @include transition(300ms, linear);
+    @include vendor-prefixes.transition(300ms, linear);
   }
   &.input-group-focus {
     .input-group-prepend .input-group-text {
-      border: 1px solid $dark-gray !important;
+      border: 1px solid variables.$dark-gray !important;
     }
     .input-group-append .input-group-text {
-      border: 1px solid $dark-gray !important;
+      border: 1px solid variables.$dark-gray !important;
     }
   }
   &.form-group-no-border{
 
     .input-group-prepend .input-group-text{
       border-right: transparent !important;
-      background: $white-color !important;
-        border: 1px solid $white-color !important;
-      @include transition(300ms, linear);
+      background: variables.$white-color !important;
+        border: 1px solid variables.$white-color !important;
+      @include vendor-prefixes.transition(300ms, linear);
     }
     .input-group-append .input-group-text{
       border-left: transparent !important;
-      background: $white-color !important;
-        border: 1px solid $white-color !important;
-      @include transition(300ms, linear);
+      background: variables.$white-color !important;
+        border: 1px solid variables.$white-color !important;
+      @include vendor-prefixes.transition(300ms, linear);
     }
   }
 }

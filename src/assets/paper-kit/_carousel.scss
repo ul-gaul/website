@@ -1,6 +1,9 @@
+@use "mixins/vendor-prefixes";
+@use "variables";
+
 .carousel-control-prev,
 .carousel-control-next{
-    background-color: $danger-color;
+    background-color: variables.$danger-color;
     border-radius: 50%;
     opacity: 1;
     text-shadow: none;
@@ -9,14 +12,14 @@
     &:hover,
     &:focus{
         opacity: 1;
-        background-color: $danger-states-color;
+        background-color: variables.$danger-states-color;
     }
 }
 .carousel-control-prev-icon{
     background-image: none !important;
     margin-top: -5px;
     &:before{
-        color: $white-color;
+        color: variables.$white-color;
         font-size: 26px;
         margin: 2px;
         padding-right: 3px;
@@ -28,7 +31,7 @@
     background-image: none !important;
     margin-top: -5px;
     &:before{
-        color: $white-color;
+        color: variables.$white-color;
         font-size: 26px;
         margin: 2px;
         padding-left: 2px;
@@ -69,14 +72,14 @@
 }
 
  .page-carousel{
-    border-radius: $border-radius-extreme !important;
+    border-radius: variables.$border-radius-extreme !important;
     border: none !important;
 }
 
 .carousel-inner{
     .carousel-item{
         img{
-            border-radius: $border-radius-extreme;
+            border-radius: variables.$border-radius-extreme;
             box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
             height: 400px;
             width: 100%;
@@ -88,17 +91,17 @@
     bottom: 0px;
 }
 .carousel-indicators li{
-    background-color: $white-color;
+    background-color: variables.$white-color;
     border: 0 none;
 }
 .carousel-indicators .active{
-    background-color: $danger-color;
+    background-color: variables.$danger-color;
 }
 .page-carousel:hover{
     .carousel-control-prev,
     .carousel-control-next{
         opacity: 1;
-        @include transition(300ms, linear);
+        @include vendor-prefixes.transition(300ms, linear);
 
     }
 }

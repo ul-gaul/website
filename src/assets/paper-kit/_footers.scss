@@ -1,3 +1,6 @@
+@use "mixins/transparency";
+@use "variables";
+
 .footer{
     background-attachment: fixed;
     position: relative;
@@ -44,12 +47,12 @@
     color: #EB5E28;
 }
 .footer{
-    background-color: $white-color;
-    line-height: $line-height;
+    background-color: variables.$white-color;
+    line-height: variables.$line-height;
 
     &.footer-black{
         h4{
-            color: $white-color;
+            color: variables.$white-color;
         }
     }
 
@@ -60,7 +63,7 @@
             list-style: none;
             margin: 0;
             padding: 0;
-            font-weight: $font-weight-bold;
+            font-weight: variables.$font-weight-bold;
 
             > li{
                 display: inline-block;
@@ -71,13 +74,13 @@
             }
 
             a:not(.btn){
-                color: $font-color;
+                color: variables.$font-color;
                 display: block;
-                font-size: $font-size-h6;
+                font-size: variables.$font-size-h6;
                 margin-bottom: 3px;
                 &:hover,
                 &:focus{
-                    color: $default-states-color;
+                    color: variables.$default-states-color;
                 }
             }
 
@@ -99,48 +102,48 @@
     }
 
     hr{
-        border-color: $medium-gray;
+        border-color: variables.$medium-gray;
         border-width: 1px 0 0;
         margin-top: 5px;
         margin-bottom: 5px;
     }
     .copyright{
-        color: $brown-font-color;
+        color: variables.$brown-font-color;
         font-size: 0.9em;
         ul > li{
             padding-right: 0px;
         }
     }
     .title{
-        color: $default-states-color;
+        color: variables.$default-states-color;
     }
 }
 
 .footer-black,
 .footer-transparent{
-    background-color: $black-footer-bg;
-    color: $medium-gray;
+    background-color: variables.$black-footer-bg;
+    color: variables.$medium-gray;
 
     .links ul{
         a:not(.btn){
-            color: $brown-font-color;
+            color: variables.$brown-font-color;
             &:hover,
             &:focus{
-                color: $brown-font-color-hover;
+                color: variables.$brown-font-color-hover;
             }
         }
     }
     .copyright {
-        color: $font-color;
+        color: variables.$font-color;
         ul > li{
             a:not(.btn){
-                color: $font-color;
+                color: variables.$font-color;
             }
         }
     }
 
     hr{
-        border-color: $font-color;
+        border-color: variables.$font-color;
     }
 }
 .footer-transparent{
@@ -152,17 +155,17 @@
         position: relative;
     }
     hr{
-        border-color: $brown-font-color;
+        border-color: variables.$brown-font-color;
     }
     .copyright {
-        color: $brown-font-color;
+        color: variables.$brown-font-color;
         ul > li a:not(.btn){
-                color: $brown-font-color;
+                color: variables.$brown-font-color;
         }
     }
 
     &::after{
-        @include black-filter(.5);
+        @include transparency.black-filter(.5);
     }
 }
 .footer-gray{
@@ -183,7 +186,7 @@
 
 // pre-footers lines
 .subscribe-line{
-    background-color: $pale-bg;
+    background-color: variables.$pale-bg;
     padding: 35px 0;
     background-position: center center;
     background-size: cover;
@@ -191,16 +194,16 @@
     margin-top: 0;
 
     .form-group{
-        margin: $none;
+        margin: variables.$none;
     }
     .form-control{
          height: auto;
-         font-size: $font-size-h3;
-         border: $none;
-         padding: $none;
-         font-weight: $font-weight-light;
-         line-height: $line-height-lg;
-         background-color: $transparent-bg;
+         font-size: variables.$font-size-h3;
+         border: variables.$none;
+         padding: variables.$none;
+         font-weight: variables.$font-weight-light;
+         line-height: variables.$line-height-lg;
+         background-color: variables.$transparent-bg;
     }
 
     .btn:not(.btn-lg){
@@ -209,21 +212,21 @@
 }
 
 .subscribe-line-black{
-    background-color: $black-footer-bg;
+    background-color: variables.$black-footer-bg;
     .form-control{
-        color: $white-color;
+        color: variables.$white-color;
     }
 }
 
 .subscribe-line-transparent{
     @extend .footer-transparent;
     .form-control{
-        color: $white-color;
+        color: variables.$white-color;
     }
 }
 
 
 .social-line-black{
-    background-color: $black-footer-bg;
-    color: $white-color;
+    background-color: variables.$black-footer-bg;
+    color: variables.$white-color;
 }

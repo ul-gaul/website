@@ -1,17 +1,20 @@
+@use "mixins/vendor-prefixes";
+@use "variables";
+
 .panel {
     border: 0;
-    border-bottom: 1px solid $medium-gray;
+    border-bottom: 1px solid variables.$medium-gray;
     box-shadow: none;
 }
 .panel-default > .panel-heading {
-    background-color: $white-color;
-    border-color: $white-color;
+    background-color: variables.$white-color;
+    border-color: variables.$white-color;
 }
 .panel-group .panel{
     border-radius: 0;
 }
 .panel-title{
-    font-size: $font-size-h5;
+    font-size: variables.$font-size-h5;
     a{
         display: block;
         padding: .75rem;
@@ -34,10 +37,10 @@
 #accordion{
     .panel-title a:hover,
     .panel-title a:focus{
-        color: $danger-color;
+        color: variables.$danger-color;
     }
     .card-header{
-        background-color: $white-color;
+        background-color: variables.$white-color;
     }
 }
 // .panel-default > .panel-heading + .panel-collapse.gsdk-collapse > .panel-body {
@@ -51,7 +54,7 @@
         -webkit-transform: rotate(180deg);
         -ms-transform: rotate(180deg);
         transform: rotate(180deg);
-        @include transition($slow-transition-time, $transition-linear)
+        @include vendor-prefixes.transition(variables.$slow-transition-time, variables.$transition-linear)
 
     }
 }

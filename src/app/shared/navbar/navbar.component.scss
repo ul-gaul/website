@@ -8,6 +8,19 @@
     // Overwrite height: 100%
     height: auto;
   }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+  }
+}
+
+fa-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.25em;
+  line-height: 0.05em;
+  margin-right: 0.5rem;
 }
 
 // Large breakpoint bootstrap 5
@@ -16,8 +29,8 @@
     flex-direction: column;
     align-items: start;
     padding-bottom: 15px;
-    background-color: #999!important;
-    border-left-color: #CCC!important;
+    background-color: #999 !important;
+    border-left-color: #ccc !important;
 
     .nav-link {
       padding: 25px 0px;

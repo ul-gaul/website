@@ -1,12 +1,15 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
-    selector: 'app-navbar',
-    imports: [CommonModule, RouterLink],
-    templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.scss']
+  selector: 'app-navbar',
+  imports: [CommonModule, RouterLink, FontAwesomeModule],
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
   // Variable qui contrôle l'ouverture de la sidebar
@@ -25,7 +28,9 @@ export class NavbarComponent {
   // Voir window.onscroll
   public navbarTransparent = true;
 
-  constructor() {
+  constructor(library: FaIconLibrary) {
+    // Rend les icônes disponibles dans le composant
+    library.addIcons(faBookmark, faFacebookSquare, faInstagram);
     // Fonction appelée à chaque fois que l'utilisateur scroll
     window.onscroll = () => {
       this.navbarTransparent = window.scrollY < 150

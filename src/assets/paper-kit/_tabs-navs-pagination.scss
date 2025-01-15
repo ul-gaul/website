@@ -1,9 +1,12 @@
+@use "mixins/transparency";
+@use "variables";
+
 /*             Navigation menu                */
 
 /*             Navigation Tabs                 */
 .nav-tabs-navigation{
     text-align: center;
-    border-bottom: 1px solid $medium-pale-bg;
+    border-bottom: 1px solid variables.$medium-pale-bg;
 
 
     .nav > .nav-item > .nav-link{
@@ -19,26 +22,26 @@
     width: 100%;
 }
 .nav-tabs {
-        font-size: $font-size-medium;
-        font-weight: $font-weight-bold;
+        font-size: variables.$font-size-medium;
+        font-weight: variables.$font-weight-bold;
         border-bottom: 1px solid #F1EAE0;
         margin-bottom: 30px;
         .nav-item{
             .nav-link{
                 border: 0 none;
-                color: $other-medium-gray;
+                color: variables.$other-medium-gray;
                 background-color: transparent;
             }
             .nav-link:hover{
-                color: $font-color;
+                color: variables.$font-color;
             }
             .nav-link.active{
-                color: $font-color;
+                color: variables.$font-color;
             }
         }
 
         .nav-item{
-            color: $font-color;
+            color: variables.$font-color;
             position: relative;
 
 
@@ -49,7 +52,7 @@
                 border: 0 none;
                 //height: 50px;
                 &:after{
-                    border-bottom: 11px solid $white-color;
+                    border-bottom: 11px solid variables.$white-color;
                     border-left: 11px solid rgba(0, 0, 0, 0);
                     border-right: 11px solid rgba(0, 0, 0, 0);
                     content: "";
@@ -60,7 +63,7 @@
                 }
 
                 &:before{
-                    border-bottom: 11px solid $medium-pale-bg;
+                    border-bottom: 11px solid variables.$medium-pale-bg;
                     border-left: 11px solid rgba(0, 0, 0, 0);
                     border-right: 11px solid rgba(0, 0, 0, 0);
                     content: "";
@@ -86,7 +89,7 @@
                 background-color: #68B3C8;
             }
             :before{
-                border-bottom: 11px solid $medium-pale-bg;
+                border-bottom: 11px solid variables.$medium-pale-bg;
                 border-left: 11px solid rgba(0, 0, 0, 0);
                 border-right: 11px solid rgba(0, 0, 0, 0);
                 content: "";
@@ -96,7 +99,7 @@
                 top: -11px;
             }
             :after{
-                border-bottom: 11px solid $pale-bg;
+                border-bottom: 11px solid variables.$pale-bg;
                 border-left: 11px solid rgba(0, 0, 0, 0);
                 border-right: 11px solid rgba(0, 0, 0, 0);
                 content: "";
@@ -124,10 +127,10 @@
         margin-left: 0;
     }
     .nav-item .nav-link {
-        border: 1px solid $default-color;
+        border: 1px solid variables.$default-color;
         border-radius: 0;
-        color: $default-color;
-        font-weight: $font-weight-bold;
+        color: variables.$default-color;
+        font-weight: variables.$font-weight-bold;
         margin-left: -1px;
         padding: 10px 25px;
 
@@ -135,7 +138,7 @@
     .nav-item.active .nav-link,
     .nav-item.active .nav-link:hover,
     .nav-item.active .nav-link:focus {
-        background-color: $default-color;
+        background-color: variables.$default-color;
         color: #FFFFFF;
     }
     .nav-item:first-child .nav-link{
@@ -146,19 +149,19 @@
         border-radius: 0 30px 30px 0 !important;
     }
     .nav-item .nav-link.active{
-        background-color: $default-color;
-        color: $white-color;
+        background-color: variables.$default-color;
+        color: variables.$white-color;
     }
 
 }
 .nav-pills-primary{
     .nav-item{
         .nav-link{
-            border: 1px solid $primary-color !important;
-            color: $primary-color !important;
+            border: 1px solid variables.$primary-color !important;
+            color: variables.$primary-color !important;
             &.active{
-                border: 1px solid $primary-color !important;
-                color: $white-color !important;
+                border: 1px solid variables.$primary-color !important;
+                color: variables.$white-color !important;
             }
         }
     }
@@ -166,11 +169,11 @@
 .nav-pills-danger{
     .nav-item{
         .nav-link{
-            border: 1px solid $danger-color !important;
-            color: $danger-color !important;
+            border: 1px solid variables.$danger-color !important;
+            color: variables.$danger-color !important;
             &.active{
-                border: 1px solid $danger-color !important;
-                color: $white-color !important;
+                border: 1px solid variables.$danger-color !important;
+                color: variables.$white-color !important;
             }
         }
     }
@@ -178,11 +181,11 @@
 .nav-pills-info{
     .nav-item{
         .nav-link{
-            border: 1px solid $info-color !important;
-            color: $info-color !important;
+            border: 1px solid variables.$info-color !important;
+            color: variables.$info-color !important;
             &.active{
-                border: 1px solid $info-color !important;
-                color: $white-color !important;
+                border: 1px solid variables.$info-color !important;
+                color: variables.$white-color !important;
             }
         }
     }
@@ -190,11 +193,11 @@
 .nav-pills-success{
     .nav-item{
         .nav-link{
-            border: 1px solid $success-color !important;
-            color: $success-color !important;
+            border: 1px solid variables.$success-color !important;
+            color: variables.$success-color !important;
             &.active{
-                border: 1px solid $success-color !important;
-                color: $white-color !important;
+                border: 1px solid variables.$success-color !important;
+                color: variables.$white-color !important;
             }
         }
     }
@@ -202,11 +205,11 @@
 .nav-pills-warning{
     .nav-item{
         .nav-link{
-            border: 1px solid $warning-color !important;
-            color: $warning-color !important;
+            border: 1px solid variables.$warning-color !important;
+            color: variables.$warning-color !important;
             &.active{
-                border: 1px solid $warning-color !important;
-                color: $white-color !important;
+                border: 1px solid variables.$warning-color !important;
+                color: variables.$white-color !important;
             }
         }
     }
@@ -219,13 +222,13 @@
 .pagination > .page-item:last-child > .page-link,
 .pagination > .page-item:last-child > span{
     background-color: transparent;
-    border: 2px solid $danger-color;
+    border: 2px solid variables.$danger-color;
     border-radius: 20px;
-    color: $danger-color;
-    height: $line-height;
+    color: variables.$danger-color;
+    height: variables.$line-height;
     margin: 0 2px;
     min-width: 36px;
-    font-weight: $font-weight-bold;
+    font-weight: variables.$font-weight-bold;
 }
 
 .nav-pills-danger > .page-item > .page-link,
@@ -235,8 +238,8 @@
 .pagination-danger > .page-item:first-child > span,
 .pagination-danger > .page-item:last-child > .page-link,
 .pagination-danger > .page-item:last-child > span{
-    border: 2px solid $danger-color;
-    color: $danger-color;
+    border: 2px solid variables.$danger-color;
+    color: variables.$danger-color;
 }
 
 .nav-pills-danger > .page-item.active > .page-link,
@@ -251,32 +254,32 @@
 .pagination-danger > .page-item.active > span:hover,
 .pagination-danger > .page-item.active > .page-link:focus,
 .pagination-danger > .page-item.active > span:focus{
-   background-color: $danger-color !important;
-   border-color: $danger-color !important;
-   color: $white-color;
+   background-color: variables.$danger-color !important;
+   border-color: variables.$danger-color !important;
+   color: variables.$white-color;
 }
 
 .nav-text, .nav-icons{
-    margin: $margin-bottom;
+    margin: variables.$margin-bottom;
 
     > li > a{
         display: block;
-        padding: 0px $padding-base-horizontal;
-        color: $dark-gray;
+        padding: 0px variables.$padding-base-horizontal;
+        color: variables.$dark-gray;
         text-align: center;
-        @include opacity(0.8);
+        @include transparency.opacity(0.8);
 
         &:hover,
         &:focus{
-            background-color: $transparent-bg;
-            @include opacity(1);
+            background-color: variables.$transparent-bg;
+            @include transparency.opacity(1);
         }
     }
     > li:first-child a{
         padding-left: 0;
     }
     > li.active a{
-       color: $info-color;
+       color: variables.$info-color;
     }
 }
 .nav-icons > li{
@@ -286,9 +289,9 @@
         margin-bottom: 10px;
     }
     > a i{
-        font-size: $font-size-h4;
+        font-size: variables.$font-size-h4;
         margin-bottom: 10px;
-        width: $font-size-h4;
+        width: variables.$font-size-h4;
     }
 }
 .nav-icons.nav-stacked > li{
@@ -298,30 +301,30 @@
     }
 }
 .nav-blue > li.active a{
-    color: $primary-color;
+    color: variables.$primary-color;
 }
 .nav-azure > li.active a{
-    color: $info-color;
+    color: variables.$info-color;
 }
 .nav-green > li.active a{
-    color: $success-color;
+    color: variables.$success-color;
 }
 .nav-orange > li.active a{
-    color: $warning-color;
+    color: variables.$warning-color;
 }
 .nav-red > li.active a{
-    color: $danger-color;
+    color: variables.$danger-color;
 }
 
 .nav-text{
-    margin: $margin-bottom;
+    margin: variables.$margin-bottom;
 
     > li > a{
-        font-size: $font-size-h6;
+        font-size: variables.$font-size-h6;
         text-transform: uppercase;
         padding: 3px 0;
         text-align: left;
-        font-weight: $font-weight-semi;
+        font-weight: variables.$font-weight-semi;
 
     }
     > li:first-child > a{
@@ -353,27 +356,27 @@
 }
 .nav-pills-default .nav-item.show .nav-link,
 .nav-pills-default .nav-link.active{
-    background-color: $default-color !important;
+    background-color: variables.$default-color !important;
 }
 .nav-pills-primary .nav-item.show .nav-link,
 .nav-pills-primary .nav-link.active{
-    background-color: $primary-color !important;
+    background-color: variables.$primary-color !important;
 }
 .nav-pills-info .nav-item.show .nav-link,
 .nav-pills-info .nav-link.active{
-    background-color: $info-color !important;
+    background-color: variables.$info-color !important;
 }
 .nav-pills-warning .nav-item.show .nav-link,
 .nav-pills-warning .nav-link.active{
-    background-color: $warning-color !important;
+    background-color: variables.$warning-color !important;
 }
 .nav-pills-success .nav-item.show .nav-link,
 .nav-pills-success .nav-link.active{
-    background-color: $success-color !important;
+    background-color: variables.$success-color !important;
 }
 .nav-pills-danger .nav-item.show .nav-link,
 .nav-pills-danger .nav-link.active{
-    background-color: $danger-color !important;
+    background-color: variables.$danger-color !important;
 }
 .pagination > li > a:hover,
 .pagination > li > a:focus,
@@ -384,15 +387,15 @@
 .pagination > li.active > span:hover,
 .pagination > li.active > a:focus,
 .pagination > li.active > span:focus{
-    background-color: $danger-color;
-    border-color: $danger-color;
-    color: $white-color;
+    background-color: variables.$danger-color;
+    border-color: variables.$danger-color;
+    color: variables.$white-color;
 }
 
 .page-item.active .page-link{
-    background-color: $danger-color;
+    background-color: variables.$danger-color;
     color: white;
-    border-color: $danger-color;
+    border-color: variables.$danger-color;
 }
 .nav-pills .nav-link{
     border-radius: 0;

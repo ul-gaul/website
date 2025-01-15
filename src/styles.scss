@@ -1,21 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* 1. Custom variables */
-$danger-color: #cd2d2c;
-$primary-color: #cd2d2c;
-$bg-nude: #fff;
-
-/* 2. Imports */
-/* Importing icons for Facebook and Instagram */
-@import "https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css";
-
+/* 1. Imports */
 /* Importing Bootstrap SCSS file. */
-@import "bootstrap/scss/bootstrap";
+@use "bootstrap/scss/bootstrap" as *;
 
 /* Importing Paper Kit 2 template */
-@import "./assets/paper-kit.scss";
+@use "assets/paper-kit.scss" with (
+  $primary-color: #cd2d2c,
+  $danger-color: #cd2d2c,
+  $bg-nude: #fff
+);
 
-/* 3. Global style/template edit */
+/* 2. Global style/template edit */
 // Taille de texte plus grand pour les paragraphes
 p {
   font-size: 1rem;

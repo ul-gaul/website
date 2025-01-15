@@ -1,26 +1,30 @@
+@use "mixins/transparency";
+@use "mixins/vendor-prefixes";
+@use "variables";
+
 .dropdown{
     .dropdown-menu{
-        background-color: $white-color;
+        background-color: variables.$white-color;
         border: 0 none;
-        border-radius: $border-radius-extreme;
+        border-radius: variables.$border-radius-extreme;
         display: block;
         margin-top: 10px;
         padding: 0px;
         position: absolute;
         visibility: hidden;
 
-        @include opacity(0);
-        @include box-shadow($dropdown-shadow);
+        @include transparency.opacity(0);
+        @include vendor-prefixes.box-shadow(variables.$dropdown-shadow);
 
         .divider{
-            background-color: $medium-pale-bg;
+            background-color: variables.$medium-pale-bg;
             margin: 0px;
         }
 
         .dropdown-header{
-            color: $dark-gray;
-            font-size: $font-size-small;
-            padding: $padding-dropdown-vertical $padding-dropdown-horizontal;
+            color: variables.$dark-gray;
+            font-size: variables.$font-size-small;
+            padding: variables.$padding-dropdown-vertical variables.$padding-dropdown-horizontal;
         }
 
         .no-notification{
@@ -31,15 +35,15 @@
         }
 
         .dropdown-item{
-            color: $font-color;
-            font-size: $font-size-base;
+            color: variables.$font-color;
+            font-size: variables.$font-size-base;
             padding: 10px 45px 10px 15px;
             clear: both;
             white-space: nowrap;
             width: 100%;
             display: block;
             &:hover{
-                color: $white-color;
+                color: variables.$white-color;
             }
 
            img{
@@ -57,14 +61,14 @@
 
         .dropdown-item:first-child a,
         .dropdown-item:first-child{
-           border-top-left-radius: $border-radius-extreme;
-           border-top-right-radius: $border-radius-extreme;
+           border-top-left-radius: variables.$border-radius-extreme;
+           border-top-right-radius: variables.$border-radius-extreme;
         }
 
         .dropdown-item:last-child a,
         .dropdown-item:last-child{
-            border-bottom-left-radius: $border-radius-extreme;
-            border-bottom-right-radius: $border-radius-extreme;
+            border-bottom-left-radius: variables.$border-radius-extreme;
+            border-bottom-right-radius: variables.$border-radius-extreme;
         }
 
         .select & .dropdown-item:first-child a{
@@ -74,35 +78,35 @@
 
         .dropdown-item a:hover,
         .dropdown-item a:focus{
-            color: $white-color;
+            color: variables.$white-color;
             opacity: 1;
             text-decoration: none;
 
         }
         .dropdown-item:hover,
         .dropdown-item:focus{
-            background-color: $default-color;
+            background-color: variables.$default-color;
         }
 
         &.dropdown-primary .dropdown-item:hover,
         &.dropdown-primary .dropdown-item:focus{
-            background-color: $bg-primary;
+            background-color: variables.$bg-primary;
         }
         &.dropdown-info .dropdown-item:hover,
         &.dropdown-info .dropdown-item:focus{
-            background-color: $bg-info;
+            background-color: variables.$bg-info;
         }
         &.dropdown-success .dropdown-item:hover,
         &.dropdown-success .dropdown-item:focus{
-            background-color: $bg-success;
+            background-color: variables.$bg-success;
         }
         &.dropdown-warning .dropdown-item:hover,
         &.dropdown-warning .dropdown-item:focus{
-            background-color: $bg-warning;
+            background-color: variables.$bg-warning;
         }
         &.dropdown-danger .dropdown-item:hover,
         &.dropdown-danger .dropdown-item:focus{
-            background-color: $bg-danger;
+            background-color: variables.$bg-danger;
         }
 
     }
@@ -110,7 +114,7 @@
         margin: 0 !important;
     }
     &.show .dropdown-menu{
-        @include opacity(1);
+        @include transparency.opacity(1);
         visibility: visible;
     }
 }
@@ -170,7 +174,7 @@
     }
     .bootstrap-datetimepicker-widget{
         visibility: visible !important;
-        @include opacity(1);
+        @include transparency.opacity(1);
     }
 
     .dropup.show .dropdown-menu{
@@ -204,7 +208,7 @@
     .card.card-just-text .dropdown .dropdown-menu:before,
     .card-just-text .dropdown .dropdown-menu:before,
     .dropdown-btn .dropdown-menu:before{
-        border-bottom: 11px solid $medium-pale-bg;
+        border-bottom: 11px solid variables.$medium-pale-bg;
         border-left: 11px solid rgba(0, 0, 0, 0);
         border-right: 11px solid rgba(0, 0, 0, 0);
         content: "";
@@ -222,7 +226,7 @@
     .card.card-just-text .dropdown .dropdown-menu:after,
     .card-just-text .dropdown .dropdown-menu:after,
     .dropdown-btn .dropdown-menu:after{
-        border-bottom: 11px solid $white-color;
+        border-bottom: 11px solid variables.$white-color;
         border-left: 11px solid rgba(0, 0, 0, 0);
         border-right: 11px solid rgba(0, 0, 0, 0);
         content: "";
@@ -269,8 +273,8 @@
 .dropdown-sharing{
 
     li{
-        color: $font-color;
-        font-size: $font-size-base;
+        color: variables.$font-color;
+        font-size: variables.$font-size-base;
 
         .social-line{
             line-height: 28px;
@@ -287,8 +291,8 @@
         .social-line,
         a,
         .action-line{
-            background-color: $pale-bg;
-            color: $font-color;
+            background-color: variables.$pale-bg;
+            color: variables.$font-color;
             opacity: 1;
             text-decoration: none;
         }
@@ -319,16 +323,16 @@
             }
         }
         .link-danger{
-            color: $danger-color;
+            color: variables.$danger-color;
             &:hover, &:active, &:focus{
-                color: $danger-color;
+                color: variables.$danger-color;
             }
         }
     }
     li:hover,
     li:focus{
         a{
-            color: $font-color;
+            color: variables.$font-color;
             opacity: 1;
             text-decoration: none;
         }

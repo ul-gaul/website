@@ -1,3 +1,9 @@
+@use "mixins/inputs";
+@use "mixins/navbars";
+@use "mixins/transparency";
+@use "mixins/vendor-prefixes";
+@use "variables";
+
 .nav {
     .nav-item{
         .nav-link:hover,
@@ -8,20 +14,20 @@
 }
 
 .navbar{
-    border: $none;
-    font-size: $font-size-base;
+    border: variables.$none;
+    font-size: variables.$font-size-base;
     transition: all 0.4s;
     -webkit-transition: all 0.4s;
     padding: 0;
-    background: $white-color;
+    background: variables.$white-color;
     box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
 
     .navbar-brand{
-        font-weight: $font-weight-bold;
-        margin: $navbar-margin-brand;
-        padding: $navbar-padding-brand;
-        font-size: $font-size-base;
-        color: $default-color;
+        font-weight: variables.$font-weight-bold;
+        margin: variables.$navbar-margin-brand;
+        padding: variables.$navbar-padding-brand;
+        font-size: variables.$font-size-base;
+        color: variables.$default-color;
         text-transform: uppercase;
     }
     .nav-link{
@@ -50,22 +56,22 @@
     .navbar-nav{
         .nav-item .nav-link {
             line-height: 1.6;
-            margin: $navbar-margin-a;
-            padding: $navbar-padding-a;
+            margin: variables.$navbar-margin-a;
+            padding: variables.$navbar-padding-a;
             opacity: .8;
-            font-size: $font-size-small;
+            font-size: variables.$font-size-small;
             text-transform: uppercase;
             font-weight: 600;
-            color: $default-color;
+            color: variables.$default-color;
          }
         .nav-item .nav-link.btn{
-            margin: $navbar-margin-a-btn;
+            margin: variables.$navbar-margin-a-btn;
             padding: 9px;
 
          }
 
         .dropdown-menu{
-            border-radius: $border-radius-extreme;
+            border-radius: variables.$border-radius-extreme;
             margin-top: 1px;
         }
     }
@@ -102,8 +108,8 @@
         top: 15px;
     }
     .btn{
-       margin: $navbar-margin-btn;
-       font-size: $font-size-small;
+       margin: variables.$navbar-margin-btn;
+       font-size: variables.$font-size-small;
        i{
         //    margin-right: 5px !important;
            font-size: 14px;
@@ -111,10 +117,10 @@
        }
     }
     .btn-simple{
-        font-size: $font-size-medium;
+        font-size: variables.$font-size-medium;
     }
     .caret{
-       @include center-item();
+       @include navbars.center-item();
     }
     &.navbar-transparent{
         padding-top: 25px;
@@ -159,21 +165,21 @@
 }
 .navbar-transparent, [class*="bg"]{
     .navbar-brand{
-        color: $white-color;
-        @include opacity(.9);
+        color: variables.$white-color;
+        @include transparency.opacity(.9);
 
         &:focus,
         &:hover{
             background-color: transparent;
-            @include opacity(1);
-            color: $white-color;
+            @include transparency.opacity(1);
+            color: variables.$white-color;
         }
     }
 
     .navbar-nav{
         .nav-item .nav-link:not(.btn){
-            color: $white-color;
-            border-color: $white-color;
+            color: variables.$white-color;
+            border-color: variables.$white-color;
         }
         .active .nav-link
         .active .nav-link:hover,
@@ -181,8 +187,8 @@
         .nav-item .nav-link:hover,
         .nav-item .nav-link:focus{
             background-color: transparent;
-            color: $white-color;
-            @include opacity(1);
+            color: variables.$white-color;
+            @include transparency.opacity(1);
         }
         .nav .nav-item a.btn:hover{
             background-color: transparent;
@@ -191,47 +197,47 @@
         .dropdown .nav-link .caret,
         .dropdown .nav-link:hover .caret,
         .dropdown .nav-link:focus .caret{
-            border-bottom-color: $white-color;
-            border-top-color: $white-color;
+            border-bottom-color: variables.$white-color;
+            border-top-color: variables.$white-color;
         }
 
         .open .nav-link,
         .open .nav-link:hover,
         .open .nav-link:focus {
             background-color: transparent;
-            color: $default-color;
-            @include opacity(1);
+            color: variables.$default-color;
+            @include transparency.opacity(1);
         }
     }
 
     .btn-default.btn-fill{
-        color: $dark-gray;
-        background-color: $white-color;
-        @include opacity(.9);
+        color: variables.$dark-gray;
+        background-color: variables.$white-color;
+        @include transparency.opacity(.9);
     }
     .btn-default.btn-fill:hover,
     .btn-default.btn-fill:focus,
     .btn-default.btn-fill:active,
     .btn-default.btn-fill.active,
     .open .dropdown-toggle.btn-fill.btn-default{
-        border-color: $white-color;
-        @include opacity(1);
+        border-color: variables.$white-color;
+        @include transparency.opacity(1);
     }
 
 }
 
 .nav-open .nav .caret{
-    border-bottom-color: $white-color;
-    border-top-color: $white-color;
+    border-bottom-color: variables.$white-color;
+    border-top-color: variables.$white-color;
 }
 
 .navbar-default {
     .brand{
-        color: $font-color !important;
+        color: variables.$font-color !important;
     }
     .navbar-nav{
         .nav-item .nav-link:not(.btn){
-            color: $dark-gray;
+            color: variables.$dark-gray;
         }
 
         .active .nav-link,
@@ -241,14 +247,14 @@
         .nav-item .nav-link:not(.btn):focus {
             background-color: transparent;
             border-radius: 3px;
-            color: $info-color;
-            @include opacity(1);
+            color: variables.$info-color;
+            @include transparency.opacity(1);
         }
 
         .dropdown .nav-link:hover .caret,
         .dropdown .nav-link:focus .caret {
-            border-bottom-color: $info-color;
-            border-top-color: $info-color;
+            border-bottom-color: variables.$info-color;
+            border-top-color: variables.$info-color;
 
         }
 
@@ -256,7 +262,7 @@
         .open .nav-link:hover,
         .open .nav-link:focus{
             background-color: transparent;
-            color: $info-color;
+            color: variables.$info-color;
         }
 
         .navbar-toggle:hover,.navbar-toggle:focus {
@@ -266,13 +272,13 @@
     }
 
     &:not(.navbar-transparent) .btn-default:hover{
-        color: $info-color;
-        border-color: $info-color;
+        color: variables.$info-color;
+        border-color: variables.$info-color;
     }
     &:not(.navbar-transparent) .btn-neutral,
     &:not(.navbar-transparent) .btn-neutral:hover,
     &:not(.navbar-transparent) .btn-neutral:active{
-            color: $dark-gray;
+            color: variables.$dark-gray;
         }
 }
 
@@ -286,8 +292,8 @@
     .navbar-nav{
         .nav-item .nav-link{
             text-align: center;
-            padding: $navbar-padding-a-icons;
-            margin: $navbar-margin-a-icons;
+            padding: variables.$navbar-padding-a-icons;
+            margin: variables.$navbar-margin-a-icons;
         }
 
         [class^="pe"] {
@@ -301,19 +307,19 @@
 }
 
 .navbar-form{
-   @include box-shadow(none);
+   @include vendor-prefixes.box-shadow(none);
    .form-control{
-        @include light-form();
+        @include inputs.light-form();
         height: 22px;
-        font-size: $font-size-navbar;
-        line-height: $line-height-general;
-        color: $light-gray;
+        font-size: variables.$font-size-navbar;
+        line-height: variables.$line-height-general;
+        color: variables.$light-gray;
     }
     .navbar-transparent & .form-control,
     [class*="bg"] & .form-control{
-        color: $white-color;
-        border: $none;
-        border-bottom: 1px solid rgba($white-color,.6);
+        color: variables.$white-color;
+        border: variables.$none;
+        border-bottom: 1px solid rgba(variables.$white-color,.6);
     }
 
 }
@@ -321,10 +327,10 @@
 .navbar-toggle{
     margin-top: 19px;
     margin-bottom: 19px;
-    border: $none;
+    border: variables.$none;
 
     .icon-bar {
-        background-color: $white-color;
+        background-color: variables.$white-color;
     }
      .navbar-collapse,
      .navbar-form {
@@ -340,7 +346,7 @@
 // stefan making edits
 
 .navbar-light .navbar-nav .nav-link:hover{
-    color: $light-gray;
+    color: variables.$light-gray;
 }
 
 .red{
@@ -351,7 +357,7 @@
 }
 
 .navbar-default .navbar-brand{
-    color: $default-color;
+    color: variables.$default-color;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus{
@@ -394,7 +400,7 @@
     cursor: pointer;
 
     .navbar & .navbar-toggler-bar{
-        background: $font-color;
+        background: variables.$font-color;
     }
 
     .navbar[class*="bg-"] & .navbar-toggler-bar,
@@ -446,7 +452,7 @@
 }
 #description-areas .nav-stacked .nav-link.active:after,
 #navtabs-row .nav-stacked .nav-link.active:after{
-    border-right: 11px solid $white-color;
+    border-right: 11px solid variables.$white-color;
     border-top: 11px solid transparent;
     border-bottom: 11px solid transparent;
     content: "";
@@ -472,7 +478,7 @@
     .collapse{
         .navbar-nav{
             a{
-                color: $black-color;
+                color: variables.$black-color;
             }
         }
     }
@@ -483,7 +489,7 @@
     box-shadow: none;
 
     .dropdown-menu .divider{
-        background-color: rgba($white-color,.2);
+        background-color: rgba(variables.$white-color,.2);
     }
 }
 .section-navbars{
@@ -491,7 +497,7 @@
         .navbar{
             .navbar-toggler{
                 .navbar-toggler-icon{
-                    background: $white-color;
+                    background: variables.$white-color;
                 }
             }
         }

@@ -1,3 +1,6 @@
+@use "../mixins/vendor-prefixes";
+@use "../variables";
+
 ngb-datepicker{
     border: 0 none !important;
     border-radius: 12px !important;
@@ -12,7 +15,7 @@ ngb-datepicker{
     }
     .ngb-dp-header{
         border-bottom: none !important;
-        background-color: $white-color !important;
+        background-color: variables.$white-color !important;
         ngb-datepicker-navigation{
             button{
                 padding: 1px;
@@ -81,11 +84,11 @@ ngb-datepicker{
                     .btn-light{
                         border-radius: 50% !important;
                         &:hover{
-                            @include transition(150ms, linear);
+                            @include vendor-prefixes.transition(150ms, linear);
                         }
                     }
                     div[ng-reflect-selected="true"]{
-                        background-color: $primary-color !important;
+                        background-color: variables.$primary-color !important;
                     }
                     &:focus{
 

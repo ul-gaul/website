@@ -1,5 +1,7 @@
+@use "variables";
+
 .modal-header {
-    border-bottom: 1px solid $medium-gray;
+    border-bottom: 1px solid variables.$medium-gray;
     padding: 20px;
     text-align: center;
     display: block !important;
@@ -12,7 +14,7 @@
         }
     }
     .modal-title{
-        color: $black-color;
+        color: variables.$black-color;
     }
     button.close{
         margin-top: -45px;
@@ -39,7 +41,7 @@
     color: #000;
 }
 .modal-footer {
-    border-top: 1px solid $medium-gray;
+    border-top: 1px solid variables.$medium-gray;
     padding: 0px;
 
     &.no-border-footer{
@@ -56,7 +58,7 @@
     width: 100%
 }
 .modal-footer .divider{
-    background-color: $medium-gray;
+    background-color: variables.$medium-gray;
     display: inline-block;
     float: inherit;
     height: 63px;

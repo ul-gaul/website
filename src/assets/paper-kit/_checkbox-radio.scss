@@ -1,3 +1,6 @@
+@use "mixins/vendor-prefixes";
+@use "variables";
+
 .form-check,
 .form-check-radio {
   padding: 0;
@@ -27,8 +30,8 @@
         border-radius: 3px;
         top: 0;
         background-color: #AAA7A4;
-        border: 1px solid $light-gray;
-        @include transition-opacity(0.3s, linear);
+        border: 1px solid variables.$light-gray;
+        @include vendor-prefixes.transition-opacity(0.3s, linear);
     }
     .form-check-sign::after{
         font-family: 'FontAwesome';
@@ -43,7 +46,7 @@
     }
     &.disabled{
         .form-check-label{
-            color: $dark-gray;
+            color: variables.$dark-gray;
             opacity: .5;
             cursor: not-allowed;
         }
@@ -86,7 +89,7 @@
     }
     &.disabled{
         .form-check-label{
-            color: $dark-gray;
+            color: variables.$dark-gray;
             opacity: .5;
             cursor: not-allowed;
         }
@@ -115,7 +118,7 @@
     opacity: 0;
     display: block;
     content: "";
-    @include transition-opacity(1s, linear);
+    @include vendor-prefixes.transition-opacity(1s, linear);
 }
 
 .form-check-radio input[type="radio"]:checked + .form-check-sign::after {
@@ -135,7 +138,7 @@
 
 .form-check-radio input[type="radio"]:disabled + .form-check-sign::before,
 .form-check-radio input[type="radio"]:disabled + .form-check-sign::after {
-    color: $dark-gray;
+    color: variables.$dark-gray;
 }
 
 // .form-check:not(.disabled):hover{
