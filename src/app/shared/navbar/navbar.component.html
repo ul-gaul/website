@@ -39,7 +39,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex" title="YouTube" href="https://www.youtube.com/@projetGAUL" target="_blank" rel="noopener">
+          <a class="nav-link d-flex" title="Suivre sur YouTube" href="https://www.youtube.com/@projetGAUL" target="_blank" rel="noopener">
             <fa-icon [icon]="['fab', 'youtube']"></fa-icon>
             <div class="d-lg-none mt-1">YouTube</div>
           </a>
@@ -48,6 +48,12 @@
           <a class="nav-link d-flex" routerLink="/partenaires">
             <fa-icon [icon]="['fas', 'bookmark']"></fa-icon>
             Partenaires
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex" (click)="toggleLang()" role="button" aria-label="Changer la langue">
+            <fa-icon [icon]="['fas', 'globe']"></fa-icon>
+            <span class="ms-1 d-none d-lg-inline">{{ currentLang === 'fr' ? 'FR' : 'EN' }}</span>
           </a>
         </li>
       </ul>
