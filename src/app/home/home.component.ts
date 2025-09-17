@@ -5,9 +5,10 @@ import { HeaderComponent } from '../shared/header/header.component';
 
 @Component({
     selector: 'app-home',
+    standalone: true,
     imports: [RouterLink, NgbCarouselModule, NgbNavModule, HeaderComponent],
     templateUrl: './home.component.html',
-    styleUrl: './home.component.scss'
+    styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
 

@@ -4,7 +4,7 @@
       <a class="navbar-brand" routerLink="/home">
         <img src="./assets/img/shared/logo-small.webp" height="48" alt="GAUL icon" class="me-2">GAUL
       </a>
-      <button class="navbar-toggler navbar-burger border-0 shadow-none" (click)="sidebarToggle()">
+      <button class="navbar-toggler navbar-burger border-0 shadow-none" (click)="sidebarToggle()" [attr.aria-expanded]="navSidebarVisible" aria-label="Toggle navigation">
         <span class="navbar-toggler-bar"></span>
         <span class="navbar-toggler-bar"></span>
         <span class="navbar-toggler-bar"></span>
