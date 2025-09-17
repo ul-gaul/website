@@ -1,6 +1,38 @@
 <!-- HEADER -->
 <app-header [backgroundImg]="'./assets/img/page-home/earth-horizon.webp'" [title]="'Nos Partenaires'"></app-header>
 
+<!-- Intro texte -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="title">
+        <p class="sponsor-intro">
+          Nous souhaitons exprimer notre sincère reconnaissance à nos partenaires. 
+          Votre soutien et votre confiance nous permettent de donner vie à nos projets et d’avancer avec ambition. 
+          Chaque contribution, qu’elle soit grande ou petite, joue un rôle essentiel dans nos réussites. 
+          Grâce à vous, nous avons l’énergie et les moyens de relever de nouveaux défis et de concrétiser nos idées. Merci de faire partie intégrante de cette aventure à nos côtés.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Plan de commandite -->
+<section class="section">
+  <div class="container text-center">
+    <div id="sponsor-count" class="sponsor-count display-4 fw-bold mt-2">{{ displayedCount }}</div>
+    <div class="sponsor-unit text-muted mb-3">partenaires</div>
+
+    <div class="sponsor-buttons mt-4">
+      <div class="d-flex justify-content-center gap-3">
+        <a class="btn btn-primary btn-round btn-partenaires" href="./assets/docs/plan-partenariat-fr.pdf" target="_blank" rel="noopener">Plan de partenariat (FR)</a>
+        <a class="btn btn-primary btn-round btn-partenaires" href="./assets/docs/plan-partenariat-en.pdf" target="_blank" rel="noopener">Partnership plan (EN)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partenaires -->
 <section class="section">
   <div class="container">
     <div class="title text-center">
