@@ -49,6 +49,10 @@ firebase login
 ```
 
 ```bash
+ng build --configuration production
+```
+
+```bash
 firebase deploy
 ```
 
