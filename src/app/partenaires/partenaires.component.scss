@@ -1,3 +1,5 @@
+@use "../../assets/paper-kit/variables" as variables;
+
 $card-size-small: 200px;
 $card-size-medium: 320px;
 
@@ -6,27 +8,88 @@ $card-size-medium: 320px;
   justify-content: center;
   justify-items: center;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, calc($card-size-medium + 40px));
+  grid-template-columns: repeat(auto-fit, minmax($card-size-small, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 0.75rem;
 
   @media screen and (max-width: 992px) {
-    grid-template-columns: repeat(auto-fit, calc($card-size-small + 40px));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
 }
 
 .card {
-  margin: 0 20px 30px 20px;
-  width: 320px;
+  margin: 0 12px 18px 12px;
+  width: 100%;
+  max-width: $card-size-medium;
 
   @media screen and (max-width: 992px) {
-    width: $card-size-small;
+    max-width: 220px;
   }
 
   img {
-    width: 320px;
-    aspect-ratio: 320/180;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
 
     @media screen and (max-width: 992px) {
-      width: $card-size-small;
+      width: 100%;
     }
+  }
+}
+
+/* Intro */
+.sponsor-intro {
+  font-size: 1rem;
+  margin: 0 auto;
+  max-width: 900px;
+  color: variables.$font-color;
+  text-align: left;
+}
+
+/* Plan de commandite */
+.sponsor-count {
+  color: variables.$font-color;
+  line-height: 1;
+
+  font-size: 4.5rem;
+  font-weight: variables.$font-weight-bold;
+  letter-spacing: -1px;
+  margin-bottom: 0.25rem;
+  /* responsive */
+  @media (max-width: 991px) {
+    font-size: 3.25rem;
+  }
+  @media (max-width: 767px) {
+    font-size: 2.25rem;
+  }
+}
+
+.sponsor-unit {
+  font-size: 1.05rem;
+  color: variables.$font-color;
+  text-transform: lowercase;
+}
+
+.btn-partenaires {
+  font-size: medium;
+  font-weight: bold;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 767px) {
+  .btn-partenaires {
+    font-size: 12px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Responsive spacing */
+@media (max-width: 767px) {
+  .sponsor-buttons .d-flex {
+    flex-direction: column;
+    gap: .75rem;
   }
 }

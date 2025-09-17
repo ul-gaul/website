@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { TranslatePipe } from '../core/translate.pipe';
 
 @Component({
     selector: 'app-contact',
-    imports: [],
+    standalone: true,
+    imports: [TranslatePipe],
     templateUrl: './contact.component.html',
-    styleUrl: './contact.component.scss'
+    styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
 

@@ -4,9 +4,10 @@ import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-showcase',
+    standalone: true,
     imports: [HeaderComponent, NgbNavModule],
     templateUrl: './showcase.component.html',
-    styleUrl: './showcase.component.scss'
+    styleUrls: ['./showcase.component.scss']
 })
 export class ShowcaseComponent {
 

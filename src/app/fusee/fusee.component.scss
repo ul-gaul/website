@@ -11,11 +11,106 @@
 .fusee-text {
   justify-content: center;
   padding: 10px;
+  margin-top: auto;
 }
 
 .grid {
   display: grid;
   justify-items: center;
   // align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.fusee-split {
+  .fusee-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      align-self: stretch;
+      padding: 0.75rem;
+      box-sizing: border-box;
+      min-height: 320px;
+      background: transparent;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+      > div { min-height: 300px; }
+    }
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(2, 1fr);
+      > div { min-height: 260px; }
+    }
+    @media (max-width: 575px) {
+      grid-template-columns: repeat(1, 1fr);
+      > div { min-height: 200px; padding: 0.5rem; }
+    }
+  }
+
+  .fusee-grid .fusee-img {
+    width: auto;
+    max-width: 220px;
+    max-height: 300px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+
+  /* responsive sizes */
+  @media (min-width: 992px) {
+    .fusee-grid .fusee-img {
+      max-width: 210px;
+      max-height: 360px;
+    }
+  }
+  @media (max-width: 576px) {
+    .fusee-grid .fusee-img {
+      max-width: 110px;
+      max-height: 180px;
+    }
+  }
+
+  .fusee-card {
+    cursor: pointer;
+    text-align: center;
+    padding: 1.6rem;
+    border-radius: 8px;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+    background: rgba(255,255,255,0.02);
+
+    &:hover, &:focus {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+    }
+
+    img.fusee-img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+      display: block;
+      margin: 0 auto 0.75rem;
+      background: #fff;
+      max-height: none;
+    }
+  }
+
+  .fusee-details {
+    background: transparent;
+    padding: 0.75rem 1.25rem;
+    border-left: 1px solid rgba(0,0,0,0.06);
+
+    img {
+      max-width: 100%;
+      border-radius: 6px;
+    }
+  }
 }

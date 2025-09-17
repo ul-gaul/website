@@ -1,26 +1,23 @@
-<header class="page-header section-dark" style="background-image: url('{{backgroundImg}}')">
+<header class="page-header section-dark" [style.background-image]="'url(' + backgroundImg + ')'">
   <div class="filter"></div>
   <div class="content-center">
     <div class="container">
       <div class="title-brand">
-        @if (title.includes("webp")) {
-        <div class="gaul-logo">
-          <img src="{{title}}" alt="GAUL logo">
-        </div>
-        } @else {
-        <h1 class="presentation-title">{{title}}</h1>
-        }
+        <ng-container *ngIf="title?.includes('webp'); else titleText">
+          <div class="gaul-logo">
+            <img [src]="title" alt="GAUL logo" />
+          </div>
+        </ng-container>
+        <ng-template #titleText>
+          <h1 class="presentation-title">{{ title }}</h1>
+        </ng-template>
       </div>
-      @if (subTitle) {
-      <h1 class="presentation-subtitle text-center">{{subTitle}}</h1>
-      }
+      <h1 *ngIf="subTitle" class="presentation-subtitle text-center">{{ subTitle }}</h1>
     </div>
   </div>
-  @if (logoUlaval) {
-  <h6 class="category-absolute ml-auto mr-auto">
-    <a href="https://www.ulaval.ca/" target="_blank">
-      <img src="./assets/img/shared/ulaval-full-white.svg" class="uni-laval-logo">
+  <h6 *ngIf="logoUlaval" class="category-absolute ml-auto mr-auto">
+    <a href="https://www.ulaval.ca/" target="_blank" rel="noopener">
+      <img src="./assets/img/shared/ulaval-full-white.svg" class="uni-laval-logo" alt="Université Laval" />
     </a>
   </h6>
-  }
 </header>

@@ -1,5 +1,5 @@
 <!-- HEADER -->
-<app-header [backgroundImg]="'./assets/img/page-fusee/main-fusee-2024.webp'" [title]="'Division Fusée'"></app-header>
+<app-header [backgroundImg]="'./assets/img/page-fusee/main-fusee-2024.webp'" [title]="('fusee.title' | translate)"></app-header>
 
 <!--INTRODUCTION-->
 <section class="section">
@@ -7,15 +7,7 @@
     <div class="row">
       <div class="title">
         <h5>
-          L'objectif principal de cette division est de concevoir et de fabriquer des fusées hautes puissances tout en
-          respectant les critères des compétitions auxquelles le groupe participe. Depuis sa reprise en 2012 jusqu'en
-          2019, le GAUL participe à la compétition Spaceport America Cup (SAC) organisé par l'Experimental Sounding Rocket
-          Assiciation (ESRA) en Utah et au Nouveau-Mexique. De plus, il participe à la compétition nationale Launch Canada
-          depuis 2023.<br><br>
-
-          C'est dans le cadre de ces deux compétitions que la division Fusée du GAUL développe ses fusées haute
-          puissance. Bien que les impacts de la COVID-19 n'ont pas épargné le GAUL, nos équipes sont motivées à viser
-          haut pour nos prochaines compétitions!<br><br>
+          {{ 'fusee.intro' | translate }}
         </h5>
       </div>
     </div>
@@ -26,7 +18,9 @@
 <section class="section section-dark">
   <div class="container">
     <div class="title">
-      <h2>Sous-Systèmes</h2>
+      <h2>
+        {{ 'fusee.subsystems_title' | translate }}
+      </h2>
     </div>
     <div class="row">
       <div class="title">
@@ -35,34 +29,21 @@
             <img src="./assets/img/page-fusee/excelsior-liftoff.webp" alt="Excelsior! en vol" height="450">
           </aside>
 
-          <h3>Aérostructure</h3><br>
-          Le groupe Aérostructure est responsable de la conception et de la fabrication des composantes structurelles
-          et de l'intégration des autres composantes dans la fusée. Les membres se consacrent au design et à la
-          fabrication du fuselage en composite, des ailerons, de l'intégration de la baie avionique, et du système de
-          récupération, c'est-à-dire le système de déploiement des parachutes et les parachutes eux-mêmes. Ce groupe
-          chapeaute également l'analyse des performances de vol par simulation et l'optimisation de la masse. Les
-          étudiants sont amenés à se familiariser avec divers logiciels d'analyse et de conception 3D.<br><br>
+          <h3>{{ 'fusee.aerostructure_title' | translate }}</h3><br>
+          {{ 'fusee.aerostructure_text' | translate }}<br><br>
 
           <aside class="img-left border">
             <img src="./assets/img/page-fusee/launchpad-highv.webp" alt="High V au lancement" height="450">
           </aside>
 
-          <h3>Avionique</h3><br>
-          Le groupe Avionique est responsable de la conception des circuits électroniques présents dans la fusée et au
-          sol. Les membres ont la charge de concevoir et de fabriquer un système d'acquisition des données de vol, un
-          système de transmission des données au sol et de fabriquer une station ayant la capacité de recevoir et
-          d'afficher ces informations. Les étudiants conçoivent également un système de déploiement des parachutes
-          pour un retour sécuritaire au sol de la fusée.<br><br>
+          <h3>{{ 'fusee.avionique_title' | translate }}</h3><br>
+          {{ 'fusee.avionique_text' | translate }}<br><br>
 
-          <h3>Propulsion</h3><br>
-          Le groupe Propulsion a comme mandat le choix du moteur commercial à utiliser pour chaque fusée. Les membres
-          de cette division analysent les besoins et s'assurent que le moteur choisi répond aux exigences de la
-          mission. Ils s'occupent ensuite d'établir la méthode d'intégration du moteur et de son assemblage dans la
-          fusée.<br><br>
-          Cette division est également responsable d'un des projets les plus ambitieux du GAUL : la conception et la
-          fabrication d'un moteur à carburant liquide. Ce projet a pour but le design et la simulation par ordinateur
-          des pièces composant le moteur afin d'en caractériser et d'optimiser ses performances. Un banc de tests doit
-          aussi être fabriqué pour réaliser des essais au sol.<br><br>
+          <h3>{{ 'fusee.propulsion_title' | translate }}</h3><br>
+          {{ 'fusee.propulsion_text' | translate }}<br><br>
+
+          <h3>{{ 'fusee.payload_title' | translate }}</h3><br>
+          {{ 'fusee.payload_text' | translate }}<br><br>
         </div>
       </div>
     </div>
@@ -74,47 +55,32 @@
   <div class="container">
     <div class="title">
       <h2>
-        Compétitions
+        {{ 'fusee.competitions_title' | translate }}
         <img src="./assets/img/page-fusee/logo-sac.webp" height="84" alt="Logo Spaceport America Cup">
         <img src="./assets/img/page-fusee/logo-lc.webp" height="84" alt="Logo Launch Canada">
       </h2>
     </div>
-    <div class="container grid">
-      <div>
-        <img class="fusee-img" src="./assets/img/page-fusee/fuseeNext.webp" alt="Fusée à venir"><br>
-        <h6 class="fusee-text">2024-2025<br><br>À venir<br></h6>
+
+    <!-- layout: left = vignettes, right = détails -->
+    <div class="row fusee-split">
+      <div class="col-lg-6">
+        <div class="grid fusee-grid">
+          <div class="fusee-card" *ngFor="let r of rockets" (click)="selectRocket(r)" role="button" tabindex="0" [attr.aria-pressed]="selected.id === r.id">
+            <img class="fusee-img" [src]="r.image" [alt]="'Photo ' + r.name">
+            <h6 class="fusee-text">{{ r.year }} - {{ r.competition ? r.competition : '' }}<br>{{ r.name }}</h6>
+          </div>
+        </div>
       </div>
-      <div>
-        <img class="fusee-img" src="./assets/img/page-fusee/fusee2024-2.webp" alt="Fusée Maïa"><br>
-        <h6 class="fusee-text">2024 - LC<br>Maïa<br>Classement: 4<br>Altitude: 14 470'</h6>
-      </div>
-      <div>
-        <img class="fusee-img" src="./assets/img/page-fusee/fusee2024-1.webp" alt="Fusée Métrope"><br>
-        <h6 class="fusee-text">2024 - SAC<br>Mérope<br>Classement: N/A<br>Altitude: 9 784'</h6>
-      </div>
-      <div>
-        <img class="fusee-img" src="./assets/img/page-fusee/fusee2023.webp" alt="Fusée Nebula"><br>
-        <h6 class="fusee-text">2023 - LC<br>Nebula<br>Classement: 3<br>Altitude: 10 785'</h6>
-      </div>
-      <div>
-        <img class="fusee-img" src="./assets/img/page-fusee/fusee2019.webp" alt="Fusée Excelsior!"><br>
-        <h6 class="fusee-text">2019 - SAC<br>Excelsior!<br>Classement: 7<br>Altitude: 22 000'</h6>
-      </div>
-      <div>
-        <img class="fusee-img" src="./assets/img/page-fusee/fusee2018.webp" alt="Fusée High V"><br>
-        <h6 class="fusee-text">2018 - SAC<br>High V<br>Classement: 5<br>Altitude: 9 517'</h6>
-      </div>
-      <div>
-        <img class="fusee-img" src="./assets/img/page-fusee/fusee2017.webp" alt="Fusée Menhir"><br>
-        <h6 class="fusee-text">2017 - SAC<br>Menhir<br>Classement: 16<br>Altitude: 8 015'</h6>
-      </div>
-      <div>
-        <img class="fusee-img" src="./assets/img/page-fusee/fusee2016.webp" alt="Fusée Ragnarök"><br>
-        <h6 class="fusee-text">2016 - SAC<br>Ragnarök<br>Classement: 4<br>Altitude: 10 086'</h6>
-      </div>
-      <div>
-        <img class="fusee-img" src="./assets/img/page-fusee/fusee2015.webp" alt="Fusée Blackbird"><br>
-        <h6 class="fusee-text">2015 - SAC<br>Blackbird<br>Classement: N/A<br>Altitude: 11 554'</h6>
+
+      <div class="col-lg-6" id="fusee-details">
+        <div class="fusee-details" *ngIf="selected">
+          <h3>{{ selected.name }} <small class="text-muted">({{ selected.year }})</small></h3>
+          <p><strong>{{ 'fusee.competition_title' | translate }} :</strong> {{ selected.competition || '—' }}</p>
+          <p><strong>{{ 'fusee.ranking_title' | translate }} :</strong> {{ selected.ranking || '—' }}</p>
+          <p><strong>{{ 'fusee.altitude_title' | translate }} :</strong> {{ selected.altitude || '—' }}</p>
+          <p>{{ selected.description }}</p>
+          <img class="img-fluid mt-3" [src]="selected.image" [alt]="selected.name">
+        </div>
       </div>
     </div>
   </div>

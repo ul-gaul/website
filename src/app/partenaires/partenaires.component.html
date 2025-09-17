@@ -1,6 +1,38 @@
 <!-- HEADER -->
-<app-header [backgroundImg]="'./assets/img/page-home/earth-horizon.webp'" [title]="'Nos Partenaires'"></app-header>
+<app-header [backgroundImg]="'./assets/img/page-home/earth-horizon.webp'" [title]="('partenaires.title' | translate)"></app-header>
 
+<!-- Intro texte -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="title">
+        <p class="sponsor-intro">{{ 'partenaires.intro' | translate }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Plan de commandite -->
+<section class="section">
+  <div class="container text-center">
+    <div id="sponsor-count" class="sponsor-count display-4 fw-bold mt-2">{{ displayedCount }}</div>
+  <div class="sponsor-unit text-muted mb-3">{{ 'partenaires.sponsor_unit' | translate }}</div>
+
+    <div class="sponsor-buttons mt-4">
+      <div class="d-flex justify-content-center gap-3">
+        <a class="btn btn-primary btn-round btn-partenaires"
+           [href]="planHref"
+           target="_blank"
+           rel="noopener"
+           [attr.aria-label]="planLabel">
+          {{ planLabel }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partenaires -->
 <section class="section">
   <div class="container">
     <div class="title text-center">

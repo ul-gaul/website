@@ -37,3 +37,14 @@ fa-icon {
     }
   }
 }
+
+.nav-link[role="button"] {
+  cursor: pointer;
+  .fa-icon, fa-icon {
+    font-size: 1.15em;
+  }
+  span {
+    font-weight: 700;
+    letter-spacing: .5px;
+  }
+}

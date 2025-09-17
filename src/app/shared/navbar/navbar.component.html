@@ -4,7 +4,7 @@
       <a class="navbar-brand" routerLink="/home">
         <img src="./assets/img/shared/logo-small.webp" height="48" alt="GAUL icon" class="me-2">GAUL
       </a>
-      <button class="navbar-toggler navbar-burger border-0 shadow-none" (click)="sidebarToggle()">
+      <button class="navbar-toggler navbar-burger border-0 shadow-none" (click)="sidebarToggle()" [attr.aria-expanded]="navSidebarVisible" aria-label="Toggle navigation">
         <span class="navbar-toggler-bar"></span>
         <span class="navbar-toggler-bar"></span>
         <span class="navbar-toggler-bar"></span>
@@ -14,13 +14,13 @@
     <div class="navbar-collapse d-flex justify-content-between" id="navbarToggler">
       <ul class="navbar-nav ms-0">
         <li class="nav-item">
-          <a routerLink="/fusee" class="nav-link">Fusée</a>
+          <a routerLink="/fusee" class="nav-link">{{ 'nav.fusee' | translate }}</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/espace" class="nav-link">Espace</a>
+          <a routerLink="/espace" class="nav-link">{{ 'nav.espace' | translate }}</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/stratos" class="nav-link">Stratos</a>
+          <a routerLink="/stratos" class="nav-link">{{ 'nav.stratos' | translate }}</a>
         </li>
       </ul>
       <ul class="navbar-nav ms-0">
@@ -39,9 +39,21 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link d-flex" title="Suivre sur YouTube" href="https://www.youtube.com/@projetGAUL" target="_blank" rel="noopener">
+            <fa-icon [icon]="['fab', 'youtube']"></fa-icon>
+            <div class="d-lg-none mt-1">YouTube</div>
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link d-flex" routerLink="/partenaires">
             <fa-icon [icon]="['fas', 'bookmark']"></fa-icon>
-            Partenaires
+            {{ 'nav.partenaires' | translate }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex" (click)="toggleLang()" role="button" aria-label="Changer la langue">
+            <fa-icon [icon]="['fas', 'globe']"></fa-icon>
+            <span class="ms-1 d-none d-lg-inline">{{ currentLang === 'fr' ? 'FR' : 'EN' }}</span>
           </a>
         </li>
       </ul>

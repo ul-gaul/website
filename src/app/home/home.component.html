@@ -7,50 +7,38 @@
 <section class="section section-dark">
   <div class="container">
     <div class="title">
-      <h2>À Propos</h2>
+      <h2>{{ 'home.about_title' | translate }}</h2>
     </div>
     <div class="row">
       <div class="title">
-        <h3>Développement de projets d'envergure reliés aux sciences de l'espace</h3><br>
+        <h3>{{ 'home.developpement_title' | translate }}</h3><br>
+        {{ 'home.developpement_text' | translate }}<br><br>
 
-        Habités par une soif d'apprendre et un désir d'œuvrer dans le domaine de l'aérospatiale, les membres du Groupe
-        Aérospatial de l'Université Laval conçoivent, fabriquent et testent divers projets de haute technologie. Que
-        ce soit pour développer des fusées haute puissance, pour construire des instruments d'observation astronomique
-        ou pour concevoir une charge scientifique ayant pour destination la stratosphère, le GAUL saisit chaque
-        occasion de mettre à profit les connaissances et les ressources de ses membres afin d'accomplir ses diverses
-        missions.<br><br>
-
-        <h3>De local à international</h3><br>
-
-        Le GAUL prend part à différents concours offerts aux étudiants universitaires à travers le Canada et à
-        l'international. Ceux-ci permettent aux activités du GAUL de s'étendre sur un plus large spectre, d'avoir
-        un contact direct avec plusieurs acteurs de l'industrie et de participer aux événements spéciaux organisés
-        par ces concours. Il s'agit également d'une opportunité pour les membres de se développer
-        professionnellement et personnellement, de rencontrer d'autres passionnés d'aérospatiale et de vivre
-        des expériences hors du commun.<br><br>
+        <h3>{{ 'home.local_title' | translate }}</h3><br>
+        {{ 'home.local_text' | translate }}<br><br>
       </div>
       <div id="divisions">
         <div class="title">
-          <h3>Les divisions</h3>
+          <h3>{{ 'home.divisions_title' | translate }}</h3>
         </div>
         <div class="row">
           <a class="col-6 col-xs-12 col-md-4 mycard" routerLink="/fusee">
             <div class="hover">
-              <h1>FUSÉE</h1>
+              <h1>{{ 'home.rocket_title' | translate }}</h1>
             </div>
             <img src="./assets/img/page-fusee/main-fusee-2024.webp" alt="Division Fusée" class="img-rounded img-responsive">
           </a>
           <a class="col-6 col-xs-12 col-md-4 mycard" routerLink="/espace">
             <div class="hover">
-              <h1>ESPACE</h1>
+              <h1>{{ 'home.space_title' | translate }}</h1>
             </div>
-            <img src="./assets/img/page-espace/main-espace.webp" alt="Division Fusée" class="img-rounded img-responsive">
+            <img src="./assets/img/page-espace/main-espace.webp" alt="Division Espace" class="img-rounded img-responsive">
           </a>
           <a class="col-6 col-xs-12 col-md-4 mycard" routerLink="/stratos">
             <div class="hover">
-              <h1>STRATOS</h1>
+              <h1>{{ 'home.stratos_title' | translate }}</h1>
             </div>
-            <img src="./assets/img/page-stratos/main-stratos.webp" alt="Division Fusée" class="img-rounded img-responsive">
+            <img src="./assets/img/page-stratos/main-stratos.webp" alt="Division Stratos" class="img-rounded img-responsive">
           </a>
         </div>
       </div>
@@ -62,77 +50,102 @@
 <section class="section">
   <div class="container">
     <div class="title">
-      <h3>En Photo</h3>
+      <h3>{{ 'home.photo_section_title' | translate }}</h3>
     </div>
     <div class="d-flex justify-content-center mt-5">
       <div class="card page-carousel w-lg-75">
-        <ngb-carousel>
+        <ngb-carousel #pageCarousel>
+          <ng-template ngbSlide>
+            <img src="./assets/img/page-home/carousel20.webp" alt="Fusée 2025">
+            <div class="carousel-caption">
+              <p>Fusée 2025</p>
+            </div>
+          </ng-template>
+
+          <ng-template ngbSlide>
+            <img src="./assets/img/page-home/carousel21.webp" alt="Fusée 2025">
+            <div class="carousel-caption">
+              <p>Fusée 2025</p>
+            </div>
+          </ng-template>
+
           <ng-template ngbSlide>
             <img src="./assets/img/page-home/carousel2025.webp" alt="GAUL 2025">
             <div class="carousel-caption">
               <p>GAUL 2025</p>
             </div>
           </ng-template>
+
           <ng-template ngbSlide>
             <img src="./assets/img/page-home/carousel2024maia.webp" alt="Fusée 2024">
             <div class="carousel-caption">
               <p>Fusée 2024 - Maïa</p>
             </div>
           </ng-template>
+
           <ng-template ngbSlide>
             <img src="./assets/img/page-home/carousel2024merope.webp" alt="Fusée 2024">
             <div class="carousel-caption">
               <p>Fusée 2024 - Mérope</p>
             </div>
           </ng-template>
+
           <ng-template ngbSlide>
             <img src="./assets/img/page-home/carousel1.webp" alt="GAUL 2023">
             <div class="carousel-caption">
               <p>GAUL 2023</p>
             </div>
           </ng-template>
+
           <ng-template ngbSlide>
             <img src="./assets/img/page-home/carousel2.webp" alt="Fusée 2023">
             <div class="carousel-caption">
               <p>Fusée 2023</p>
             </div>
           </ng-template>
+
           <ng-template ngbSlide>
             <img src="./assets/img/page-home/carousel3.webp" alt="Fusée 2019">
             <div class="carousel-caption">
               <p>Fusée 2019</p>
             </div>
           </ng-template>
+
           <ng-template ngbSlide>
             <img src="./assets/img/page-home/carousel4.webp" alt="Fusée 2018">
             <div class="carousel-caption">
               <p>Fusée 2018</p>
             </div>
           </ng-template>
+
           <ng-template ngbSlide>
             <img src="./assets/img/page-home/carousel5.webp" alt="Fusée 2017">
             <div class="carousel-caption">
               <p>Fusée 2017</p>
             </div>
           </ng-template>
+
           <ng-template ngbSlide>
             <img src="./assets/img/page-home/carousel6.webp" alt="Fusée 2016">
             <div class="carousel-caption">
               <p>Fusée 2016</p>
             </div>
           </ng-template>
+
           <ng-template ngbSlide>
             <img src="./assets/img/page-home/carousel7.webp" alt="Fusée 2015">
             <div class="carousel-caption">
               <p>Fusée 2015</p>
             </div>
           </ng-template>
+
           <ng-template ngbSlide>
             <img src="./assets/img/page-home/carousel8.webp" alt="Espace">
             <div class="carousel-caption">
               <p>Espace</p>
             </div>
           </ng-template>
+
           <ng-template ngbSlide>
             <img src="./assets/img/page-home/carousel9.webp" alt="Stratos">
             <div class="carousel-caption">
@@ -150,18 +163,14 @@
 <section class="section section-dark">
   <div class="container">
     <div class="title">
-      <h2>Partenaires</h2>
+      <h2>{{ 'nav.partenaires' | translate }}</h2>
     </div>
     <div class="row">
       <div class="title">
-        Le Groupe Aérospatial de l'Université Laval ne peut évidemment pas construire d'instruments d'observation, de ballons stratosphériques ou
-        de fusées pour représenter l'Université Laval dans des compétitions internationales sans l'aide précieuse de ses partenaires. Grâce à leur
-        générosité et à leur confiance, nous pouvons nourrir la passion des étudiants pour l'espace. Leur appui joue un rôle crucial dans la formation
-        de la prochaine génération d'ingénieurs et de chercheurs passionnés, tout en contribuant à renforcer l'expertise québécoise et canadienne
-        dans un secteur clé de haute technologie. Merci de nous accompagner dans cette mission ambitieuse et visionnaire !
+        {{ 'home.partenaires_text' | translate }}
       </div>
       <div class="center">
-        <button id="btn-partenaires" class="btn btn-primary btn-round mt-2" routerLink="/partenaires">Liste des partenaires</button>
+  <button id="btn-partenaires" class="btn btn-primary btn-round mt-2" routerLink="/partenaires">{{ 'home.partners_button' | translate }}</button>
       </div>
     </div>
   </div>
@@ -174,26 +183,8 @@
     </div>
     <div class="row">
       <div class="title">
-        <h3>Depuis sa fondation, en 1993...</h3><br>
-
-        Le GAUL (Groupe Aérospatial de l'Université Laval) fut fondé en 1993 par un étudiant de génie mécanique
-        passionné par le domaine aérospatial. Ce dernier a regroupé des étudiants de la Faculté des sciences et de
-        génie qui partageaient eux aussi un intérêt envers cette science. C'est à cette période que se créa un
-        partenariat avec le Centre de Recherche et de Développement de la Défense du Canada à Valcartier qui dura
-        plusieurs années. Le groupe est resté actif jusqu'en 2008 avant d'être repris par des étudiants en 2012 et
-        continue ses activités jusqu'à ce jour. Les étudiants participant aux divers projets proposés par le GAUL sont
-        amenés à concevoir et à fabriquer des fusées hautes puissances, à participer à un projet de ballon-sonde ainsi
-        qu'à développer divers instruments d'observation astronomiques.<br><br>
-
-        Ces projets multidisciplinaires permettent aux étudiants de différents programmes de collaborer et de mettre
-        en valeur leurs connaissances spécifiques. Le GAUL offre l'opportunité à ses membres d'appliquer leurs
-        connaissances acquises dans les cours durant leur parcours universitaire tout en développant des habiletés
-        essentielles à l'ingénierie et à la recherche telles que l'esprit d'équipe, la résolution de problèmes et la
-        gestion de projets.<br><br>
-
-        Le GAUL fait maintenant partie d'une communauté canadienne grandissante de projets étudiants reliés à l'espace
-        tout en bénéficiant d'un partenariat exceptionnel avec de nombreux commanditaires qui supportent le
-        groupe.<br><br>
+        <h3>{{ 'history_title' | translate }}</h3><br>
+        {{ 'history_text' | translate }}<br><br>
       </div>
     </div>
   </div>

@@ -69,3 +69,18 @@
     object-fit: cover;
   }
 }
+
+.page-carousel {
+  .carousel-inner {
+    transition: height 220ms ease;
+    overflow: hidden;
+    height: auto;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+}

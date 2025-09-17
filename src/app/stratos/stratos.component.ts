@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
+import { TranslatePipe } from '../core/translate.pipe';
 
 @Component({
     selector: 'app-stratos',
-    imports: [HeaderComponent],
+    standalone: true,
+    imports: [HeaderComponent, TranslatePipe],
     templateUrl: './stratos.component.html',
-    styleUrl: './stratos.component.scss'
+    styleUrls: ['./stratos.component.scss']
 })
 export class StratosComponent {
 
