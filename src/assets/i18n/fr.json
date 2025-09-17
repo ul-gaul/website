@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "fusee": "Fusée",
+    "espace": "Espace",
+    "stratos": "Stratos",
+    "partenaires": "Partenaires",
+    "showcase": "Vitrine",
+    "contact": "Contact"
+  },
+  "home": {
+    "about_title": "À Propos",
+    "developpement_title": "Développement de projets d'envergure reliés aux sciences de l'espace",
+    "developpement_text": "Habités par une soif d'apprendre et un désir d'œuvrer dans le domaine de l'aérospatiale, les membres du Groupe Aérospatial de l'Université Laval conçoivent, fabriquent et testent divers projets de haute technologie. Que ce soit pour développer des fusées haute puissance, pour construire des instruments d'observation astronomique ou pour concevoir une charge scientifique ayant pour destination la stratosphère, le GAUL saisit chaque occasion de mettre à profit les connaissances et les ressources de ses membres afin d'accomplir ses diverses missions.",
+    "local_title": "De local à international",
+    "local_text": "Le GAUL prend part à différents concours offerts aux étudiants universitaires à travers le Canada et à l'international. Ceux-ci permettent aux activités du GAUL de s'étendre sur un plus large spectre, d'avoir un contact direct avec plusieurs acteurs de l'industrie et de participer aux événements spéciaux organisés par ces concours. Il s'agit également d'une opportunité pour les membres de se développer professionnellement et personnellement, de rencontrer d'autres passionnés d'aérospatiale et de vivre des expériences hors du commun.",
+    "divisions_title": "Les divisions",
+    "rocket_title": "FUSÉE",
+    "space_title": "ESPACE",
+    "stratos_title": "STRATOS",
+    "partners_button": "Liste des partenaires",
+    "partenaires_text": "Le Groupe Aérospatial de l'Université Laval ne peut évidemment pas construire d'instruments d'observation, de ballons stratosphériques ou de fusées pour représenter l'Université Laval dans des compétitions internationales sans l'aide précieuse de ses partenaires. Grâce à leur générosité et à leur confiance, nous pouvons nourrir la passion des étudiants pour l'espace. Leur appui joue un rôle crucial dans la formation de la prochaine génération d'ingénieurs et de chercheurs passionnés, tout en contribuant à renforcer l'expertise québécoise et canadienne dans un secteur clé de haute technologie. Merci de nous accompagner dans cette mission ambitieuse et visionnaire !",
+    "photo_section_title": "En Photo",
+    "history_title": "Depuis sa fondation, en 1993...",
+    "history_text": "Le GAUL (Groupe Aérospatial de l'Université Laval) fut fondé en 1993 par un étudiant de génie mécanique passionné par le domaine aérospatial. Ce dernier a regroupé des étudiants de la Faculté des sciences et de génie qui partageaient eux aussi un intérêt envers cette science. C'est à cette période que se créa un partenariat avec le Centre de Recherche et de Développement de la Défense du Canada à Valcartier qui dura plusieurs années. Le groupe est resté actif jusqu'en 2008 avant d'être repris par des étudiants en 2012 et continue ses activités jusqu'à ce jour. Les étudiants participant aux divers projets proposés par le GAUL sont amenés à concevoir et à fabriquer des fusées hautes puissances, à participer à un projet de ballon-sonde ainsi qu'à développer divers instruments d'observation astronomiques. Ces projets multidisciplinaires permettent aux étudiants de différents programmes de collaborer et de mettre en valeur leurs connaissances spécifiques. Le GAUL offre l'opportunité à ses membres d'appliquer leurs connaissances acquises dans les cours durant leur parcours universitaire tout en développant des habiletés essentielles à l'ingénierie et à la recherche telles que l'esprit d'équipe, la résolution de problèmes et la gestion de projets. Le GAUL fait maintenant partie d'une communauté canadienne grandissante de projets étudiants reliés à l'espace tout en bénéficiant d'un partenariat exceptionnel avec de nombreux commanditaires qui supportent le groupe."
+  },
+  "fusee": {
+    "title": "Division Fusée",
+    "intro": "L'objectif principal de cette division est de concevoir et de fabriquer des fusées hautes puissances tout en respectant les critères des compétitions auxquelles le groupe participe. Depuis sa reprise en 2012 jusqu'en 2019, le GAUL participe à la compétition Spaceport America Cup (SAC) organisé par l'Experimental Sounding Rocket Assiciation (ESRA) en Utah et au Nouveau-Mexique. De plus, il participe à la compétition nationale Launch Canada depuis 2023. C'est dans le cadre de ces deux compétitions que la division Fusée du GAUL développe ses fusées haute puissance. Bien que les impacts de la COVID-19 n'ont pas épargné le GAUL, nos équipes sont motivées à viser haut pour nos prochaines compétitions!",
+    "subsystems_title": "Sous-systèmes",
+    "aerostructure_title": "Aérostructure",
+    "aerostructure_text": "Le groupe Aérostructure est responsable de la conception et de la fabrication des composantes structurelles et de l'intégration des autres composantes dans la fusée. Les membres se consacrent au design et à la fabrication du fuselage en composite, des ailerons, de l'intégration de la baie avionique, et du système de récupération, c'est-à-dire le système de déploiement des parachutes et les parachutes eux-mêmes. Ce groupe chapeaute également l'analyse des performances de vol par simulation et l'optimisation de la masse. Les étudiants sont amenés à se familiariser avec divers logiciels d'analyse et de conception 3D.",
+    "avionique_title": "Avionique",
+    "avionique_text": "Le groupe Avionique est responsable de la conception des circuits électroniques présents dans la fusée et au sol. Les membres ont la charge de concevoir et de fabriquer un système d'acquisition des données de vol, un système de transmission des données au sol et de fabriquer une station ayant la capacité de recevoir et d'afficher ces informations. Les étudiants conçoivent également un système de déploiement des parachutes pour un retour sécuritaire au sol de la fusée.",
+    "propulsion_title": "Propulsion",
+    "propulsion_text": "Le groupe Propulsion a comme mandat le choix du moteur commercial à utiliser pour chaque fusée. Les membres de cette division analysent les besoins et s'assurent que le moteur choisi répond aux exigences de la mission. Ils s'occupent ensuite d'établir la méthode d'intégration du moteur et de son assemblage dans la fusée. Cette division est également responsable d'un des projets les plus ambitieux du GAUL : la conception et la fabrication d'un moteur à carburant liquide. Ce projet a pour but le design et la simulation par ordinateur des pièces composant le moteur afin d'en caractériser et d'optimiser ses performances. Un banc de tests doit aussi être fabriqué pour réaliser des essais au sol.",
+    "payload_title": "Payload",
+    "payload_text": "Le groupe Payload est chargé de la conception et de la réalisation de la charge utile embarquée dans la fusée. Ses membres travaillent à développer des expériences scientifiques, technologiques ou éducatives qui seront intégrées au véhicule afin de recueillir des données ou de valider de nouveaux concepts en conditions réelles de vol. Le mandat du groupe inclut la définition des objectifs expérimentaux, la conception mécanique et électronique de la charge utile, ainsi que son intégration dans la fusée tout en respectant les contraintes de masse, d’espace et de sécurité. Les étudiants participent ainsi à l’ensemble du cycle de développement d’un projet scientifique, depuis l’idéation jusqu’à l’analyse des résultats après récupération.",
+    "competitions_title": "Compétitions",
+    "ranking_title": "Classement",
+    "altitude_title": "Altitude"
+  },
+  "espace": {
+    "title": "Division Espace",
+    "intro": "La division Espace est une nouvelle division du GAUL qui a pour objectif de faire découvrir l'espace à toute personne intéressée. Le but à long terme est de réaliser des soirées d'observation avec le matériel conçu et fabriqué par l'équipe de la division. Ainsi, il est question d'éduquer sur l'espace, mais aussi d'utiliser le matériel du GAUL pour proposer des soirées d'observation complètement conceptualisées à l'Université Laval. Ces activités seront réalisées en collaboration avec différents observatoires dans la région de Québec. Contrairement aux autres divisions du GAUL, la mission que se donne l'équipe de la division Espace est davantage axée sur l'apprentissage que sur la compétition. Cette nouvelle approche permet au GAUL d'élargir ses horizons et d'aller chercher un nouveau public. De plus, cette division multidisciplinaire permet aux membres de développer des aptitudes tant pédagogiques que pratiques.",
+    "goals_title": "Objectifs Globaux",
+    "goals_text": "La division concentre ses activités autour de l'organisation de soirées d'observations ainsi que dans la fabrication d'instruments d'observation. Ces différents volets permettent à la division de toucher un aspect éducatif et un aspect de conception qui rendent la division multifonctions.",
+    "observation_title": "Soirées d'observation",
+    "observation_text": "Cette division a donc pour objectif d'organiser des activités d'observation et de collaborer avec d'autres groupes de personnes passionnées par l'astronomie. Ces séances nous offrent l'occasion de tester nos nouveaux outils d'observation, de partager notre passion et surtout d'apprendre des travaux de nos collègues. En somme, ces événements contribuent à rendre nos télescopes amateurs plus performants tout en renforçant notre engagement envers l'observation de l'espace.",
+    "instrument_title": "Fabrication d'instrument d'observation",
+    "instrument_text": "Parmi les outils d'observation que nous concevons, il y a évidemment les télescopes, mais aussi tous les autres instruments qui rendent l'observation spatiale intéressante et amusante. Nous travaillons actuellement sur un télescope de type lunette astronomique de 1,5m de longueur, ainsi que sur un trépied automatisé.",
+    "mission_title": "Une mission éducative et scientifique",
+    "mission_text": "La division Espace a comme mission de permettre aux étudiants de tous les niveaux d'acquérir de l'expérience enrichissante dans le domaine, tout en leur transmettant la passion pour l'astronomie et l'astrophysique."
+  },
+  "stratos": {
+    "title": "Division Stratos",
+    "intro": "L'espace est un environnement unique et hostile, mais stimulant en raison des nombreuses contraintes et difficultés qu'il impose aux ingénieurs et scientifiques. Un tel milieu représente donc une opportunité incomparable pour les étudiants désirant relever des défis et apprendre à développer de façon ingénieuse des systèmes exploitant cet environnement. La division STRATOS se consacre donc à des projets destinés à atteindre les plus hautes couches de l'atmosphère terrestre, et au-delà. La division conçoit, assemble et lance une charge utile à bord d'un ballon stratosphérique qui peut atteindre la stratosphère (environ 30km d'altitude). L'équipe participe à toutes les opérations de lancement, de suivi du vol et de récupération de la charge utile, ainsi qu'à l'analyse post-mission. La division STRATOS a aussi pour but de tester divers expériences ou composants électroniques destinés à être embarqués à bord de nos fusées. Certains objectifs à long terme sont également dans la ligne de mire de la division STRATOS et font l'objet d'un plan d'action en deux phases.",
+    "phase1_title": "Phase I : Développer les compétences",
+    "phase1_text": "La phase I consiste à concevoir un ballon stratosphérique, sa charge utile et l'ensemble de ses sous-systèmes lui permettant d'effectuer un vol de quelques heures à haute altitude. Différentes itérations du design et de multiples expériences pourront être réalisées au fil du temps. Éventuellement, la division pourrait participer au concours Canadian Stratospheric Balloon Experiment Challenge, une initiative de SEDS-Canada. Des équipes canadiennes y participent et chacun a pour mission de développer une charge utile exploitant les ressources et caractéristiques propres à la stratosphère. Les expériences sont lancées à bord d'une nacelle de l'Agence spatiale canadienne. De telles expériences peuvent œuvrer dans des domaines tels que l'astrophysique, l'atmosphère terrestre et le champ magnétique, la biologie, la télédétection et les démonstrations technologiques. Pendant cette phase, une certaine expertise dans le domaine et une banque de ressources seront développées au sein de la division. Ces deux éléments, en plus d'un historique de lancements, permettront de faciliter la transition éventuelle vers la phase II du plan d'action. Bien sûr, d'autres lancements de ballons stratosphériques pourront avoir lieu grâce à l'expérience acquise lors des lancements précédents.",
+    "phase2_title": "Phase II : Progresser l'espace",
+    "phase2_text": "L'objectif de la phase II est d'aller au-delà des limites de l'atmosphère terrestre. En effet, des concours canadiens et internationaux permettent d'encadrer des étudiants universitaires dans le design et le lancement de nanosatellites appelés CubeSats. Toutefois, pour le moment, aucune procédure sérieuse quant à l'implication de la division dans un tel concours n'est poursuivie. Les projets développés dans la phase I permettront donc d'acquérir l'expertise nécessaire pour participer à un tel projet, d'autant plus que les ressources monétaires et matérielles sont particulièrement ardues à acquérir pour envoyer un engin au-delà de l'atmosphère terrestre.",
+    "phase3_title": "Perspectives éducatives",
+    "phase3_text": "Au fil du temps, les membres du projet approfondiront leurs connaissances en matière de programmation informatique, d'électronique, de théorie de vol et de mécanique orbitale, des télécommunications, de gestion de projets d'ingénierie, etc. L'expérience acquise par les étudiants constitue un atout important pour leurs futures carrières. De la planche à dessin jusqu'au lancement, les connaissances acquises dans le domaine de l'aérospatiale permettront de former les futurs ingénieurs et scientifiques qui s'activeront pour développer l'expertise spatiale canadienne."
+  },
+  "partenaires": {
+    "title": "Nos partenaires",
+    "intro": "Nous souhaitons exprimer notre sincère reconnaissance à nos partenaires.Votre soutien et votre confiance nous permettent de donner vie à nos projets et d’avancer avec ambition. Chaque contribution, qu’elle soit grande ou petite, joue un rôle essentiel dans nos réussites. Grâce à vous, nous avons l’énergie et les moyens de relever de nouveaux défis et de concrétiser nos idées. Merci de faire partie intégrante de cette aventure à nos côtés.",
+    "sponsor_count_title": "Nombre de commanditaires",
+    "plan_fr": "Plan de partenariat (FR)",
+    "plan_en": "Plan de partenariat (EN)",
+    "sponsor_unit": "partenaires"
+  },
+  "showcase": {
+    "title": "Modèles 3D",
+    "intro": "Explorez les modèles 3D interactifs."
+  },
+  "contact": {
+    "title": "Contact",
+    "text": "Contactez-nous via le formulaire."
+  },
+  "notfound": {
+    "title": "Page introuvable",
+    "back": "Retour à la page principale"
+  }
+}

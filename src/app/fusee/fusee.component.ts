@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../shared/header/header.component';
+import { TranslatePipe } from '../core/translate.pipe';
 
 @Component({
-    selector: 'app-fusee',
-    imports: [HeaderComponent, CommonModule],
-    templateUrl: './fusee.component.html',
-    styleUrl: './fusee.component.scss'
+  selector: 'app-fusee',
+  standalone: true,
+  imports: [HeaderComponent, CommonModule, TranslatePipe],
+  templateUrl: './fusee.component.html',
+  styleUrls: ['./fusee.component.scss']
 })
 export class FuseeComponent {
   // Liste des fusées

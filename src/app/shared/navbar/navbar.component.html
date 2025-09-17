@@ -14,13 +14,13 @@
     <div class="navbar-collapse d-flex justify-content-between" id="navbarToggler">
       <ul class="navbar-nav ms-0">
         <li class="nav-item">
-          <a routerLink="/fusee" class="nav-link">Fusée</a>
+          <a routerLink="/fusee" class="nav-link">{{ 'nav.fusee' | translate }}</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/espace" class="nav-link">Espace</a>
+          <a routerLink="/espace" class="nav-link">{{ 'nav.espace' | translate }}</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/stratos" class="nav-link">Stratos</a>
+          <a routerLink="/stratos" class="nav-link">{{ 'nav.stratos' | translate }}</a>
         </li>
       </ul>
       <ul class="navbar-nav ms-0">
@@ -47,7 +47,7 @@
         <li class="nav-item">
           <a class="nav-link d-flex" routerLink="/partenaires">
             <fa-icon [icon]="['fas', 'bookmark']"></fa-icon>
-            Partenaires
+            {{ 'nav.partenaires' | translate }}
           </a>
         </li>
         <li class="nav-item">

@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "home": "Home",
+    "fusee": "Rocket",
+    "espace": "Space",
+    "stratos": "Stratos",
+    "partenaires": "Partners",
+    "showcase": "Showcase",
+    "contact": "Contact"
+  },
+  "home": {
+    "about_title": "About",
+    "developpement_title": "Development of large-scale projects related to space sciences",
+    "developpement_text": "Driven by a thirst for learning and a desire to work in the aerospace field, the members of the Université Laval Aerospace Group design, manufacture, and test various high-tech projects. Whether developing high-power rockets, building astronomical observation instruments, or designing a scientific payload destined for the stratosphere, GAUL seizes every opportunity to leverage the knowledge and resources of its members to accomplish its missions.",
+    "local_title": "From local to international",
+    "local_text": "GAUL takes part in various competitions offered to university students across Canada and internationally. These allow GAUL’s activities to expand across a broader spectrum, establish direct contact with many industry players, and participate in special events organized by these competitions. It is also an opportunity for members to develop professionally and personally, to meet other aerospace enthusiasts, and to experience something truly unique.",
+    "divisions_title": "Divisions",
+    "rocket_title": "ROCKET",
+    "space_title": "SPACE",
+    "stratos_title": "STRATOS",
+    "partners_button": "List of partners",
+    "partenaires_text": "The Université Laval Aerospace Group obviously cannot build observation instruments, stratospheric balloons, or rockets to represent Université Laval in international competitions without the invaluable help of its partners. Thanks to their generosity and trust, we can nurture students’ passion for space. Their support plays a crucial role in training the next generation of passionate engineers and researchers, while contributing to strengthening Quebec and Canadian expertise in a key high-tech sector. Thank you for joining us in this ambitious and visionary mission!",
+    "photo_section_title": "In Pictures",
+    "history_title": "Since its foundation in 1993...",
+    "history_text": "GAUL (Université Laval Aerospace Group) was founded in 1993 by a mechanical engineering student passionate about aerospace. He gathered students from the Faculty of Science and Engineering who also shared an interest in this field. At that time, a partnership was established with the Defense Research and Development Canada Center in Valcartier, which lasted several years. The group remained active until 2008, before being revived by students in 2012, and it continues its activities to this day. Students participating in GAUL projects are involved in designing and manufacturing high-power rockets, participating in a balloon probe project, and developing various astronomical observation instruments. These multidisciplinary projects allow students from different programs to collaborate and showcase their specific knowledge. GAUL offers its members the opportunity to apply their classroom knowledge while developing essential engineering and research skills such as teamwork, problem-solving, and project management. Today, GAUL is part of a growing Canadian community of student space-related projects, while benefiting from exceptional partnerships with numerous sponsors who support the group."
+  },
+  "fusee": {
+    "title": "Rocket Division",
+    "intro": "The main objective of this division is to design and manufacture high-power rockets while meeting the criteria of the competitions the group participates in. From its revival in 2012 until 2019, GAUL took part in the Spaceport America Cup (SAC), organized by the Experimental Sounding Rocket Association (ESRA) in Utah and New Mexico. Since 2023, it has also been participating in the national Launch Canada competition. It is within the framework of these two competitions that GAUL’s Rocket Division develops its high-power rockets. Although the impacts of COVID-19 did not spare GAUL, our teams remain motivated to aim high for our upcoming competitions!",
+    "subsystems_title": "Subsystems",
+    "aerostructure_title": "Aerostructure",
+    "aerostructure_text": "The Aerostructure group is responsible for designing and manufacturing structural components and integrating other components into the rocket. Members focus on the design and fabrication of the composite fuselage, fins, avionics bay integration, and recovery system—meaning the parachute deployment system and the parachutes themselves. This group also oversees flight performance analysis through simulation and mass optimization. Students become familiar with various analysis software and 3D design tools.",
+    "avionique_title": "Avionics",
+    "avionique_text": "The Avionics group is responsible for designing the electronic circuits in the rocket and on the ground. Members are tasked with designing and manufacturing a flight data acquisition system, a ground data transmission system, and building a station capable of receiving and displaying this information. Students also design a parachute deployment system to ensure the rocket returns safely to the ground.",
+    "propulsion_title": "Propulsion",
+    "propulsion_text": "The Propulsion group’s mandate is to choose the commercial motor to be used for each rocket. Members of this division analyze the requirements and ensure that the chosen motor meets the mission’s needs. They then determine the method for integrating and assembling the motor in the rocket. This division is also responsible for one of GAUL’s most ambitious projects: the design and manufacture of a liquid-fuel engine. The goal of this project is to design and simulate the engine’s components to characterize and optimize its performance. A test bench must also be built to conduct ground tests.",
+    "payload_title": "Payload",
+    "payload_text": "The Payload group is responsible for designing and building the payload carried by the rocket. Its members work on developing scientific, technological, or educational experiments that will be integrated into the vehicle to collect data or validate new concepts in real flight conditions. The group’s mandate includes defining experimental objectives, designing the payload’s mechanical and electronic systems, and integrating it into the rocket while meeting constraints of mass, space, and safety. Students are thus involved in the entire development cycle of a scientific project, from ideation to post-recovery data analysis.",
+    "competitions_title": "Competitions",
+    "ranking_title": "Ranking",
+    "altitude_title": "Altitude"
+  },
+  "espace": {
+    "title": "Space Division",
+    "intro": "The Space Division is a new division of GAUL with the goal of introducing space to anyone interested. The long-term objective is to host observation nights using equipment designed and built by the team. The idea is not only to educate about space but also to use GAUL’s equipment to offer fully conceptualized observation nights at Université Laval. These activities will be carried out in collaboration with different observatories in the Quebec region. Unlike GAUL’s other divisions, the mission of the Space Division team is more focused on learning than on competition. This new approach allows GAUL to broaden its horizons and reach a new audience. Moreover, this multidisciplinary division allows members to develop both pedagogical and practical skills.",
+    "goals_title": "Global Objectives",
+    "goals_text": "The division focuses its activities on organizing observation nights as well as building observation instruments. These two aspects allow the division to cover both an educational side and a design side, making it multifunctional.",
+    "observation_title": "Observation Nights",
+    "observation_text": "This division’s objective is therefore to organize observation activities and collaborate with other groups of people passionate about astronomy. These sessions give us the opportunity to test our new observation tools, share our passion, and most importantly, learn from the work of our colleagues. In short, these events help make our amateur telescopes more efficient while strengthening our commitment to space observation.",
+    "instrument_title": "Observation Instrument Fabrication",
+    "instrument_text": "Among the observation tools we design are, of course, telescopes, but also other instruments that make space observation engaging and fun. We are currently working on a refracting telescope measuring 1.5 m in length, as well as an automated tripod.",
+    "mission_title": "An Educational and Scientific Mission",
+    "mission_text": "The mission of the Space Division is to enable students of all levels to gain valuable experience in the field while passing on a passion for astronomy and astrophysics."
+  },
+  "stratos": {
+    "title": "Stratos Division",
+    "intro": "Space is a unique and hostile environment, yet stimulating due to the many constraints and challenges it imposes on engineers and scientists. Such an environment therefore represents an unparalleled opportunity for students who wish to take on challenges and learn how to ingeniously develop systems that operate within it. The STRATOS division is thus dedicated to projects aimed at reaching the highest layers of Earth’s atmosphere and beyond.The division designs, assembles, and launches a payload aboard a stratospheric balloon that can reach the stratosphere (around 30 km in altitude). The team takes part in all launch operations, flight tracking, payload recovery, and post-mission analysis.The STRATOS division also aims to test various experiments or electronic components intended to be integrated into our rockets.Certain long-term objectives are also in the sights of the STRATOS division and are the subject of a two-phase action plan.",
+    "phase1_title": "Phase I: Developing Skills",
+    "phase1_text": "Phase I consists of designing a stratospheric balloon, its payload, and all of its subsystems enabling it to perform a high-altitude flight lasting several hours. Different design iterations and multiple experiments may be carried out over time. Eventually, the division could participate in the Canadian Stratospheric Balloon Experiment Challenge, an initiative of SEDS-Canada. Canadian teams take part in this competition, each tasked with developing a payload that leverages the resources and characteristics of the stratosphere. The experiments are launched aboard a gondola provided by the Canadian Space Agency. Such experiments can cover fields such as astrophysics, Earth’s atmosphere and magnetic field, biology, remote sensing, and technology demonstrations. During this phase, expertise in the field and a pool of resources will be developed within the division. These two elements, along with a track record of launches, will facilitate the eventual transition to Phase II of the action plan. Of course, additional stratospheric balloon launches may also take place thanks to the experience gained from previous missions.",
+    "phase2_title": "Phase II: Advancing into Space",
+    "phase2_text": "The objective of Phase II is to go beyond the limits of Earth’s atmosphere. Indeed, Canadian and international competitions provide a framework for university students to design and launch nanosatellites known as CubeSats. However, at the moment, no serious steps have been taken regarding the division’s involvement in such a competition.The projects developed in Phase I will therefore make it possible to acquire the expertise necessary to participate in such an endeavor, especially since financial and material resources are particularly difficult to obtain when attempting to send a vehicle beyond Earth’s atmosphere.",
+    "phase3_title": "Educational Perspectives",
+    "phase3_text": "Over time, project members will deepen their knowledge in computer programming, electronics, flight theory and orbital mechanics, telecommunications, engineering project management, and more.The experience gained by students is a significant asset for their future careers. From the drawing board to launch, the knowledge acquired in the field of aerospace will help train the future engineers and scientists who will contribute to developing Canadian expertise in space."
+  },
+  "partenaires": {
+    "title": "Our Partners",
+    "intro": "We would like to express our sincere gratitude to our partners. Your support and trust enable us to bring our projects to life and move forward with ambition. Every contribution, whether large or small, plays an essential role in our success. Thanks to you, we have the energy and resources to take on new challenges and make our ideas a reality. Thank you for being an integral part of this journey with us.",
+    "sponsor_count_title": "Number of sponsors",
+    "plan_fr": "Partnership plan (FR)",
+    "plan_en": "Partnership plan (EN)",
+    "sponsor_unit": "partners"
+  },
+  "showcase": {
+    "title": "3D Models",
+    "intro": "Explore interactive 3D models."
+  },
+  "contact": {
+    "title": "Contact",
+    "text": "Contact us through the form."
+  },
+  "notfound": {
+    "title": "Page not found",
+    "back": "Back to main page"
+  }
+}

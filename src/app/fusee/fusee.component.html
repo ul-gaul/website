@@ -1,5 +1,5 @@
 <!-- HEADER -->
-<app-header [backgroundImg]="'./assets/img/page-fusee/main-fusee-2024.webp'" [title]="'Division Fusée'"></app-header>
+<app-header [backgroundImg]="'./assets/img/page-fusee/main-fusee-2024.webp'" [title]="('fusee.title' | translate)"></app-header>
 
 <!--INTRODUCTION-->
 <section class="section">
@@ -7,15 +7,7 @@
     <div class="row">
       <div class="title">
         <h5>
-          L'objectif principal de cette division est de concevoir et de fabriquer des fusées hautes puissances tout en
-          respectant les critères des compétitions auxquelles le groupe participe. Depuis sa reprise en 2012 jusqu'en
-          2019, le GAUL participe à la compétition Spaceport America Cup (SAC) organisé par l'Experimental Sounding Rocket
-          Assiciation (ESRA) en Utah et au Nouveau-Mexique. De plus, il participe à la compétition nationale Launch Canada
-          depuis 2023.<br><br>
-
-          C'est dans le cadre de ces deux compétitions que la division Fusée du GAUL développe ses fusées haute
-          puissance. Bien que les impacts de la COVID-19 n'ont pas épargné le GAUL, nos équipes sont motivées à viser
-          haut pour nos prochaines compétitions!<br><br>
+          {{ 'fusee.intro' | translate }}
         </h5>
       </div>
     </div>
@@ -26,7 +18,9 @@
 <section class="section section-dark">
   <div class="container">
     <div class="title">
-      <h2>Sous-Systèmes</h2>
+      <h2>
+        {{ 'fusee.subsystems_title' | translate }}
+      </h2>
     </div>
     <div class="row">
       <div class="title">
@@ -35,44 +29,21 @@
             <img src="./assets/img/page-fusee/excelsior-liftoff.webp" alt="Excelsior! en vol" height="450">
           </aside>
 
-          <h3>Aérostructure</h3><br>
-          Le groupe Aérostructure est responsable de la conception et de la fabrication des composantes structurelles
-          et de l'intégration des autres composantes dans la fusée. Les membres se consacrent au design et à la
-          fabrication du fuselage en composite, des ailerons, de l'intégration de la baie avionique, et du système de
-          récupération, c'est-à-dire le système de déploiement des parachutes et les parachutes eux-mêmes. Ce groupe
-          chapeaute également l'analyse des performances de vol par simulation et l'optimisation de la masse. Les
-          étudiants sont amenés à se familiariser avec divers logiciels d'analyse et de conception 3D.<br><br>
+          <h3>{{ 'fusee.aerostructure_title' | translate }}</h3><br>
+          {{ 'fusee.aerostructure_text' | translate }}<br><br>
 
           <aside class="img-left border">
             <img src="./assets/img/page-fusee/launchpad-highv.webp" alt="High V au lancement" height="450">
           </aside>
 
-          <h3>Avionique</h3><br>
-          Le groupe Avionique est responsable de la conception des circuits électroniques présents dans la fusée et au
-          sol. Les membres ont la charge de concevoir et de fabriquer un système d'acquisition des données de vol, un
-          système de transmission des données au sol et de fabriquer une station ayant la capacité de recevoir et
-          d'afficher ces informations. Les étudiants conçoivent également un système de déploiement des parachutes
-          pour un retour sécuritaire au sol de la fusée.<br><br>
+          <h3>{{ 'fusee.avionique_title' | translate }}</h3><br>
+          {{ 'fusee.avionique_text' | translate }}<br><br>
 
-          <h3>Propulsion</h3><br>
-          Le groupe Propulsion a comme mandat le choix du moteur commercial à utiliser pour chaque fusée. Les membres
-          de cette division analysent les besoins et s'assurent que le moteur choisi répond aux exigences de la
-          mission. Ils s'occupent ensuite d'établir la méthode d'intégration du moteur et de son assemblage dans la
-          fusée.<br><br>
-          Cette division est également responsable d'un des projets les plus ambitieux du GAUL : la conception et la
-          fabrication d'un moteur à carburant liquide. Ce projet a pour but le design et la simulation par ordinateur
-          des pièces composant le moteur afin d'en caractériser et d'optimiser ses performances. Un banc de tests doit
-          aussi être fabriqué pour réaliser des essais au sol.<br><br>
+          <h3>{{ 'fusee.propulsion_title' | translate }}</h3><br>
+          {{ 'fusee.propulsion_text' | translate }}<br><br>
 
-          <h3>Payload</h3><br>
-          Le groupe Payload est chargé de la conception et de la réalisation de la charge utile embarquée dans la fusée. 
-          Ses membres travaillent à développer des expériences scientifiques, technologiques ou éducatives qui seront intégrées 
-          au véhicule afin de recueillir des données ou de valider de nouveaux concepts en conditions réelles de vol. 
-          
-          Le mandat du groupe inclut la définition des objectifs expérimentaux, la conception mécanique et électronique de la 
-          charge utile, ainsi que son intégration dans la fusée tout en respectant les contraintes de masse, d’espace et de sécurité. 
-          Les étudiants participent ainsi à l’ensemble du cycle de développement d’un projet scientifique, depuis l’idéation jusqu’à 
-          l’analyse des résultats après récupération.<br><br>
+          <h3>{{ 'fusee.payload_title' | translate }}</h3><br>
+          {{ 'fusee.payload_text' | translate }}<br><br>
         </div>
       </div>
     </div>
@@ -84,7 +55,7 @@
   <div class="container">
     <div class="title">
       <h2>
-        Compétitions
+        {{ 'fusee.competitions_title' | translate }}
         <img src="./assets/img/page-fusee/logo-sac.webp" height="84" alt="Logo Spaceport America Cup">
         <img src="./assets/img/page-fusee/logo-lc.webp" height="84" alt="Logo Launch Canada">
       </h2>
@@ -104,9 +75,9 @@
       <div class="col-lg-6" id="fusee-details">
         <div class="fusee-details" *ngIf="selected">
           <h3>{{ selected.name }} <small class="text-muted">({{ selected.year }})</small></h3>
-          <p><strong>Compétition :</strong> {{ selected.competition || '—' }}</p>
-          <p><strong>Classement :</strong> {{ selected.ranking || '—' }}</p>
-          <p><strong>Altitude :</strong> {{ selected.altitude || '—' }}</p>
+          <p><strong>{{ 'fusee.competition_title' | translate }} :</strong> {{ selected.competition || '—' }}</p>
+          <p><strong>{{ 'fusee.ranking_title' | translate }} :</strong> {{ selected.ranking || '—' }}</p>
+          <p><strong>{{ 'fusee.altitude_title' | translate }} :</strong> {{ selected.altitude || '—' }}</p>
           <p>{{ selected.description }}</p>
           <img class="img-fluid mt-3" [src]="selected.image" [alt]="selected.name">
         </div>
