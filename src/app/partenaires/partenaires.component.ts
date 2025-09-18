@@ -12,7 +12,7 @@ import { TranslateService } from '../core/translate.service';
 })
 export class PartenairesComponent implements AfterViewInit {
   // Nombre de partenaires
-  partnersCount = 16;
+  partnersCount = 21;
   // Valeur affichée animée
   displayedCount = 0;
 
