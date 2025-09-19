@@ -51,6 +51,14 @@
           </a>
         </li>
         <li class="nav-item">
+          <!-- CHANGE LINK -->
+          <a class="nav-link d-flex" href="https://www.paypal.com/donate?hosted_button_id=REPLACE_WITH_YOUR_ID"
+             target="_blank" rel="noopener" title="Nous soutenir" aria-label="Nous soutenir">
+            <fa-icon [icon]="['fas', 'heart']"></fa-icon>
+            <span class="ms-1 d-none d-lg-inline">Nous soutenir</span>
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link d-flex" (click)="toggleLang()" role="button" aria-label="Changer la langue">
             <fa-icon [icon]="['fas', 'globe']"></fa-icon>
             <span class="ms-1 d-none d-lg-inline">{{ currentLang === 'fr' ? 'FR' : 'EN' }}</span>
