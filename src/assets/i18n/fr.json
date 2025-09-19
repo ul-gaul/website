@@ -5,6 +5,7 @@
     "espace": "Espace",
     "stratos": "Stratos",
     "partenaires": "Partenaires",
+    "support": "Nous soutenir",
     "showcase": "Vitrine",
     "contact": "Contact"
   },
@@ -70,6 +71,13 @@
     "plan_fr": "Plan de partenariat (FR)",
     "plan_en": "Plan de partenariat (EN)",
     "sponsor_unit": "partenaires"
+  },
+  "teams": {
+    "title": "Nos Équipes",
+    "intro": "Le Groupe Aéronautique de l’Université Laval rassemble des étudiants passionnés par l’aviation et l’ingénierie. Notre mission est de transformer l’intérêt académique en expériences concrètes en donnant la chance de concevoir, développer et tester des projets aéronautiques innovants. À travers ces initiatives, nous favorisons l’apprentissage pratique, la collaboration et le rayonnement de la communauté étudiante dans le domaine aérospatial.",
+    "join_title": "Nous joindre",
+    "join_text": "Pour nous rejoindre : remplissez le formulaire de contact, écrivez-nous à gaul@fsg.ulaval.ca ou venez à nos réunions hebdomadaires. Nous accueillons les étudiant·e·s de tous les programmes et niveaux.",
+    "join_cta": "Je veux faire partie de l'équipe du GAUL!"
   },
   "showcase": {
     "title": "Modèles 3D",

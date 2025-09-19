@@ -1,0 +1,61 @@
+<app-header
+  [backgroundImg]="'./assets/img/page-home/earth-horizon.webp'"
+  [title]="(('teams.title' | translate) || '').replace(' ', '<br>')">
+</app-header>
+
+<!-- Intro -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="title">
+        <p class="sponsor-intro">{{ 'teams.intro' | translate }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team sections -->
+<section class="section" *ngFor="let section of teamSections">
+  <div class="container">
+    <div class="title text-center">
+      <h2>{{ section.titleKey | translate }}</h2>
+      <p class="lead" *ngIf="section.lead">{{ section.lead | translate }}</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4" *ngFor="let m of section.members">
+        <div class="card team-card text-center">
+          <img class="card-img-top member-photo" [src]="m.photo" [alt]="m.name">
+          <div class="card-body">
+            <h5 class="card-title">{{ m.name }}</h5>
+            <p class="card-subtitle mb-2 text-muted">{{ m.role }}</p>
+            <p class="card-text">{{ m.bio }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- join -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="title text-center">
+      <h2>{{ 'teams.join_title' | translate }}</h2>
+    </div>
+    <div class="row">
+      <div class="title">
+        <p class="lead text-center">{{ 'teams.join_text' | translate }}</p>
+        <div class="d-flex justify-content-center mt-3">
+          <a href="https://www.facebook.com/groupeaerospatialul"
+             target="_blank"
+             rel="noopener"
+             aria-label=""
+             class="btn btn-primary btn-round text-white">
+            {{ 'teams.join_cta' | translate }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

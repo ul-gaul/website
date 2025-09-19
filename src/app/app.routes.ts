@@ -15,6 +15,7 @@ export const routes: Routes = [
   { path: 'fusee', loadComponent: () => import('./fusee/fusee.component').then(m => m.FuseeComponent) },
   { path: 'espace', loadComponent: () => import('./espace/espace.component').then(m => m.EspaceComponent) },
   { path: 'stratos', loadComponent: () => import('./stratos/stratos.component').then(m => m.StratosComponent) },
+  { path: 'teams', loadComponent: () => import('./teams/teams.component').then(m => m.TeamComponent) },
   { path: 'partenaires', loadComponent: () => import('./partenaires/partenaires.component').then(m => m.PartenairesComponent) },
   { path: 'contact', loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent) },
   { path: 'showcase', loadComponent: () => import('./showcase/showcase.component').then(m => m.ShowcaseComponent) },

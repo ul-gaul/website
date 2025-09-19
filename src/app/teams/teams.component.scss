@@ -1,0 +1,15 @@
+@use "../../assets/paper-kit/variables" as variables;
+
+.team-card {
+  margin-bottom: 1.5rem;
+  border: 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  .member-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .card-body {
+    padding: 1rem;
+  }
+}

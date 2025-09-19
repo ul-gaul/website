@@ -9,7 +9,7 @@
           </div>
         </ng-container>
         <ng-template #titleText>
-          <h1 class="presentation-title">{{ title }}</h1>
+          <h1 class="presentation-title" [innerHTML]="title"></h1>
         </ng-template>
       </div>
       <h1 *ngIf="subTitle" class="presentation-subtitle text-center">{{ subTitle }}</h1>
