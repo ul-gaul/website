@@ -1,0 +1,106 @@
+@use "../../../assets/paper-kit/variables" as variables;
+
+/* footer minimaliste sans Bootstrap */
+.site-footer {
+  background: variables.$black-bg;
+  color: variables.$white-color;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  font-family: variables.$font-family-sans-serif;
+  font-size: 0.95rem;
+}
+
+.site-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* colonnes */
+.site-footer__col {
+  flex: 1 1 220px;
+  min-width: 180px;
+}
+
+/* contact */
+.site-footer__brand {
+  font-weight: variables.$font-weight-bold;
+  margin-bottom: 0.5rem;
+  color: variables.$white-color;
+}
+
+.site-footer__address { margin: 0; }
+
+.site-footer__line {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: rgba(255,255,255,0.9);
+  margin: 0.45rem 0;
+}
+
+.icon { fill: currentColor; opacity: 0.95; }
+
+/* email */
+.site-footer__email {
+  color: variables.$white-color;
+  font-weight: 600;
+  text-decoration: none;
+}
+.site-footer__email:hover { text-decoration: underline; opacity: 0.95; }
+
+/* nav links */
+.site-footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.site-footer__link {
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: none;
+}
+.site-footer__link:hover { text-decoration: underline; }
+
+.site-footer__credits { text-align: right; color: rgba(255,255,255,0.85); }
+
+/* responsive*/
+@media (max-width: 768px) {
+  .site-footer__inner { align-items: center; text-align: center; }
+  .site-footer__credits { text-align: center; margin-top: .5rem; }
+}
+
+.site-footer__nav .site-footer__links.horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer__nav .site-footer__links.horizontal li {
+  display: inline-block;
+}
+
+/* mobile: stack and center */
+@media (max-width: 768px) {
+  .site-footer__nav .site-footer__links.horizontal {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+  }
+  .site-footer__credits { align-items: center !important; text-align: center; }
+}
