@@ -1,3 +1,4 @@
+<!-- HEADER -->
 <app-header
   [backgroundImg]="'./assets/img/page-home/earth-horizon.webp'"
   [title]="(('teams.title' | translate) || '').replace(' ', '<br>')">
@@ -14,30 +15,60 @@
   </div>
 </section>
 
-<!-- Team sections -->
-<section class="section" *ngFor="let section of teamSections">
+<!-- Directeur -->
+<section class="section">
   <div class="container">
     <div class="title text-center">
-      <h2>{{ section.titleKey | translate }}</h2>
-      <p class="lead" *ngIf="section.lead">{{ section.lead | translate }}</p>
+      <h2><fa-icon class="me-2" [icon]="directorIcon"></fa-icon>{{ 'teams.director_title' | translate }}</h2>
     </div>
-
-    <div class="row">
-      <div class="col-md-4" *ngFor="let m of section.members">
-        <div class="card team-card text-center">
-          <img class="card-img-top member-photo" [src]="m.photo" [alt]="m.name">
-          <div class="card-body">
-            <h5 class="card-title">{{ m.name }}</h5>
-            <p class="card-subtitle mb-2 text-muted">{{ m.role }}</p>
-            <p class="card-text">{{ m.bio }}</p>
-          </div>
+    <div class="container d-flex justify-content-center">
+      <div class="card" style="max-width:320px;">
+        <img class="card-img-top member-photo" [src]="director.photo" [alt]="director.name">
+        <div class="card-body text-center">
+          <p class="card-subtitle mb-2 text-muted member-role">{{ director.role }}</p>
         </div>
+        <a
+          class="btn btn-primary w-100"
+          [href]="director.linkedin ? director.linkedin : '#'"
+          target="_blank"
+          rel="noopener"
+          role="button"
+          [attr.aria-label]="('teams.view_profile' | translate) + ' ' + director.name">
+          {{ director.name }}
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- join -->
+<!-- Teams sections -->
+<section class="section" *ngFor="let section of teamSections">
+  <div class="container">
+    <div class="title text-center">
+      <h2><fa-icon class="me-2" [icon]="getIcon(section)"></fa-icon>{{ section.titleKey | translate }}</h2>
+      <p class="lead" *ngIf="section.lead">{{ section.lead | translate }}</p>
+    </div>
+    <div class="container grid">
+      <div class="card" *ngFor="let m of section.members">
+        <img class="card-img-top member-photo" [src]="m.photo" [alt]="m.name">
+        <div class="card-body text-center">
+          <p class="card-subtitle mb-2 text-muted member-role">{{ m.role }}</p>
+        </div>
+        <a
+          class="btn btn-primary w-100"
+          [href]="m.linkedin ? m.linkedin : '#'"
+          target="_blank"
+          rel="noopener"
+          role="button"
+          [attr.aria-label]="('teams.view_profile' | translate) + ' ' + m.name">
+          {{ m.name }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Join Section -->
 <section class="section section-dark">
   <div class="container">
     <div class="title text-center">

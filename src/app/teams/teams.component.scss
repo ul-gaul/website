@@ -1,15 +1,97 @@
 @use "../../assets/paper-kit/variables" as variables;
 
-.team-card {
-  margin-bottom: 1.5rem;
-  border: 0;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  .member-photo {
+$card-size-small: 200px;
+$card-size-medium: 320px;
+
+.grid {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-auto-rows: 260px;
+  gap: 1rem;
+
+  @media screen and (max-width: 992px) {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-auto-rows: 160px;
+  }
+}
+
+.card {
+  margin: 0 0 18px 0;
+  width: 100%;
+  max-width: 320px;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media screen and (max-width: 992px) {
+    max-width: 180px;
+    min-width: 0;
+  }
+
+  img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 140px;
+    object-fit: contain;
+    aspect-ratio: 16/9;
+    margin-bottom: 1rem;
+    background: variables.$white-color;
   }
+
   .card-body {
-    padding: 1rem;
+    padding: 0 1rem 0.75rem;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
+
+  .card-title {
+    margin: 0 0 .25rem;
+    font-size: 1rem;
+    font-weight: variables.$font-weight-bold;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+    color: variables.$font-color;
+    margin-top: .5rem;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+
+  .member-role {
+    margin-top: auto;
+    padding-bottom: 0.5rem;
+    color: variables.$card-muted-color;
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    border-radius: 0 0 8px 8px;
+    padding: .75rem 1rem;
+    text-transform: uppercase;
+    font-weight: variables.$font-weight-bold;
+  }
+}
+
+/* small photo override */
+.member-photo {
+  background: variables.$white-color;
 }

@@ -1,0 +1,6 @@
+section,titleKey,name,role,photo,linkedin,lead
+director,teams.director_title,Jean Dupont,Président,./assets/img/team/jean.webp,https://www.linkedin.com/in/jeandupont/,
+fusee.title,fusee.title,Marc Dupont,Chef Fusée,./assets/img/team/marc.webp,https://www.linkedin.com/in/marcdupont/,
+fusee.title,fusee.title,Jean Tremblay,Aérostructure,./assets/img/team/jean.webp,https://www.linkedin.com/in/jeantremblay/,
+espace.title,espace.title,Sophie Gagnon,Responsable Avionique,./assets/img/team/sophie.webp,https://www.linkedin.com/in/sophiegagnon/,
+stratos.title,stratos.title,Alice Tremblay,Responsable Stratos,./assets/img/team/alice.webp,https://www.linkedin.com/in/alicetremblay/,
