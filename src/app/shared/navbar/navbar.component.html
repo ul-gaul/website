@@ -28,6 +28,15 @@
       </ul>
       <ul class="navbar-nav ms-0">
         <li class="nav-item">
+          <a class="nav-link d-flex align-items-center"
+             routerLink="/events"
+             href="/events"
+             (click)="onEventsClick($event)"
+             [attr.aria-label]="('nav.events' | translate)">
+            <fa-icon [icon]="['fas','calendar-alt']"></fa-icon>
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link d-flex" title="Page Facebook" href="https://www.facebook.com/groupeaerospatialul"
             target="_blank">
             <fa-icon [icon]="['fab', 'facebook-square']"></fa-icon>

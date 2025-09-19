@@ -1,0 +1,166 @@
+@use "sass:color" as color;
+@use "../../assets/paper-kit/variables" as variables;
+
+.section { padding-top: 2rem; }
+
+.calendar {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.calendar-controls {
+  .btn.btn-icon {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    color: variables.$default-color;
+    background: transparent;
+    border-radius: 6px;
+  }
+
+  .btn.btn-icon svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    fill: none;
+  }
+
+  .btn.btn-icon.btn-primary {
+    color: variables.$white-color;
+  }
+}
+
+.fa-icon, fa-icon {
+  font-size: 1.05rem;
+}
+.calendar {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.weekdays, .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.weekday {
+  text-align: center;
+  font-weight: 700;
+  padding: .5rem 0;
+  background: rgba(0,0,0,0.03);
+}
+.day {
+  min-height: 90px;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: .5rem;
+  box-sizing: border-box;
+}
+.day.empty {
+  background: rgba(0,0,0,0.02);
+  color: rgba(0,0,0,0.35);
+}
+.day-number {
+  font-weight: 600;
+  margin-bottom: .25rem;
+}
+.day-events {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: .9rem;
+}
+.day-events li {
+  background: rgba(205,45,44,0.08);
+  margin-bottom: .25rem;
+  padding: .15rem .35rem;
+  border-radius: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.next-event-countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.25rem;
+
+  .countdown-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1rem 2rem;
+    background-color: #cd2d2c !important;
+    background: #cd2d2c !important;
+    color: variables.$white-color !important;
+    border-radius: 999px;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: 0.6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    border: 1px solid color.adjust(#cd2d2c, $lightness: -10%) !important;
+    line-height: 1;
+  }
+
+  .pill-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    min-width: 240px;
+  }
+
+  .pill-title .event-name {
+    font-size: 1.15rem;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .pill-title .small {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.9);
+    text-transform: none;
+  }
+
+  .pill-timer {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: variables.$white-color !important;
+    color: #cd2d2c !important;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-weight: 800;
+    min-width: 160px;
+    justify-content: center;
+  }
+
+  .timer-compact {
+    font-variant-numeric: tabular-nums;
+    font-size: 1.05rem;
+  }
+
+  .timer-sep {
+    color: rgba(0,0,0,0.12);
+    font-weight: 800;
+    font-size: 1.05rem;
+  }
+
+  /* responsive */
+  @media (max-width: 575px) {
+    .countdown-pill {
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      min-width: 220px;
+    }
+    .pill-title { align-items: center; min-width: 0; text-align: center; }
+    .pill-timer { min-width: 0; padding: 0.3rem .5rem; }
+  }
+}

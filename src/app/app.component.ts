@@ -10,7 +10,7 @@ import { OnInit, OnDestroy } from '@angular/core';
     selector: 'app-root',
     imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent],
     templateUrl: './app.component.html',
-    styleUrl: './app.component.scss'
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy{
   // État de la sidebar (true = ouverte, false = fermée)
@@ -57,9 +57,13 @@ export class AppComponent implements OnInit, OnDestroy{
   }
 
   ngOnDestroy(): void {
-    if (this.cursorDot) document.body.removeChild(this.cursorDot);
-    if (this.cursorOutline) document.body.removeChild(this.cursorOutline);
     window.removeEventListener('mousemove', this.mouseMoveHandler);
+    if (this.cursorDot && this.cursorDot.parentElement) {
+      this.cursorDot.parentElement.removeChild(this.cursorDot);
+    }
+    if (this.cursorOutline && this.cursorOutline.parentElement) {
+      this.cursorOutline.parentElement.removeChild(this.cursorOutline);
+    }
   }
 
   // Ferme la sidebar quand on clique sur la page

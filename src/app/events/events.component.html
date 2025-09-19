@@ -1,0 +1,77 @@
+<!-- HEADER -->
+<app-header [backgroundImg]="'./assets/img/page-home/earth-horizon.webp'" [title]="('events.title' | translate)"></app-header>
+
+<!-- INTRO -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="row">
+      <div class="title">
+        <h5>{{ 'events.intro' | translate }}</h5>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTDOWN + CALENDAR -->
+<section class="section mt-5">
+  <div class="container">
+
+    <!-- Countdown -->
+    <div *ngIf="nextEvent; else noEventTpl" class="next-event-countdown text-center mb-5">
+      <div class="countdown-pill" role="group" [attr.aria-label]="('events.next_event' | translate)">
+        <div class="pill-title">
+          <div class="small text-muted d-none d-md-block">{{ 'events.next_event' | translate }}</div>
+          <div class="event-name">{{ nextEvent.title }}</div>
+        </div>
+        <div class="pill-timer" aria-live="polite" aria-atomic="true">
+          <span class="timer-compact">{{ countdown.days }}j</span>
+          <span class="timer-sep">:</span>
+          <span class="timer-compact">{{ countdown.hours }}h</span>
+          <span class="timer-sep">:</span>
+          <span class="timer-compact">{{ countdown.minutes }}m</span>
+          <span class="timer-sep">:</span>
+          <span class="timer-compact">{{ countdown.seconds }}s</span>
+        </div>
+      </div>
+      <div class="mt-1 text-muted small d-md-none">{{ nextEventDate?.toLocaleDateString() }}</div>
+    </div>
+
+    <ng-template #noEventTpl>
+      <div class="text-center mb-3 text-muted">{{ 'events.no_event' | translate }}</div>
+    </ng-template>
+
+    <!-- Calendar controls -->
+    <div class="calendar-controls d-flex justify-content-center align-items-center mb-3">
+      <button class="btn btn-outline-secondary me-2 btn-icon" (click)="prevMonth()" aria-label="Mois précédent" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
+          <path d="M15 6 L9 12 L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </button>
+
+      <div class="mx-2 fw-bold">{{ ( 'events.month_names' | translate )[viewMonth] }} {{ viewYear }}</div>
+
+      <button class="btn btn-outline-secondary ms-2 btn-icon" (click)="nextMonth()" aria-label="Mois suivant" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
+          <path d="M9 6 L15 12 L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Calendar grid -->
+    <div class="calendar">
+      <div class="weekdays">
+        <div *ngFor="let w of ( 'events.day_names' | translate )" class="weekday">{{ w }}</div>
+      </div>
+
+      <div class="days">
+        <div *ngFor="let day of calendarDays" class="day" [class.empty]="!day.iso">
+          <div class="day-number" *ngIf="day.d">{{ day.d }}</div>
+          <ul class="day-events" *ngIf="day.events.length">
+            <li *ngFor="let e of day.events" title="{{ e.desc || '' }}">{{ e.title }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

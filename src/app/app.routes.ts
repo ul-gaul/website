@@ -19,5 +19,6 @@ export const routes: Routes = [
   { path: 'partenaires', loadComponent: () => import('./partenaires/partenaires.component').then(m => m.PartenairesComponent) },
   { path: 'contact', loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent) },
   { path: 'showcase', loadComponent: () => import('./showcase/showcase.component').then(m => m.ShowcaseComponent) },
+  { path: 'events', loadComponent: () => import('./events/events.component').then(m => m.EventsComponent) },
   { path: '**', loadComponent: () => import('./page-not-found/page-not-found.component').then(m => m.PageNotFoundComponent) },
 ];

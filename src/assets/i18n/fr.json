@@ -5,6 +5,7 @@
     "espace": "Espace",
     "stratos": "Stratos",
     "partenaires": "Partenaires",
+    "events": "Événements",
     "support": "Nous soutenir",
     "showcase": "Vitrine",
     "contact": "Contact"
@@ -20,11 +21,23 @@
     "space_title": "ESPACE",
     "stratos_title": "STRATOS",
     "partners_button": "Liste des partenaires",
+    "events_button": "Événements à venir",
     "partenaires_text": "Le Groupe Aérospatial de l'Université Laval ne peut évidemment pas construire d'instruments d'observation, de ballons stratosphériques ou de fusées pour représenter l'Université Laval dans des compétitions internationales sans l'aide précieuse de ses partenaires. Grâce à leur générosité et à leur confiance, nous pouvons nourrir la passion des étudiants pour l'espace. Leur appui joue un rôle crucial dans la formation de la prochaine génération d'ingénieurs et de chercheurs passionnés, tout en contribuant à renforcer l'expertise québécoise et canadienne dans un secteur clé de haute technologie. Merci de nous accompagner dans cette mission ambitieuse et visionnaire !",
     "photo_section_title": "En Photo",
     "history_title": "Histoire",
     "history_subtitle": "Depuis sa fondation, en 1993...",
     "history_text": "Le GAUL (Groupe Aérospatial de l'Université Laval) fut fondé en 1993 par un étudiant de génie mécanique passionné par le domaine aérospatial. Ce dernier a regroupé des étudiants de la Faculté des sciences et de génie qui partageaient eux aussi un intérêt envers cette science. C'est à cette période que se créa un partenariat avec le Centre de Recherche et de Développement de la Défense du Canada à Valcartier qui dura plusieurs années. Le groupe est resté actif jusqu'en 2008 avant d'être repris par des étudiants en 2012 et continue ses activités jusqu'à ce jour. Les étudiants participant aux divers projets proposés par le GAUL sont amenés à concevoir et à fabriquer des fusées hautes puissances, à participer à un projet de ballon-sonde ainsi qu'à développer divers instruments d'observation astronomiques. Ces projets multidisciplinaires permettent aux étudiants de différents programmes de collaborer et de mettre en valeur leurs connaissances spécifiques. Le GAUL offre l'opportunité à ses membres d'appliquer leurs connaissances acquises dans les cours durant leur parcours universitaire tout en développant des habiletés essentielles à l'ingénierie et à la recherche telles que l'esprit d'équipe, la résolution de problèmes et la gestion de projets. Le GAUL fait maintenant partie d'une communauté canadienne grandissante de projets étudiants reliés à l'espace tout en bénéficiant d'un partenariat exceptionnel avec de nombreux commanditaires qui supportent le groupe."
+  },
+  "events": {
+    "title": "Événements",
+    "intro": "Ici, vous pourrez retrouver toutes les dates importantes, les événements à venir et les moments clés à ne pas manquer. C’est l’endroit idéal pour rester organisé et avoir une vue d’ensemble sur ce qui s’en vient.",
+    "next_event": "Prochain événement.",
+    "no_event": "Aucun événement à venir.",
+    "month_names": [
+      "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+      "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+    ],
+    "day_names": ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"]
   },
   "fusee": {
     "title": "Division Fusée",

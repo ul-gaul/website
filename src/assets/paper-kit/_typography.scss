@@ -100,9 +100,8 @@ blockquote small{
 // Pulsing Heart (footer)
 .heart {
   color: #EB5E28;
-  animation: heathing 1s ease infinite,;
+  animation: heathing 1s ease infinite;
 }
-
 @keyframes heathing {
   0% { transform: scale( .75 ); }
   20% { transform: scale( 1 ); }
@@ -111,6 +110,7 @@ blockquote small{
   80% { transform: scale( .75 ); }
   100% { transform: scale( .75 ); }
 }
+
 .footer .credits,
 .footer-nav{
     line-height: 85px;
