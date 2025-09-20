@@ -1,7 +1,8 @@
-date,title,desc
-2025-09-11,Recrutement 2025-2026,"Recrutement 2025-2026"
-2025-09-16,Rencontre de divisions,"Présentation des divisions"
-2025-09-18,Rencontre de divisions,"Présentation des divisions"
-2026-05-31,FAR-OUT, Compétition FAR-OUT 2026 - Lancement Fusée liquide
-2026-06-20,IREC, Compétition IREC 2026 - Lancement Fusée 45k
-2026-08-18,LAUNCH CANADA, Compétition Launch Canada 2026 - Lancement Fusée 100k
+start_date,end_date,title,desc,link
+2025-09-11,2025-09-11,Recrutement 2025-2026,"Recrutement 2025-2026",
+2025-09-16,2025-09-16,Rencontre de divisions,"Présentation des divisions",
+2025-09-18,2025-09-18,Rencontre de divisions,"Présentation des divisions",
+2025-10-17,2025-10-18,Ciel d'Octobre,"Observation du ciel - Espace", https://www.sapm.qc.ca/activites,
+2026-05-27,2026-06-01,FAR-OUT,"Compétition FAR-OUT 2026 - Lancement Fusée liquide",https://www.faroutlaunch.org/,
+2026-06-20,2026-07-04,IREC,"Compétition IREC 2026 - Lancement Fusée 45k",https://www.soundingrocket.org/,
+2026-08-18,2026-08-27,LAUNCH CANADA,"Compétition Launch Canada 2026 - Lancement Fusée 100k",https://www.launchcanada.org/,

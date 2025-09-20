@@ -4,7 +4,18 @@ import { HeaderComponent } from '../shared/header/header.component';
 import { TranslatePipe } from '../core/translate.pipe';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-type EventItem = { date: string; title: string; desc?: string; };
+type EventItem = {
+  // raw CSV
+  start_date: string;
+  end_date?: string;
+  title: string;
+  desc?: string;
+  link?: string;
+
+  // parsed helpers
+  start?: Date;
+  end?: Date;
+};
 
 @Component({
     selector: 'app-events',
@@ -17,7 +28,7 @@ export class EventsComponent implements OnInit, OnDestroy {
   constructor(private http: HttpClient) { }
 
   events: EventItem[] = [];
- 
+
   private loadEventsFromCsv(): void {
     this.http.get('/assets/docs/events.csv', { responseType: 'text' }).subscribe({
       next: (txt: string) => {
@@ -26,17 +37,32 @@ export class EventsComponent implements OnInit, OnDestroy {
         const sep = lines[0].includes(';') ? ';' : ',';
         const splitter = new RegExp(`${sep}(?=(?:[^"]*"[^"]*")*[^"]*$)`);
         const header = lines.shift()!.split(splitter).map((h: string) => h.replace(/^"|"$/g, '').toLowerCase());
-        const dateIdx = header.indexOf('date');
+
+        const startIdx = header.indexOf('start_date') >= 0 ? header.indexOf('start_date') : header.indexOf('date');
+        const endIdx = header.indexOf('end_date') >= 0 ? header.indexOf('end_date') : -1;
         const titleIdx = header.indexOf('title');
         const descIdx = header.indexOf('desc');
+        const linkIdx = header.indexOf('link') >= 0 ? header.indexOf('link') : (header.indexOf('url') >= 0 ? header.indexOf('url') : -1);
+
         const parsed: EventItem[] = lines.map((l: string) => {
           const cols = l.split(splitter).map((c: string) => c.replace(/^"|"$/g, ''));
-          return {
-            date: (cols[dateIdx] || '').trim(),
+          const startRaw = (cols[startIdx] || '').trim();
+          const endRaw = endIdx >= 0 ? (cols[endIdx] || '').trim() : '';
+          const linkRaw = linkIdx >= 0 ? (cols[linkIdx] || '') : '';
+
+          const linkClean = (linkRaw || '').toString().replace(/^"|"$/g, '').trim().replace(/,+$/g, '');
+          const ev: EventItem = {
+            start_date: startRaw,
+            end_date: endRaw || startRaw,
             title: (cols[titleIdx] || '').trim(),
-            desc: (cols[descIdx] || '').trim()
+            desc: (cols[descIdx] || '').trim(),
+            link: linkClean ? linkClean : undefined
           };
-        }).filter((e: EventItem) => !!(e.date && e.title));
+          ev.start = this.parseDateISO(ev.start_date);
+          ev.end = this.parseDateISO(ev.end_date || ev.start_date);
+          return ev;
+        }).filter((e: EventItem) => !!(e.start && e.title));
+
         if (parsed.length) {
           this.events = parsed;
           this.findNextEvent();
@@ -45,7 +71,43 @@ export class EventsComponent implements OnInit, OnDestroy {
       error: (err) => console.warn('Failed to load events CSV', err)
     });
   }
-  
+
+  public eventTitleForDay(e: EventItem, iso?: string): string {
+    if (!iso) return e.title;
+    const s = e.start || this.parseDateISO(e.start_date);
+    const en = e.end || this.parseDateISO(e.end_date || e.start_date);
+    const ds = s.toISOString().slice(0,10);
+    const de = en.toISOString().slice(0,10);
+    if (ds !== de) {
+      if (iso === ds) return `${e.title} (start)`;
+      if (iso === de) return `${e.title} (end)`;
+    }
+    return e.title;
+  }
+
+  onDayClick(day: { d: number; iso?: string; events: EventItem[] }) {
+    if (!day || !day.events || !day.events.length) return;
+    const evWithLink = day.events.find(e => !!e.link);
+    if (evWithLink && evWithLink.link) {
+      window.open(this.normalizeUrl(evWithLink.link), '_blank', 'noopener');
+      return;
+    }
+    if (day.events.length === 1) {
+      console.debug('[Events] clicked single event without link', day.events[0]);
+    } else {
+      console.debug('[Events] clicked multiple events, none with link');
+    }
+  }
+
+  public normalizeUrl(link?: string): string {
+    if (!link) return '';
+    let url = ('' + link).replace(/^"|"$/g, '').trim().replace(/,+$/g, '');
+    if (!/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(url)) {
+      url = 'https://' + url;
+    }
+    return url;
+  }
+
   viewYear = new Date().getFullYear();
   viewMonth = new Date().getMonth(); // 0-11
 
@@ -69,14 +131,21 @@ export class EventsComponent implements OnInit, OnDestroy {
   private findNextEvent() {
     const todayStart = new Date();
     todayStart.setHours(0,0,0,0);
+
     const future = this.events
-      .map((e: EventItem) => ({ e, d: this.parseDateISO(e.date) }))
-      .filter((x: { e: EventItem; d: Date }) => x.d.getTime() >= todayStart.getTime())
-      .sort((a: { e: EventItem; d: Date }, b: { e: EventItem; d: Date }) => a.d.getTime() - b.d.getTime());
+      .map((e: EventItem) => ({ e, start: e.start || new Date(0), end: e.end || e.start || new Date(0) }))
+      .filter(x => x.end.getTime() >= todayStart.getTime())
+      .sort((a, b) => a.start.getTime() - b.start.getTime() || a.end.getTime() - b.end.getTime());
 
     if (future.length) {
       this.nextEvent = future[0].e;
-      this.nextEventDate = future[0].d;
+
+      const now = new Date();
+      if (future[0].start.getTime() > now.getTime()) {
+        this.nextEventDate = future[0].start;
+      } else {
+        this.nextEventDate = future[0].end;
+      }
       console.debug('[Events] nextEvent found', this.nextEvent, this.nextEventDate);
       this.updateCountdown();
     } else {
@@ -89,7 +158,6 @@ export class EventsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadEventsFromCsv();
-    this.findNextEvent();
     this.intervalId = setInterval(() => this.updateCountdown(), 1000);
   }
 
@@ -102,7 +170,6 @@ export class EventsComponent implements OnInit, OnDestroy {
     const now = new Date();
     const diff = this.nextEventDate.getTime() - now.getTime();
     if (diff <= 0) {
-      // événement atteint : recalculer le prochain
       this.findNextEvent();
       return;
     }
@@ -133,8 +200,17 @@ export class EventsComponent implements OnInit, OnDestroy {
     for (let i = 0; i < total; i++) {
       const dayIndex = i - offset + 1;
       if (dayIndex >= 1 && dayIndex <= daysInMonth) {
-        const iso = new Date(this.viewYear, this.viewMonth, dayIndex).toISOString().slice(0, 10);
-        const evs = this.events.filter((e: EventItem) => e.date === iso);
+        const dateObj = new Date(this.viewYear, this.viewMonth, dayIndex);
+        const iso = dateObj.toISOString().slice(0, 10);
+        // include events whose [start..end] covers this date
+        const evs = this.events.filter((e: EventItem) => {
+          const s = e.start || this.parseDateISO(e.start_date);
+          const en = e.end || this.parseDateISO(e.end_date || e.start_date);
+          // normalize to yyyy-mm-dd by comparing yyyy-mm-dd strings
+          const ds = s.toISOString().slice(0,10);
+          const de = en.toISOString().slice(0,10);
+          return iso >= ds && iso <= de;
+        });
         days.push({ d: dayIndex, iso, events: evs });
       } else {
         days.push({ d: 0, iso: undefined, events: [] });

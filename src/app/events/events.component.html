@@ -1,4 +1,3 @@
-<!-- HEADER -->
 <app-header [backgroundImg]="'./assets/img/page-home/earth-horizon.webp'" [title]="('events.title' | translate)"></app-header>
 
 <!-- INTRO -->
@@ -64,14 +63,48 @@
       </div>
 
       <div class="days">
-        <div *ngFor="let day of calendarDays" class="day" [class.empty]="!day.iso">
+        <div *ngFor="let day of calendarDays"
+             class="day"
+             [class.empty]="!day.iso"
+             role="button"
+             [attr.tabindex]="day.iso ? 0 : -1"
+             (click)="day.iso ? onDayClick(day) : null"
+             [attr.aria-label]="day.iso ? ('events.date_label' | translate) + ' ' + day.iso : null">
           <div class="day-number" *ngIf="day.d">{{ day.d }}</div>
           <ul class="day-events" *ngIf="day.events.length">
-            <li *ngFor="let e of day.events" title="{{ e.desc || '' }}">{{ e.title }}</li>
+            <li *ngFor="let e of day.events" title="{{ e.desc || '' }}">
+              <a *ngIf="e.link"
+                 [href]="normalizeUrl(e.link)"
+                 target="_blank"
+                 rel="noopener"
+                 (click)="$event.stopPropagation()">
+                {{ eventTitleForDay(e, day.iso) }}
+              </a>
+              <span *ngIf="!e.link">
+                {{ eventTitleForDay(e, day.iso) }}
+              </span>
+            </li>
           </ul>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
+<section class="section section-dark">
+  <div class="container">
+    <!-- last event -->
+    <div class="recent-event">
+      <h4 class="recent-title">{{ 'events.last_event' | translate }}</h4>
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/THQY0V3Uhkg?rel=0&modestbranding=1&playsinline=1"
+          title="IREC 2025"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
   </div>
 </section>

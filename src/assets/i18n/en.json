@@ -37,7 +37,8 @@
       "January", "February", "March", "April", "May", "June",
       "July", "August", "September", "October", "November", "December"
     ],
-    "day_names": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    "day_names": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "last_event": "Latest Event."
   },
   "fusee": {
     "title": "Rocket Division",

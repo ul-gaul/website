@@ -82,6 +82,18 @@
   white-space: nowrap;
 }
 
+.day-events li a {
+  color: variables.$font-color;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.day-events li a:hover,
+.day-events li a:focus {
+  color: variables.$font-color;
+  text-decoration: none;
+}
+
 .next-event-countdown {
   display: flex;
   justify-content: center;
@@ -162,5 +174,36 @@
     }
     .pill-title { align-items: center; min-width: 0; text-align: center; }
     .pill-timer { min-width: 0; padding: 0.3rem .5rem; }
+  }
+}
+
+.recent-event {
+  margin-top: 2rem;
+  color: variables.$white-color;
+  padding: 1rem;
+  border-radius: 8px;
+
+  .recent-title {
+    margin-bottom: .5rem;
+    font-weight: 700;
+    color: variables.$white-color !important;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.35);
+  }
+
+  .video-wrap {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
   }
 }
