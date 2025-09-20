@@ -28,17 +28,79 @@ export class TeamComponent implements OnInit {
   director: any = { name: '', role: '', photo: '', linkedin: '' };
   teamSections: Array<any> = [];
 
-  // <-- Single constructor: register icons + inject HttpClient
   constructor(private faLib: FaIconLibrary, private http: HttpClient) {
     this.faLib.addIcons(faLinkedin, faRocket, faGlobe, faCloud, faUserTie, faUser);
   }
 
   ngOnInit(): void {
-    // CSV
-    this.http.get('assets/docs/members.csv', { responseType: 'text' }).subscribe({
-      next: (csvText) => this.parseCsvToSections(csvText),
-      error: (err) => console.error('Failed loading members CSV', err)
+    this.http.get('assets/docs/members.csv', { responseType: 'text' }).subscribe(csv => {
+      const parsed = this.parseCsv(csv);
+      if (!parsed || parsed.length === 0) return;
+
+      const header = parsed[0].map(h => h.trim());
+      const rows = parsed.slice(1).map(r => {
+        const obj: any = {};
+        header.forEach((h, i) => obj[h] = (r[i] ?? '').trim());
+        return obj;
+      });
+
+      const sectionsMap: Record<string, any> = {};
+
+      rows.forEach(r => {
+        let sectionKey = (r['section'] || '').trim();
+        if (!sectionKey) return;
+        if (sectionKey.includes('.')) sectionKey = sectionKey.split('.')[0];
+
+        if (sectionKey === 'director') {
+          this.director = {
+            name: r.name || this.director.name,
+            role: r.role || this.director.role,
+            photo: r.photo || this.director.photo,
+            linkedin: r.linkedin || this.director.linkedin
+          };
+          return;
+        }
+
+        let subsectionKey = (r['subsection'] || '').trim();
+        if (subsectionKey.includes('.') || subsectionKey === sectionKey) subsectionKey = '';
+
+        if (!sectionsMap[sectionKey]) {
+          sectionsMap[sectionKey] = { titleKey: r['titleKey'] || sectionKey, lead: r['lead'] || '', members: [], subsections: {} };
+        }
+
+        sectionsMap[sectionKey].members.push(r);
+
+        if (subsectionKey) {
+          if (!sectionsMap[sectionKey].subsections[subsectionKey]) {
+            sectionsMap[sectionKey].subsections[subsectionKey] = { key: subsectionKey, title: this.prettySubsection(subsectionKey), members: [] };
+          }
+          sectionsMap[sectionKey].subsections[subsectionKey].members.push(r);
+        }
+      });
+
+      this.teamSections = Object.keys(sectionsMap).map(k => {
+        const s = sectionsMap[k];
+        const subsectionsArr = Object.keys(s.subsections).map(sk => s.subsections[sk]);
+        return { key: k, titleKey: s.titleKey, members: s.members, subsections: subsectionsArr, lead: s.lead };
+      });
+    }, err => {
+      console.error('Failed to load members.csv', err);
     });
+  }
+
+  private parseCsv(text: string): string[][] {
+    if (!text) return [];
+    const lines = text.split(/\r?\n/).filter(l => l.trim().length > 0);
+    const reSplit = /,(?=(?:[^"]*"[^"]*")*[^"]*$)/;
+    return lines.map(line => line.split(reSplit).map(cell => {
+      let v = cell.trim();
+      if (v.startsWith('"') && v.endsWith('"')) v = v.slice(1, -1).replace(/""/g, '"');
+      return v;
+    }));
+  }
+
+  private prettySubsection(key: string) {
+    return key.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
   }
 
   getIcon(section: any): IconDefinition {

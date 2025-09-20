@@ -91,7 +91,92 @@ $card-size-medium: 320px;
   }
 }
 
-/* small photo override */
-.member-photo {
+.subsection-block {
+  margin-bottom: 3rem;
+  padding-top: 1.25rem;
+}
+
+.subsection-title-wrapper {
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.subsection-title {
+  margin: 0;
+  font-weight: 700;
+  color: variables.$black-color;
+  font-size: 1.05rem;
+  text-transform: none;
+  line-height: 1.25;
+}
+
+.subsection-grid,
+.container.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  row-gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 767px) {
+  .subsection-block { margin-bottom: 2rem; padding-top: .5rem; }
+  .subsection-title { font-size: 1rem; margin-bottom: .5rem; }
+  .subsection-title-wrapper { padding-left: 0; margin-bottom: .5rem; }
+}
+
+.member-card {
+  width: 220px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.member-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.card-img-wrap {
+  height: 170px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   background: variables.$white-color;
+}
+.member-photo {
+  max-height: 150px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.member-name {
+  font-size: 0.95rem;
+  color: variables.$font-color;
+  margin: 0.5rem 0;
+  min-height: 2.2rem;
+}
+
+.member-btn {
+  border-radius: 0 0 8px 8px;
+  padding: 0.7rem 0.9rem;
+  font-weight: variables.$font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  background: #cd2d2c;
+  border-color: #cd2d2c;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .member-card { height: auto; }
+  .card-img-wrap { height: 180px; }
+  .subsection-title { font-size: 1rem; margin-bottom: .5rem; }
+  .subsection-title-wrapper { padding-left: 0; }
 }

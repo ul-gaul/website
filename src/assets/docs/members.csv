@@ -1,6 +1,22 @@
-section,titleKey,name,role,photo,linkedin,lead
-director,teams.director_title,Jean Dupont,Président,./assets/img/team/jean.webp,https://www.linkedin.com/in/jeandupont/,
-fusee.title,fusee.title,Marc Dupont,Chef Fusée,./assets/img/team/marc.webp,https://www.linkedin.com/in/marcdupont/,
-fusee.title,fusee.title,Jean Tremblay,Aérostructure,./assets/img/team/jean.webp,https://www.linkedin.com/in/jeantremblay/,
-espace.title,espace.title,Sophie Gagnon,Responsable Avionique,./assets/img/team/sophie.webp,https://www.linkedin.com/in/sophiegagnon/,
-stratos.title,stratos.title,Alice Tremblay,Responsable Stratos,./assets/img/team/alice.webp,https://www.linkedin.com/in/alicetremblay/,
+section,subsection,titleKey,name,role,photo,linkedin,lead
+
+director,,teams.director_title,Justin Binette,Président,./assets/img/page-teams/rocket/justin.webp,https://www.linkedin.com/in/justin-binette-2ba137332/,
+
+fusee,aerostructure,fusee.title,Loïc Gauthier-Heintz,Vice-Président,./assets/img/page-teams/rocket/loic.webp,https://www.linkedin.com/in/lo%C3%AFc-gauthier-heintz/,
+fusee,aerostructure,fusee.title,Jérémy Moreau,Directeur Aérostructure,./assets/img/page-teams/rocket/jeremy.webp,https://www.linkedin.com/in/j%C3%A9r%C3%A9my-moreau-51895227b/,
+fusee,aerostructure,fusee.title,Alexis Giroux,Lead Intégration,./assets/img/page-teams/rocket/alexis.webp,https://www.linkedin.com/in/alexis-giroux-530968255/,
+fusee,aerostructure,fusee.title,Samy Ailas,Lead Structure,./assets/img/page-teams/rocket/samy.webp,https://www.linkedin.com/in/samy-ailas-70ab592a5/,
+
+fusee,propulsion,fusee.title,Émile Blais,Directeur Propulsion,./assets/img/page-teams/rocket/emile.webp,https://www.linkedin.com/in/emile-blais/,
+fusee,propulsion,fusee.title,Christopher Smith,Lead GSE,./assets/img/page-teams/rocket/christopher.webp,https://www.linkedin.com/in/jchristopher-smith-/,
+
+fusee,avionique,fusee.title,Victor Deschênes,Codirecteur Avionique,./assets/img/page-teams/rocket/victor.webp,https://www.linkedin.com/in/victor-desch%C3%AAnes-66159429b/,
+fusee,avionique,fusee.title,Mathias Boudreau,Codirecteur Avionique,./assets/img/page-teams/rocket/mathias.webp,https://www.linkedin.com/in/mathias-boudreau/,
+fusee,avionique,fusee.title,Samuel Gagnon,Lead ODB & NautilPCB,./assets/img/page-teams/rocket/samuel.webp,https://www.linkedin.com/in/samuel-gagnon-61aaab2b8/,
+fusee,avionique,fusee.title,Nathan Armishaw,Lead NautilPCB,./assets/img/page-teams/rocket/nathan.webp,https://www.linkedin.com/in/nathan-armishaw-173963258/,
+fusee,avionique,fusee.title,Brieuc Soriano-Loheac,Lead COTS,./assets/img/page-teams/rocket/brieuc.webp,https://www.linkedin.com/in/brieuc-soriano-loheac/,
+
+fusee,payload,fusee.title,Clodelle Beaudry,Directrice Payload,./assets/img/page-teams/rocket/clodelle.webp,https://www.linkedin.com/in/clodelle-beaudry-0b0251325/,
+fusee,marketing,fusee.title,Marguerite Ricard,Directrice Marketing,./assets/img/page-teams/rocket/marguerite.webp,https://www.facebook.com/marguerite.ricard.16#,
+espace,,espace.title,Gabriel Marie Lavois-St-Gelais,Directeur Espace,./assets/img/page-teams/space/gabriel.webp,https://www.linkedin.com/in/gabriel-lavois-st-gelais/,
+stratos,,stratos.title,à venir,Directeur(e) Stratos,./assets/img/page-teams/stratos/alice.webp,https://www.linkedin.com/in/placeholder/,

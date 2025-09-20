@@ -25,7 +25,7 @@
       <div class="card" style="max-width:320px;">
         <img class="card-img-top member-photo" [src]="director.photo" [alt]="director.name">
         <div class="card-body text-center">
-          <p class="card-subtitle mb-2 text-muted member-role">{{ director.role }}</p>
+          <p class="card-subtitle mb-2 text-muted member-role">{{ director.name }}</p>
         </div>
         <a
           class="btn btn-primary w-100"
@@ -34,7 +34,7 @@
           rel="noopener"
           role="button"
           [attr.aria-label]="('teams.view_profile' | translate) + ' ' + director.name">
-          {{ director.name }}
+          {{ director.role }}
         </a>
       </div>
     </div>
@@ -44,27 +44,58 @@
 <!-- Teams sections -->
 <section class="section" *ngFor="let section of teamSections">
   <div class="container">
-    <div class="title text-center">
-      <h2><fa-icon class="me-2" [icon]="getIcon(section)"></fa-icon>{{ section.titleKey | translate }}</h2>
-      <p class="lead" *ngIf="section.lead">{{ section.lead | translate }}</p>
+    <div class="title text-center mb-4">
+      <h2>
+        <fa-icon class="me-2" [icon]="getIcon(section)"></fa-icon>
+        {{ section.titleKey | translate }}
+      </h2>
     </div>
-    <div class="container grid">
-      <div class="card" *ngFor="let m of section.members">
-        <img class="card-img-top member-photo" [src]="m.photo" [alt]="m.name">
-        <div class="card-body text-center">
-          <p class="card-subtitle mb-2 text-muted member-role">{{ m.role }}</p>
+
+    <ng-container *ngIf="section.subsections && section.subsections.length > 0; else flatList">
+      <div *ngFor="let sub of section.subsections" class="mb-5 subsection-block">
+        <div class="row align-items-start">
+          <div class="col-12 col-md-3 d-flex align-items-start">
+            <div class="subsection-title-wrapper">
+              <h3 class="subsection-title">{{ sub.title }}</h3>
+              <p class="subsection-lead" *ngIf="section.lead">{{ section.lead | translate }}</p>
+            </div>
+          </div>
+
+          <!-- Colonne cartes -->
+          <div class="col-12 col-md-9">
+            <div class="container grid subsection-grid">
+              <div class="card member-card" *ngFor="let m of sub.members" role="article" [attr.aria-label]="m.name">
+                <div class="card-img-wrap">
+                  <img class="card-img-top member-photo" [src]="m.photo" [alt]="m.name">
+                </div>
+                <div class="card-body text-center">
+                  <p class="card-subtitle mb-2 text-muted member-name">{{ m.name }}</p>
+                </div>
+                <a class="btn btn-primary w-100 member-btn" [href]="m.linkedin ? m.linkedin : '#'" target="_blank" rel="noopener">
+                  {{ m.role }}
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <a
-          class="btn btn-primary w-100"
-          [href]="m.linkedin ? m.linkedin : '#'"
-          target="_blank"
-          rel="noopener"
-          role="button"
-          [attr.aria-label]="('teams.view_profile' | translate) + ' ' + m.name">
-          {{ m.name }}
-        </a>
       </div>
-    </div>
+    </ng-container>
+
+    <ng-template #flatList>
+      <div class="container grid">
+        <div class="card member-card" *ngFor="let m of section.members">
+          <div class="card-img-wrap">
+            <img class="card-img-top member-photo" [src]="m.photo" [alt]="m.name">
+          </div>
+          <div class="card-body text-center">
+            <p class="card-subtitle mb-2 text-muted member-name">{{ m.name }}</p>
+          </div>
+          <a class="btn btn-primary w-100 member-btn" [href]="m.linkedin ? m.linkedin : '#'" target="_blank" rel="noopener">
+            {{ m.role }}
+          </a>
+        </div>
+      </div>
+    </ng-template>
   </div>
 </section>
 
