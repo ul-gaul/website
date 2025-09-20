@@ -100,15 +100,28 @@ blockquote small{
 // Pulsing Heart (footer)
 .heart {
   color: #EB5E28;
-  animation: heathing 1s ease infinite;
+  display: inline-block;
+  transform-origin: center;
+  animation: heartbeat 1.2s ease-in-out infinite;
 }
-@keyframes heathing {
-  0% { transform: scale( .75 ); }
-  20% { transform: scale( 1 ); }
-  40% { transform: scale( .75 ); }
-  60% { transform: scale( 1 ); }
-  80% { transform: scale( .75 ); }
-  100% { transform: scale( .75 ); }
+@keyframes heartbeat {
+  0%   { transform: scale(1); }
+  14%  { transform: scale(1.28); }
+  28%  { transform: scale(1); }
+  42%  { transform: scale(1.14); }
+  70%  { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+.fa-heart {
+  color: inherit;
+  display: inline-block;
+  transform-origin: center;
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .heart, .fa-heart {
+    animation: none !important;
+  }
 }
 
 .footer .credits,
