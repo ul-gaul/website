@@ -34,6 +34,7 @@
              (click)="onEventsClick($event)"
              [attr.aria-label]="('nav.events' | translate)">
             <fa-icon [icon]="['fas','calendar-alt']"></fa-icon>
+            <div class="d-lg-none mt-1">{{ 'nav.events' | translate }}</div>
           </a>
         </li>
         <li class="nav-item">
@@ -67,13 +68,13 @@
           <a class="nav-link d-flex" href="https://www.paypal.com/donate?hosted_button_id=REPLACE_WITH_YOUR_ID"
              target="_blank" rel="noopener" title="Nous soutenir" aria-label="Nous soutenir">
             <fa-icon class="me-2 fa-heart" [icon]="['fas','heart']"></fa-icon>
-            <span class="ms-1 d-none d-lg-inline">{{ 'nav.support' | translate }}</span>
+            {{ 'nav.support' | translate }}
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link d-flex" (click)="toggleLang()" role="button" aria-label="Changer la langue">
             <fa-icon [icon]="['fas', 'globe']"></fa-icon>
-            <span class="ms-1 d-none d-lg-inline">{{ currentLang === 'fr' ? 'FR' : 'EN' }}</span>
+            {{ currentLang === 'fr' ? 'FR' : 'EN' }}
           </a>
         </li>
       </ul>

@@ -60,22 +60,20 @@
               <p class="subsection-lead" *ngIf="section.lead">{{ section.lead | translate }}</p>
             </div>
           </div>
+        </div>
 
-          <!-- Colonne cartes -->
-          <div class="col-12 col-md-9">
-            <div class="container grid subsection-grid">
-              <div class="card member-card" *ngFor="let m of sub.members" role="article" [attr.aria-label]="m.name">
-                <div class="card-img-wrap">
-                  <img class="card-img-top member-photo" [src]="m.photo" [alt]="m.name">
-                </div>
-                <div class="card-body text-center">
-                  <p class="card-subtitle mb-2 text-muted member-name">{{ m.name }}</p>
-                </div>
-                <a class="btn btn-primary w-100 member-btn" [href]="m.linkedin ? m.linkedin : '#'" target="_blank" rel="noopener">
-                  {{ m.role }}
-                </a>
-              </div>
+        <!-- Colonne cartes -->
+        <div class="container grid">
+          <div class="card member-card" *ngFor="let m of sub.members" role="article" [attr.aria-label]="m.name">
+            <div class="card-img-wrap">
+              <img class="card-img-top member-photo" [src]="m.photo" [alt]="m.name">
             </div>
+            <div class="card-body text-center">
+              <p class="card-subtitle mb-2 text-muted member-name">{{ m.name }}</p>
+            </div>
+            <a class="btn btn-primary w-100 member-btn" [href]="m.linkedin ? m.linkedin : '#'" target="_blank" rel="noopener">
+              {{ m.role }}
+            </a>
           </div>
         </div>
       </div>

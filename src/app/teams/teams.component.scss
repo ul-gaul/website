@@ -5,16 +5,15 @@ $card-size-medium: 320px;
 
 .grid {
   display: grid;
+  margin-top: 2rem;
   justify-content: center;
   justify-items: center;
   align-items: stretch;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-auto-rows: 260px;
-  gap: 1rem;
+  gap: 2rem;
 
   @media screen and (max-width: 992px) {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    grid-auto-rows: 160px;
   }
 }
 
@@ -29,7 +28,6 @@ $card-size-medium: 320px;
   justify-content: space-between;
 
   @media screen and (max-width: 992px) {
-    max-width: 180px;
     min-width: 0;
   }
 
@@ -38,7 +36,6 @@ $card-size-medium: 320px;
     height: 140px;
     object-fit: contain;
     aspect-ratio: 16/9;
-    margin-bottom: 1rem;
     background: variables.$white-color;
   }
 
@@ -117,7 +114,7 @@ $card-size-medium: 320px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.25rem;
   row-gap: 2rem;
-  align-items: start;
+  align-items: center;
 }
 
 @media (max-width: 767px) {
@@ -127,7 +124,6 @@ $card-size-medium: 320px;
 }
 
 .member-card {
-  width: 220px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
