@@ -63,7 +63,7 @@
 
     <!-- layout: left = vignettes, right = détails -->
     <div class="row fusee-split">
-      <div class="col-lg-6">
+      <div class="col-lg-8">
         <div class="grid fusee-grid">
           <div class="fusee-card" *ngFor="let r of rockets" (click)="selectRocket(r)" role="button" tabindex="0" [attr.aria-pressed]="selected.id === r.id">
             <img class="fusee-img" [src]="r.image" [alt]="'Photo ' + r.name">
@@ -72,7 +72,7 @@
         </div>
       </div>
 
-      <div class="col-lg-6" id="fusee-details">
+      <div class="col-lg-4" id="fusee-details">
         <div class="fusee-details" *ngIf="selected">
           <h3>{{ selected.name }} <small class="text-muted">({{ selected.year }})</small></h3>
           <p><strong>{{ 'fusee.competitions_title' | translate }} :</strong> {{ selected.competition || '—' }}</p>

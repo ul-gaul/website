@@ -31,7 +31,7 @@ export class FuseeComponent {
   selectRocket(r: any) {
     this.selected = r;
     // scroll doux vers la zone détails (optionnel)
-    const el = document.getElementById('fusee-details');
-    if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    // const el = document.getElementById('fusee-details');
+    // if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   }
 }
