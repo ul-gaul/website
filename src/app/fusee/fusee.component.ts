@@ -14,8 +14,8 @@ export class FuseeComponent {
   // Liste des fusées
   rockets = [
     { id: 'next', name: 'À venir', year: '2026', image: './assets/img/page-fusee/fuseeNext.webp', competition: '', ranking: '', altitude: '', description: '' },
-    { id: 'pogoma', name: 'Pogoma', year: '2025', image: './assets/img/page-fusee/fusee2025-2.webp', competition: 'LC', ranking: '', altitude: '', description: 'Launch Canada 2025' },
-    { id: 'altera', name: 'Altéra', year: '2025', image: './assets/img/page-fusee/fusee2025-1.webp', competition: 'IREC', ranking: '', altitude: '', description: 'IREC 2025' },
+    { id: 'pagoma', name: 'Pagoma', year: '2025', image: './assets/img/page-fusee/fusee2025-2.webp', poster: './assets/img/page-fusee/posters/poster_pagoma.webp', competition: 'LC', ranking: '', altitude: '', description: 'Launch Canada 2025' },
+    { id: 'altera', name: 'Altéra', year: '2025', image: './assets/img/page-fusee/fusee2025-1.webp', poster: './assets/img/page-fusee/posters/poster_altera.webp', competition: 'IREC', ranking: '', altitude: '', description: 'IREC 2025' },
     { id: 'maia', name: 'Maïa', year: '2024', image: './assets/img/page-fusee/fusee2024-2.webp', competition: 'LC', ranking: '4', altitude: "14 470'", description: 'Launch Canada 2024' },
     { id: 'merope', name: 'Mérope', year: '2024', image: './assets/img/page-fusee/fusee2024-1.webp', competition: 'SAC', ranking: 'N/A', altitude: "9 784'", description: 'Spaceport America Cup 2024' },
     { id: 'nebula', name: 'Nebula', year: '2023', image: './assets/img/page-fusee/fusee2023.webp', competition: 'LC', ranking: '3', altitude: "10 785'", description: 'Launch Canada 2023' },

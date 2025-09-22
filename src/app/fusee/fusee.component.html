@@ -79,7 +79,7 @@
           <p><strong>{{ 'fusee.ranking_title' | translate }} :</strong> {{ selected.ranking || '—' }}</p>
           <p><strong>{{ 'fusee.altitude_title' | translate }} :</strong> {{ selected.altitude || '—' }}</p>
           <p>{{ selected.description }}</p>
-          <img class="img-fluid mt-3" [src]="selected.image" [alt]="selected.name">
+          <img class="img-fluid mt-3" [src]="selected.poster || selected.image" [alt]="selected.name">
         </div>
       </div>
     </div>
