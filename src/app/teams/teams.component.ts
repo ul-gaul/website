@@ -25,6 +25,7 @@ export class TeamComponent implements OnInit {
   };
 
   // Director + Sections
+  directors: any[] = [];
   director: any = { name: '', role: '', photo: '', linkedin: '' };
   teamSections: Array<any> = [];
 
@@ -52,12 +53,14 @@ export class TeamComponent implements OnInit {
         if (sectionKey.includes('.')) sectionKey = sectionKey.split('.')[0];
 
         if (sectionKey === 'director') {
-          this.director = {
-            name: r.name || this.director.name,
-            role: r.role || this.director.role,
-            photo: r.photo || this.director.photo,
-            linkedin: r.linkedin || this.director.linkedin
+          const d = {
+            name: r.name || '',
+            role: r.role || '',
+            photo: r.photo || '',
+            linkedin: r.linkedin || ''
           };
+          this.directors.push(d);
+          if (!this.director.name) this.director = d;
           return;
         }
 

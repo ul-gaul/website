@@ -65,21 +65,45 @@
     <div class="row fusee-split">
       <div class="col-lg-8">
         <div class="grid fusee-grid">
-          <div class="fusee-card" *ngFor="let r of rockets" (click)="selectRocket(r)" role="button" tabindex="0" [attr.aria-pressed]="selected.id === r.id">
+          <div class="fusee-card" *ngFor="let r of rockets" (click)="selectRocket(r)" role="button" tabindex="0" [attr.aria-pressed]="selected?.id === r.id">
             <img class="fusee-img" [src]="r.image" [alt]="'Photo ' + r.name">
             <h6 class="fusee-text">{{ r.year }} - {{ r.competition ? r.competition : '' }}<br>{{ r.name }}</h6>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-4" id="fusee-details">
-        <div class="fusee-details" *ngIf="selected">
-          <h3>{{ selected.name }} <small class="text-muted">({{ selected.year }})</small></h3>
-          <p><strong>{{ 'fusee.competitions_title' | translate }} :</strong> {{ selected.competition || '—' }}</p>
-          <p><strong>{{ 'fusee.ranking_title' | translate }} :</strong> {{ selected.ranking || '—' }}</p>
-          <p><strong>{{ 'fusee.altitude_title' | translate }} :</strong> {{ selected.altitude || '—' }}</p>
-          <p>{{ selected.description }}</p>
-          <img class="img-fluid mt-3" [src]="selected.poster || selected.image" [alt]="selected.name">
+      <div class="col-lg-4">
+        <div id="fusee-details" class="fusee-details" *ngIf="selected && selected.showDetails" role="region" aria-labelledby="fusee-title">
+          <h3 id="fusee-title">{{ selected.name }}<small class="text-muted">({{ selected.year }}<span *ngIf="selected.category" class="fusee-category"> • {{ selected.category }}</span>)</small></h3>
+
+          <!-- Section Fusée -->
+          <div class="spec-section mb-3">
+            <h5 class="mb-2">{{ 'fusee.rocket_title' | translate }}</h5>
+            <ul class="fusee-attrs list-unstyled">
+              <li><span class="attr-label">{{ 'fusee.dimensions_title' | translate }}:</span> <span class="attr-value">{{ selected.specs?.fusee?.dimensions || '—' }}</span></li>
+              <li><span class="attr-label">{{ 'fusee.materials_title' | translate }}:</span> <span class="attr-value">{{ selected.specs?.fusee?.materials || '—' }}</span></li>
+              <li><span class="attr-label">{{ 'fusee.flight_title' | translate }}:</span> <span class="attr-value">{{ selected.specs?.fusee?.flight || '—' }}</span></li>
+              <li><span class="attr-label">{{ 'fusee.motor_title' | translate }}:</span> <span class="attr-value">{{ selected.specs?.fusee?.motor || '—' }}</span></li>
+              <li><span class="attr-label">{{ 'fusee.recovery_title' | translate }}:</span> <span class="attr-value">{{ selected.specs?.fusee?.recovery || '—' }}</span></li>
+            </ul>
+          </div>
+
+          <!-- Section Avionique -->
+          <div class="spec-section mb-3">
+            <h5 class="mb-2">{{ 'fusee.avionique_title' | translate }}</h5>
+            <ul class="fusee-attrs list-unstyled">
+              <li><span class="attr-label">{{ 'fusee.avionique_ground' | translate }}:</span> <span class="attr-value">{{ selected.specs?.avionique?.ground || '—' }}</span></li>
+              <li><span class="attr-label">{{ 'fusee.avionique_communication' | translate }}:</span> <span class="attr-value">{{ selected.specs?.avionique?.communication || '—' }}</span></li>
+              <li><span class="attr-label">{{ 'fusee.avionique_sensors' | translate }}:</span> <span class="attr-value">{{ selected.specs?.avionique?.sensors || '—' }}</span></li>
+              <li><span class="attr-label">{{ 'fusee.avionique_power' | translate }}:</span> <span class="attr-value">{{ selected.specs?.avionique?.power || '—' }}</span></li>
+            </ul>
+          </div>
+
+          <!-- Section Payload -->
+          <div class="spec-section">
+            <h5 class="mb-2">{{ 'fusee.payload_title' | translate }}</h5>
+            <p class="fusee-desc">{{ selected.specs?.payload?.text || selected.description || '—' }}</p>
+          </div>
         </div>
       </div>
     </div>

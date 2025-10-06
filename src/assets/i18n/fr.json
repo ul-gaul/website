@@ -50,11 +50,22 @@
     "avionique_text": "Le groupe Avionique est responsable de la conception des circuits électroniques présents dans la fusée et au sol. Les membres ont la charge de concevoir et de fabriquer un système d'acquisition des données de vol, un système de transmission des données au sol et de fabriquer une station ayant la capacité de recevoir et d'afficher ces informations. Les étudiants conçoivent également un système de déploiement des parachutes pour un retour sécuritaire au sol de la fusée.",
     "propulsion_title": "Propulsion",
     "propulsion_text": "Le groupe Propulsion a comme mandat le choix du moteur commercial à utiliser pour chaque fusée. Les membres de cette division analysent les besoins et s'assurent que le moteur choisi répond aux exigences de la mission. Ils s'occupent ensuite d'établir la méthode d'intégration du moteur et de son assemblage dans la fusée. Cette division est également responsable d'un des projets les plus ambitieux du GAUL : la conception et la fabrication d'un moteur à carburant liquide. Ce projet a pour but le design et la simulation par ordinateur des pièces composant le moteur afin d'en caractériser et d'optimiser ses performances. Un banc de tests doit aussi être fabriqué pour réaliser des essais au sol.",
-    "payload_title": "Payload",
+    "payload_title": "Charge Utile",
     "payload_text": "Le groupe Payload est chargé de la conception et de la réalisation de la charge utile embarquée dans la fusée. Ses membres travaillent à développer des expériences scientifiques, technologiques ou éducatives qui seront intégrées au véhicule afin de recueillir des données ou de valider de nouveaux concepts en conditions réelles de vol. Le mandat du groupe inclut la définition des objectifs expérimentaux, la conception mécanique et électronique de la charge utile, ainsi que son intégration dans la fusée tout en respectant les contraintes de masse, d’espace et de sécurité. Les étudiants participent ainsi à l’ensemble du cycle de développement d’un projet scientifique, depuis l’idéation jusqu’à l’analyse des résultats après récupération.",
     "competitions_title": "Compétitions",
+    "category_title": "Catégorie",
     "ranking_title": "Classement",
-    "altitude_title": "Altitude"
+    "altitude_title": "Altitude",
+    "rocket_title": "Fusée",
+    "dimensions_title": "Dimensions",
+    "materials_title": "Matériaux",
+    "flight_title": "Vol",
+    "motor_title": "Moteur",
+    "recovery_title": "Récupération",
+    "avionique_ground": "Station sol",
+    "avionique_communication": "Communications",
+    "avionique_sensors": "Capteurs",
+    "avionique_power": "Alimentation"
   },
   "espace": {
     "title": "Division Espace",
@@ -89,7 +100,7 @@
   "teams": {
     "title": "Nos Équipes",
     "intro": "Le Groupe Aéronautique de l’Université Laval rassemble des étudiants passionnés par l’aviation et l’ingénierie. Notre mission est de transformer l’intérêt académique en expériences concrètes en donnant la chance de concevoir, développer et tester des projets aéronautiques innovants. À travers ces initiatives, nous favorisons l’apprentissage pratique, la collaboration et le rayonnement de la communauté étudiante dans le domaine aérospatial.",
-    "teams.director_title": "Président(e)",
+    "teams.director_title": "Direction",
     "join_title": "Nous joindre",
     "join_text": "Pour nous rejoindre : écrivez-nous à gaul@fsg.ulaval.ca ou venez à nos réunions hebdomadaires. Nous accueillons les étudiant·e·s de tous les programmes et niveaux.",
     "join_cta": "Je veux faire partie de l'équipe du GAUL!"

@@ -54,7 +54,18 @@
     "payload_text": "The Payload group is responsible for designing and building the payload carried by the rocket. Its members work on developing scientific, technological, or educational experiments that will be integrated into the vehicle to collect data or validate new concepts in real flight conditions. The group’s mandate includes defining experimental objectives, designing the payload’s mechanical and electronic systems, and integrating it into the rocket while meeting constraints of mass, space, and safety. Students are thus involved in the entire development cycle of a scientific project, from ideation to post-recovery data analysis.",
     "competitions_title": "Competitions",
     "ranking_title": "Ranking",
-    "altitude_title": "Altitude"
+    "altitude_title": "Altitude",
+    "category_title": "Category",
+    "rocket_title": "Rocket",
+    "dimensions_title": "Dimensions",
+    "materials_title": "Materials",
+    "flight_title": "Flight",
+    "motor_title": "Motor",
+    "recovery_title": "Recovery",
+    "avionique_ground": "Ground station",
+    "avionique_communication": "Communications",
+    "avionique_sensors": "Sensors",
+    "avionique_power": "Power"
   },
   "espace": {
     "title": "Space Division",
@@ -89,7 +100,7 @@
   "teams": {
     "title": "Our Teams",
     "intro": "The Aerospace Group of Université Laval brings together students driven by a passion for aviation and engineering. Our mission is to transform academic interest into hands-on experiences by offering the opportunity to design, develop, and test innovative aeronautical projects. Through these initiatives, we promote practical learning, collaboration, and the visibility of the student community within the aerospace field.",
-    "teams.director_title": "Director",
+    "teams.director_title": "Direction",
     "join_title": "Join us",
     "join_text": "To join GAUL: email us at gaul@fsg.ulaval.ca or attend our weekly meetings. Students from all programs and levels are welcome.",
     "join_cta": "I want to be part of the GAUL team!"

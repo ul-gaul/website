@@ -123,33 +123,34 @@ $card-size-medium: 320px;
   .subsection-title-wrapper { padding-left: 0; margin-bottom: .5rem; }
 }
 
-.member-card {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  height: 280px;
-  border-radius: 8px;
+.member-card .card-img-wrap {
+  height: 220px;
   overflow: hidden;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-.member-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-}
-
-.card-img-wrap {
-  height: 170px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: variables.$white-color;
 }
+
+.member-card {
+  will-change: transform;
+  transition: transform variables.$general-transition-time ease, box-shadow 120ms ease;
+}
+.member-card:hover {
+  transform: translate3d(0, -3px, 0);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.04);
+}
+
 .member-photo {
-  max-height: 150px;
+  max-height: 260px;
   width: auto;
   object-fit: cover;
   border-radius: 6px;
+}
+
+@media (max-width: 767px) {
+  .card-img-wrap { height: 220px; }
+  .member-photo { max-height: 200px; }
 }
 
 .member-name {
@@ -175,4 +176,35 @@ $card-size-medium: 320px;
   .card-img-wrap { height: 180px; }
   .subsection-title { font-size: 1rem; margin-bottom: .5rem; }
   .subsection-title-wrapper { padding-left: 0; }
+}
+
+.card img.member-photo,
+.card-img-top.member-photo,
+.member-card img.member-photo,
+.member-card .member-photo {
+  height: auto !important;
+  width: auto !important;
+  aspect-ratio: auto !important;
+
+  max-height: 200px !important;
+  object-fit: cover !important;
+  border-radius: 6px;
+  transition: none !important;
+  backface-visibility: hidden;
+}
+
+.member-card .card-img-wrap {
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* responsive */
+@media (max-width: 767px) {
+  .member-card .card-img-wrap { height: 180px; }
+  .card img.member-photo,
+  .member-card img.member-photo,
+  .member-card .member-photo { max-height: 160px !important; }
 }
