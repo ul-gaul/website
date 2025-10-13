@@ -58,7 +58,7 @@ firebase deploy
 
 ## Gérer les données (Membres / Fusées / Événements)
 
-Les listes dynamiques du site sont stockées sous forme de CSV dans le dossier `src/assets/docs`. Après modification, les changements sont immédiatement visibles après un "refresh" de la page sans devoir redéployer.
+Les listes dynamiques du site sont stockées sous forme de CSV dans le dossier `src/assets/docs`. Après modification, les changements sont immédiatement visibles après un redéploiement.
 
 Fichiers principaux :
 - Membres : [src/assets/docs/members.csv](src/assets/docs/members.csv)  
