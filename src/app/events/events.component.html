@@ -65,11 +65,13 @@
       <div class="days">
         <div *ngFor="let day of calendarDays"
              class="day"
+             [class.today]="day.isToday"
              [class.empty]="!day.iso"
              role="button"
              [attr.tabindex]="day.iso ? 0 : -1"
              (click)="day.iso ? onDayClick(day) : null"
              [attr.aria-label]="day.iso ? ('events.date_label' | translate) + ' ' + day.iso : null">
+          <span class="today-dot" *ngIf="day.isToday" aria-hidden="true"></span>
           <div class="day-number" *ngIf="day.d">{{ day.d }}</div>
           <ul class="day-events" *ngIf="day.events.length">
             <li *ngFor="let e of day.events" title="{{ e.desc || '' }}">

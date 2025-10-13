@@ -17,6 +17,8 @@ type EventItem = {
   end?: Date;
 };
 
+type DayCell = { d: number; iso?: string; events: EventItem[]; isToday: boolean };
+
 @Component({
     selector: 'app-events',
     standalone: true,
@@ -190,13 +192,14 @@ export class EventsComponent implements OnInit, OnDestroy {
     if (this.viewMonth === 11) { this.viewMonth = 0; this.viewYear++; } else { this.viewMonth++; }
   }
 
-  get calendarDays(): { d: number; iso?: string; events: EventItem[] }[] {
+  get calendarDays(): DayCell[] {
     const first = new Date(this.viewYear, this.viewMonth, 1);
     const startWeekday = first.getDay(); // 0=dim
     const daysInMonth = new Date(this.viewYear, this.viewMonth + 1, 0).getDate();
     const offset = startWeekday;
     const total = 42;
-    const days: { d: number; iso?: string; events: EventItem[] }[] = [];
+    const days: DayCell[] = [];
+    const todayIso = new Date().toISOString().slice(0, 10);
     for (let i = 0; i < total; i++) {
       const dayIndex = i - offset + 1;
       if (dayIndex >= 1 && dayIndex <= daysInMonth) {
@@ -211,9 +214,9 @@ export class EventsComponent implements OnInit, OnDestroy {
           const de = en.toISOString().slice(0,10);
           return iso >= ds && iso <= de;
         });
-        days.push({ d: dayIndex, iso, events: evs });
+        days.push({ d: dayIndex, iso, events: evs, isToday: iso === todayIso });
       } else {
-        days.push({ d: 0, iso: undefined, events: [] });
+        days.push({ d: 0, iso: undefined, events: [], isToday: false });
       }
     }
     return days;

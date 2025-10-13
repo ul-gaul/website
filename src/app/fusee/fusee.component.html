@@ -67,14 +67,26 @@
         <div class="grid fusee-grid">
           <div class="fusee-card" *ngFor="let r of rockets" (click)="selectRocket(r)" role="button" tabindex="0" [attr.aria-pressed]="selected?.id === r.id">
             <img class="fusee-img" [src]="r.image" [alt]="'Photo ' + r.name">
-            <h6 class="fusee-text">{{ r.year }} - {{ r.competition ? r.competition : '' }}<br>{{ r.name }}</h6>
+            <h6 class="fusee-text">
+              {{ r.year }} - {{ r.competition ? r.competition : '' }}<br>
+              {{ r.name }}
+              <span class="text-muted small" *ngIf="r.ranking && r.ranking !== 'N/A'"> • #{{ r.ranking }}</span>
+            </h6>
           </div>
         </div>
       </div>
 
       <div class="col-lg-4">
         <div id="fusee-details" class="fusee-details" *ngIf="selected && selected.showDetails" role="region" aria-labelledby="fusee-title">
-          <h3 id="fusee-title">{{ selected.name }}<small class="text-muted">({{ selected.year }}<span *ngIf="selected.category" class="fusee-category"> • {{ selected.category }}</span>)</small></h3>
+          <h3 id="fusee-title">
+            {{ selected.name }}
+            <small class="text-muted">
+              ({{ selected.year }}
+              <span *ngIf="selected.category" class="fusee-category"> • {{ selected.category }}</span>
+              <span *ngIf="selected.ranking && selected.ranking !== 'N/A'"> • #{{ selected.ranking }}</span>
+              <span *ngIf="selected.altitude"> • {{ selected.altitude }}</span>)
+            </small>
+          </h3>
 
           <!-- Section Fusée -->
           <div class="spec-section mb-3">

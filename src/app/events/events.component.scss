@@ -58,6 +58,21 @@
   border: 1px solid rgba(0,0,0,0.06);
   padding: .5rem;
   box-sizing: border-box;
+  position: relative;
+}
+day.today {
+  box-shadow: 0 0 0 2px rgba(205,45,44,0.10) inset;
+}
+.today-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #cd2d2c;
+  box-shadow: 0 0 6px rgba(205,45,44,0.35);
+  z-index: 2;
 }
 .day.empty {
   background: rgba(0,0,0,0.02);

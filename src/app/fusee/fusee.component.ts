@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from '../shared/header/header.component';
 import { TranslatePipe } from '../core/translate.pipe';
 
@@ -35,335 +36,76 @@ interface Rocket {
 @Component({
   selector: 'app-fusee',
   standalone: true,
-  imports: [HeaderComponent, CommonModule, TranslatePipe],
+  imports: [HeaderComponent, CommonModule, TranslatePipe, HttpClientModule],
   templateUrl: './fusee.component.html',
   styleUrls: ['./fusee.component.scss']
 })
-export class FuseeComponent {
-  // Liste des fusées
-  rockets: Rocket[] = [
-    { id: 'next', 
-      name: 'À venir', 
-      year: '2026', 
-      image: './assets/img/page-fusee/fuseeNext.webp', 
-      competition: '', 
-      category: '',
-      ranking: '', 
-      altitude: '',
-      showDetails: true,
-      specs: {
-        fusee: {
-          dimensions: 'Longueur: 3.2 m • Diamètre: 0.25 m • Masse: ~22 kg',
-          materials: 'Fuselage en composite carbone-époxy, ailerons en aluminium 7075-T6',
-          flight: 'Profile de vol suborbital, récupération par parachute principal et secondaire',
-          motor: 'Moteur commercial classe M (montage moteur unique, igniteur électrique)',
-          recovery: 'Parachute principal + drogue, suivi GPS, balise LoRa'
-        },
-        avionique: {
-          ground: 'Station de réception basée sur SDR et interface web pour télémétrie',
-          communication: 'Télémetrie RF avec downlink 915 MHz; redondance de liaisons',
-          sensors: 'IMU 9-axes, baromètre haute précision, GPS multi-constellation',
-          power: 'Batterie LiPo 4S + régulateurs 5V et 3.3V; alimentation redondante'
-        },
-        payload: {
-          text: 'Charge utile expérimentale: capteurs environnementaux et enregistreur de vol haute fréquence.'
-        }
-      },
-      description: '' 
-    },
-    { id: 'pagoma', 
-      name: 'Pagoma', 
-      year: '2025', 
-      image: './assets/img/page-fusee/fusee2025-2.webp', 
-      competition: 'LC', 
-      category: '',
-      ranking: '', 
-      altitude: '',
-      showDetails: true,
-      specs: {
-        fusee: {
-          dimensions: 'Longueur: 3.2 m • Diamètre: 0.25 m • Masse: ~22 kg',
-          materials: 'Fuselage en composite carbone-époxy, ailerons en aluminium 7075-T6',
-          flight: 'Profile de vol suborbital, récupération par parachute principal et secondaire',
-          motor: 'Moteur commercial classe M (montage moteur unique, igniteur électrique)',
-          recovery: 'Parachute principal + drogue, suivi GPS, balise LoRa'
-        },
-        avionique: {
-          ground: 'Station de réception basée sur SDR et interface web pour télémétrie',
-          communication: 'Télémetrie RF avec downlink 915 MHz; redondance de liaisons',
-          sensors: 'IMU 9-axes, baromètre haute précision, GPS multi-constellation',
-          power: 'Batterie LiPo 4S + régulateurs 5V et 3.3V; alimentation redondante'
-        },
-        payload: {
-          text: 'Charge utile expérimentale: capteurs environnementaux et enregistreur de vol haute fréquence.'
-        }
-      },
-      description: 'Launch Canada 2025' 
-    },
-    { id: 'altera', 
-      name: 'Altéra', 
-      year: '2025', 
-      image: './assets/img/page-fusee/fusee2025-1.webp', 
-      competition: 'IREC', 
-      category: '',
-      ranking: '', 
-      altitude: '', 
-      showDetails: true,
-      specs: {
-        fusee: {
-          dimensions: 'Longueur: 3.2 m • Diamètre: 0.25 m • Masse: ~22 kg',
-          materials: 'Fuselage en composite carbone-époxy, ailerons en aluminium 7075-T6',
-          flight: 'Profile de vol suborbital, récupération par parachute principal et secondaire',
-          motor: 'Moteur commercial classe M (montage moteur unique, igniteur électrique)',
-          recovery: 'Parachute principal + drogue, suivi GPS, balise LoRa'
-        },
-        avionique: {
-          ground: 'Station de réception basée sur SDR et interface web pour télémétrie',
-          communication: 'Télémetrie RF avec downlink 915 MHz; redondance de liaisons',
-          sensors: 'IMU 9-axes, baromètre haute précision, GPS multi-constellation',
-          power: 'Batterie LiPo 4S + régulateurs 5V et 3.3V; alimentation redondante'
-        },
-        payload: {
-          text: 'Charge utile expérimentale: capteurs environnementaux et enregistreur de vol haute fréquence.'
-        }
-      },
-      description: 'IREC 2025' 
-    },
-    { id: 'maia', 
-      name: 'Maïa', 
-      year: '2024', 
-      image: './assets/img/page-fusee/fusee2024-2.webp', 
-      competition: 'LC', 
-      category: '',
-      ranking: '4', 
-      altitude: "14 470'", 
-      showDetails: true,
-      specs: {
-        fusee: {
-          dimensions: 'Longueur: 3.2 m • Diamètre: 0.25 m • Masse: ~22 kg',
-          materials: 'Fuselage en composite carbone-époxy, ailerons en aluminium 7075-T6',
-          flight: 'Profile de vol suborbital, récupération par parachute principal et secondaire',
-          motor: 'Moteur commercial classe M (montage moteur unique, igniteur électrique)',
-          recovery: 'Parachute principal + drogue, suivi GPS, balise LoRa'
-        },
-        avionique: {
-          ground: 'Station de réception basée sur SDR et interface web pour télémétrie',
-          communication: 'Télémetrie RF avec downlink 915 MHz; redondance de liaisons',
-          sensors: 'IMU 9-axes, baromètre haute précision, GPS multi-constellation',
-          power: 'Batterie LiPo 4S + régulateurs 5V et 3.3V; alimentation redondante'
-        },
-        payload: {
-          text: 'Charge utile expérimentale: capteurs environnementaux et enregistreur de vol haute fréquence.'
-        }
-      },
-      description: 'Launch Canada 2024' 
-    },
-    { id: 'merope', 
-      name: 'Mérope', 
-      year: '2024', 
-      image: './assets/img/page-fusee/fusee2024-1.webp', 
-      competition: 'SAC', 
-      category: '',
-      ranking: 'N/A', 
-      altitude: "9 784'", 
-      showDetails: true,
-      specs: {
-        fusee: {
-          dimensions: 'Longueur: 3.2 m • Diamètre: 0.25 m • Masse: ~22 kg',
-          materials: 'Fuselage en composite carbone-époxy, ailerons en aluminium 7075-T6',
-          flight: 'Profile de vol suborbital, récupération par parachute principal et secondaire',
-          motor: 'Moteur commercial classe M (montage moteur unique, igniteur électrique)',
-          recovery: 'Parachute principal + drogue, suivi GPS, balise LoRa'
-        },
-        avionique: {
-          ground: 'Station de réception basée sur SDR et interface web pour télémétrie',
-          communication: 'Télémetrie RF avec downlink 915 MHz; redondance de liaisons',
-          sensors: 'IMU 9-axes, baromètre haute précision, GPS multi-constellation',
-          power: 'Batterie LiPo 4S + régulateurs 5V et 3.3V; alimentation redondante'
-        },
-        payload: {
-          text: 'Charge utile expérimentale: capteurs environnementaux et enregistreur de vol haute fréquence.'
-        }
-      },
-      description: 'Spaceport America Cup 2024' 
-    },
-    { id: 'nebula', 
-      name: 'Nebula', 
-      year: '2023', 
-      image: './assets/img/page-fusee/fusee2023.webp', 
-      competition: 'LC', 
-      category: '',
-      ranking: '3', 
-      altitude: "10 785'", 
-      showDetails: true,
-      specs: {
-        fusee: {
-          dimensions: 'Longueur: 3.2 m • Diamètre: 0.25 m • Masse: ~22 kg',
-          materials: 'Fuselage en composite carbone-époxy, ailerons en aluminium 7075-T6',
-          flight: 'Profile de vol suborbital, récupération par parachute principal et secondaire',
-          motor: 'Moteur commercial classe M (montage moteur unique, igniteur électrique)',
-          recovery: 'Parachute principal + drogue, suivi GPS, balise LoRa'
-        },
-        avionique: {
-          ground: 'Station de réception basée sur SDR et interface web pour télémétrie',
-          communication: 'Télémetrie RF avec downlink 915 MHz; redondance de liaisons',
-          sensors: 'IMU 9-axes, baromètre haute précision, GPS multi-constellation',
-          power: 'Batterie LiPo 4S + régulateurs 5V et 3.3V; alimentation redondante'
-        },
-        payload: {
-          text: 'Charge utile expérimentale: capteurs environnementaux et enregistreur de vol haute fréquence.'
-        }
-      },
-      description: 'Launch Canada 2023' 
-    },
-    { id: 'excelsior', 
-      name: 'Excelsior', 
-      year: '2019', 
-      image: './assets/img/page-fusee/fusee2019.webp', 
-      competition: 'SAC', 
-      category: '',
-      ranking: '7', 
-      altitude: "22 000'", 
-      showDetails: true,
-      specs: {
-        fusee: {
-          dimensions: 'Longueur: 3.2 m • Diamètre: 0.25 m • Masse: ~22 kg',
-          materials: 'Fuselage en composite carbone-époxy, ailerons en aluminium 7075-T6',
-          flight: 'Profile de vol suborbital, récupération par parachute principal et secondaire',
-          motor: 'Moteur commercial classe M (montage moteur unique, igniteur électrique)',
-          recovery: 'Parachute principal + drogue, suivi GPS, balise LoRa'
-        },
-        avionique: {
-          ground: 'Station de réception basée sur SDR et interface web pour télémétrie',
-          communication: 'Télémetrie RF avec downlink 915 MHz; redondance de liaisons',
-          sensors: 'IMU 9-axes, baromètre haute précision, GPS multi-constellation',
-          power: 'Batterie LiPo 4S + régulateurs 5V et 3.3V; alimentation redondante'
-        },
-        payload: {
-          text: 'Charge utile expérimentale: capteurs environnementaux et enregistreur de vol haute fréquence.'
-        }
-      },
-      description: 'Spaceport America Cup 2019' 
-    },
-    { id: 'highv', 
-      name: 'High V', 
-      year: '2018', 
-      image: './assets/img/page-fusee/fusee2018.webp', 
-      competition: 'SAC', 
-      category: '',
-      ranking: '5', 
-      altitude: "9 517'", 
-      showDetails: true,
-      specs: {
-        fusee: {
-          dimensions: 'Longueur: 3.2 m • Diamètre: 0.25 m • Masse: ~22 kg',
-          materials: 'Fuselage en composite carbone-époxy, ailerons en aluminium 7075-T6',
-          flight: 'Profile de vol suborbital, récupération par parachute principal et secondaire',
-          motor: 'Moteur commercial classe M (montage moteur unique, igniteur électrique)',
-          recovery: 'Parachute principal + drogue, suivi GPS, balise LoRa'
-        },
-        avionique: {
-          ground: 'Station de réception basée sur SDR et interface web pour télémétrie',
-          communication: 'Télémetrie RF avec downlink 915 MHz; redondance de liaisons',
-          sensors: 'IMU 9-axes, baromètre haute précision, GPS multi-constellation',
-          power: 'Batterie LiPo 4S + régulateurs 5V et 3.3V; alimentation redondante'
-        },
-        payload: {
-          text: 'Charge utile expérimentale: capteurs environnementaux et enregistreur de vol haute fréquence.'
-        }
-      },
-      description: 'Spaceport America Cup 2018' 
-    },
-    { id: 'menhir', 
-      name: 'Menhir', 
-      year: '2017', 
-      image: './assets/img/page-fusee/fusee2017.webp', 
-      competition: 'SAC', 
-      category: '',
-      ranking: '16', 
-      altitude: "8 015'", 
-      showDetails: true,
-      specs: {
-        fusee: {
-          dimensions: 'Longueur: 3.2 m • Diamètre: 0.25 m • Masse: ~22 kg',
-          materials: 'Fuselage en composite carbone-époxy, ailerons en aluminium 7075-T6',
-          flight: 'Profile de vol suborbital, récupération par parachute principal et secondaire',
-          motor: 'Moteur commercial classe M (montage moteur unique, igniteur électrique)',
-          recovery: 'Parachute principal + drogue, suivi GPS, balise LoRa'
-        },
-        avionique: {
-          ground: 'Station de réception basée sur SDR et interface web pour télémétrie',
-          communication: 'Télémetrie RF avec downlink 915 MHz; redondance de liaisons',
-          sensors: 'IMU 9-axes, baromètre haute précision, GPS multi-constellation',
-          power: 'Batterie LiPo 4S + régulateurs 5V et 3.3V; alimentation redondante'
-        },
-        payload: {
-          text: 'Charge utile expérimentale: capteurs environnementaux et enregistreur de vol haute fréquence.'
-        }
-      },
-      description: 'Spaceport America Cup 2017' 
-    },
-    { id: 'ragnarok', 
-      name: 'Ragnarök', 
-      year: '2016', 
-      image: './assets/img/page-fusee/fusee2016.webp', 
-      competition: 'SAC', 
-      category: '',
-      ranking: '4', 
-      altitude: "10 086'", 
-      showDetails: false,
-      specs: {
-        fusee: {
-          dimensions: '',
-          materials: '',
-          flight: '',
-          motor: '',
-          recovery: ''
-        },
-        avionique: {
-          ground: '',
-          communication: '',
-          sensors: '',
-          power: ''
-        },
-        payload: {
-          text: ''
-        }
-      },
-      description: 'Spaceport America Cup 2016' 
-    },
-    { id: 'blackbird', 
-      name: 'Blackbird', 
-      year: '2015', 
-      image: './assets/img/page-fusee/fusee2015.webp', 
-      competition: 'SAC', 
-      category: '',
-      ranking: 'N/A', 
-      altitude: "11 554'", 
-      showDetails: false,
-      specs: {
-        fusee: {
-          dimensions: '',
-          materials: '',
-          flight: '',
-          motor: '',
-          recovery: ''
-        },
-        avionique: {
-          ground: '',
-          communication: '',
-          sensors: '',
-          power: ''
-        },
-        payload: {
-          text: ''
-        }
-      },
-      description: 'Spaceport America Cup 2015' 
-    },
-  ];
+export class FuseeComponent implements OnInit {
+  rockets: Rocket[] = [];
+  selected: Rocket | null = null;
 
-  selected: Rocket | null = this.rockets.length ? this.rockets[0] : null;
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.loadFromCsv();
+  }
+
+  private loadFromCsv() {
+    this.http.get('assets/docs/rockets.csv', { responseType: 'text' }).subscribe({
+      next: (csv) => {
+        this.rockets = this.parseCsv(csv);
+        this.selected = this.rockets.length ? this.rockets[0] : null;
+      },
+      error: (err) => {
+        console.error('Erreur chargement CSV rockets:', err);
+      }
+    });
+  }
+
+  private parseCsv(text: string): Rocket[] {
+    const lines = text.split(/\r?\n/).filter(l => l.trim().length > 0);
+    if (!lines.length) return [];
+
+    const headers = this.splitCsvLine(lines[0]).map(h => h.trim());
+    const rows = lines.slice(1).map(line => {
+      const cols = this.splitCsvLine(line);
+      const obj: any = {};
+      headers.forEach((h, i) => {
+        obj[h] = typeof cols[i] === 'undefined' ? '' : cols[i];
+      });
+      obj.showDetails = obj.showDetails === 'true' || obj.showDetails === '1';
+      if (obj.specs) {
+        try { obj.specs = JSON.parse(obj.specs); } catch { obj.specs = {}; }
+      }
+      return obj as Rocket;
+    });
+
+    return rows;
+  }
+
+  private splitCsvLine(line: string): string[] {
+    const res: string[] = [];
+    let cur = '';
+    let inQuotes = false;
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i];
+      if (ch === '"') {
+        if (inQuotes && i + 1 < line.length && line[i + 1] === '"') {
+          cur += '"'; // escaped quote
+          i++;
+        } else {
+          inQuotes = !inQuotes;
+        }
+      } else if (ch === ',' && !inQuotes) {
+        res.push(cur);
+        cur = '';
+      } else {
+        cur += ch;
+      }
+    }
+    res.push(cur);
+    return res;
+  }
 
   selectRocket(r: Rocket) {
     if (typeof r.showDetails === 'undefined') {
