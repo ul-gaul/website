@@ -1,6 +1,6 @@
 id,name,year,image,competition,category,ranking,altitude,showDetails,description,specs
 
-next,"À venir",2026,./assets/img/page-fusee/fuseeNext.webp,N/A,N/A,1,"N/A",true,"N/A","N/A"
+next,"À venir",2026,./assets/img/page-fusee/fuseeNext.webp,N/A,N/A,1,"N/A",false,"N/A","N/A"
 
 pagoma,Pagoma,2025,./assets/img/page-fusee/fusee2025-2.webp,LC,Basic,7,"12 030'",true,"Launch Canada 2025","{""fusee"":{""dimensions"":""Longueur: 2.10 m • Diamètre: 105.6 mm • Masse au décollage: 12.83 kg"",""materials"":""Nez en fibre de verre (Von Karman 5:1), sandwich nid d’abeille carbone-aluminium, tubes en fibre de carbone et fibre de verre"",""flight"":""Accélération max: 187 m/s² • Vitesse sortie rail: 40.8 m/s • Vitesse max: Mach 1.19"",""motor"":""AeroTech M2050X • Durée combustion: 2.5 s • Impulsion totale: 5498 Ns • Poussée max: 2677 N"",""recovery"":""Système SRAD CO₂ + Reef Cutter""},""avionique"":{""ground"":""Station au sol Raspberry Pi tactile avec télémétrie, carte interactive, graphe d’altitude et modèle 3D en direct"",""communication"":""RFD900x Radio Modem (Booster)"",""sensors"":""Altimètre StratoLogger CF, GPS Featherweight, Eggfinder Mini, Idefix 433 MHz SRAD beacon"",""power"":""Batteries Li-ion 2S (7.4 V / 21 Ah) + packs 9 V et LiPo pour avionique et caméras""},""payload"":{""text"":""Chambre anti-vibration pour l’isolation mécanique du CubeSat expérimental""} }"
 
