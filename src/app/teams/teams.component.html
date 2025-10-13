@@ -24,7 +24,7 @@
     <div class="container d-flex justify-content-center gap-3 flex-wrap">
       <div class="card member-card" *ngFor="let d of directors" style="max-width:320px;" role="article" [attr.aria-label]="d.name">
         <div class="card-img-wrap">
-          <img class="card-img-top member-photo" [src]="d.photo" [alt]="d.name">
+          <img class="card-img-top member-photo" [src]="d.photo" [alt]="d.name" loading="lazy" decoding="async">
         </div>
         <div class="card-body text-center">
           <p class="card-subtitle mb-2 text-muted member-name">{{ d.name }}</p>
@@ -85,7 +85,7 @@
       <div class="container grid">
         <div class="card member-card" *ngFor="let m of section.members">
           <div class="card-img-wrap">
-            <img class="card-img-top member-photo" [src]="m.photo" [alt]="m.name">
+            <img class="card-img-top member-photo" [src]="m.photo" [alt]="m.name" loading="lazy" decoding="async">
           </div>
           <div class="card-body text-center">
             <p class="card-subtitle mb-2 text-muted member-name">{{ m.name }}</p>
