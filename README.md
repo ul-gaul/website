@@ -104,7 +104,7 @@ Fichiers principaux :
   ```
   nova,Nova,2026,./assets/img/page-fusee/nova.webp,LC,Basic,1,"12 000'",true,"Launch Canada 2026","{""fusee"":{""dimensions"":""...""},""avionique"":{""ground"":""...""},""payload"":{""text"":""...""}}"
   ```
-- Règles et conseils :
+- Règles :
   - `id` : identifiant unique court (sans espaces) utilisé pour référencer la fusée.  
   - `name` : nom affiché de la fusée.  
   - `year` : année de développement / lancement.  
