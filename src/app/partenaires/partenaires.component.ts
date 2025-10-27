@@ -30,7 +30,7 @@ export class PartenairesComponent implements OnInit, AfterViewInit {
   constructor(private translate: TranslateService, private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.loadPartnersCsv('assets/docs/partners.csv', () => this.loadPartnersCsv('assets/docs/parteners.csv'));
+    this.loadPartnersCsv('assets/docs/parteners.csv', () => this.loadPartnersCsv('assets/docs/parteners.csv'));
   }
 
   private loadPartnersCsv(path: string, fallback?: () => void): void {
