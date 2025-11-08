@@ -4,9 +4,11 @@ import { HomeComponent } from './home/home.component';
 import { FuseeComponent } from './fusee/fusee.component';
 import { EspaceComponent } from './espace/espace.component';
 import { StratosComponent } from './stratos/stratos.component';
+import { TeamComponent } from './teams/teams.component';
 import { PartenairesComponent } from './partenaires/partenaires.component';
 import { ContactComponent } from './contact/contact.component';
 import { ShowcaseComponent } from './showcase/showcase.component';
+import { EventsComponent } from './events/events.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export const routes: Routes = [
