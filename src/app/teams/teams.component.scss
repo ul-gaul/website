@@ -1,17 +1,10 @@
 @use "../../assets/paper-kit/variables" as variables;
 @use "sass:math" as math;
 
-/* Layout variables */
-$card-size-medium: 320px;
-$member-card-height-desktop: 420px;
-$member-img-height-desktop-perc: 62;
+$card-width: 320px;
+$card-height: 420px;
+$img-height: math.div($card-height * 62, 100);
 
-/* Derived sizes (use math.div to avoid slash-deprecation) */
-$fixed-card-width: $card-size-medium;
-$fixed-card-height: $member-card-height-desktop;
-$fixed-img-height: math.div($fixed-card-height * $member-img-height-desktop-perc, 100);
-
-/* Grid */
 .grid {
   display: grid;
   margin-top: 2rem;
@@ -28,8 +21,8 @@ $fixed-img-height: math.div($fixed-card-height * $member-img-height-desktop-perc
   }
 }
 
-.grid > .card,
-.grid > .member-card {
+.grid>.card,
+.grid>.member-card {
   align-self: start;
   position: relative;
   z-index: 0;
@@ -42,11 +35,10 @@ $fixed-img-height: math.div($fixed-card-height * $member-img-height-desktop-perc
   z-index: 1;
 }
 
-/* Card base */
 .card {
   margin: 0 0 18px 0;
   width: 100%;
-  max-width: $card-size-medium;
+  max-width: $card-width;
   min-width: 0;
   height: 100%;
   display: flex;
@@ -62,7 +54,11 @@ $fixed-img-height: math.div($fixed-card-height * $member-img-height-desktop-perc
     justify-content: flex-start;
   }
 
-  .card-title { margin: 0 0 .25rem; font-size: 1rem; font-weight: variables.$font-weight-bold; }
+  .card-title {
+    margin: 0 0 .25rem;
+    font-size: 1rem;
+    font-weight: variables.$font-weight-bold;
+  }
 
   .card-text {
     font-size: 0.9rem;
@@ -81,11 +77,23 @@ $fixed-img-height: math.div($fixed-card-height * $member-img-height-desktop-perc
     text-transform: uppercase;
     font-weight: variables.$font-weight-bold;
   }
+
+  img {
+    object-fit: cover;
+  }
 }
 
-/* Subsections */
-.subsection-block { margin-bottom: 3rem; padding-top: 1.25rem; }
-.subsection-title-wrapper { padding-top: 0.5rem; padding-left: 0.5rem; margin-bottom: 0.75rem; }
+.subsection-block {
+  margin-bottom: 3rem;
+  padding-top: 1.25rem;
+}
+
+.subsection-title-wrapper {
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
 .subsection-title {
   margin: 0;
   font-weight: 700;
@@ -94,7 +102,6 @@ $fixed-img-height: math.div($fixed-card-height * $member-img-height-desktop-perc
   line-height: 1.25;
 }
 
-/* Subsection grid smaller columns */
 .subsection-grid,
 .container.grid {
   display: grid;
@@ -104,7 +111,6 @@ $fixed-img-height: math.div($fixed-card-height * $member-img-height-desktop-perc
   align-items: center;
 }
 
-/* Member card specific - single consolidated block */
 .member-card {
   will-change: transform;
   transition: transform variables.$general-transition-time ease, box-shadow 120ms ease;
@@ -113,12 +119,10 @@ $fixed-img-height: math.div($fixed-card-height * $member-img-height-desktop-perc
   flex-direction: column;
   justify-content: space-between;
   align-self: stretch;
-
-  /* responsive */
   width: 100%;
-  max-width: $fixed-card-width;
-  height: $fixed-card-height;
-  min-height: $fixed-card-height;
+  max-width: $card-width;
+  height: $card-height;
+  min-height: $card-height;
   margin: 0 auto;
 
   &:hover {
@@ -127,7 +131,7 @@ $fixed-img-height: math.div($fixed-card-height * $member-img-height-desktop-perc
   }
 
   .card-img-wrap {
-    height: $fixed-img-height;
+    height: $img-height;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -136,21 +140,17 @@ $fixed-img-height: math.div($fixed-card-height * $member-img-height-desktop-perc
     padding: 0.5rem;
   }
 
-  /* Image: keep aspect, fill area without distortion */
   img.member-photo,
-  .card-img-top.member-photo,
-  .member-card .member-photo {
-    width: auto !important;
-    height: 100% !important;
-    max-width: 100% !important;
-    object-fit: cover !important;
+  .card-img-top.member-photo {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
     border-radius: 6px;
     display: block;
     backface-visibility: hidden;
-    transition: none !important;
   }
 
-  /* Content */
   .card-body {
     flex: 1 0 auto;
     padding: 0.75rem 1rem;
@@ -160,7 +160,12 @@ $fixed-img-height: math.div($fixed-card-height * $member-img-height-desktop-perc
     text-align: center;
   }
 
-  .member-name { font-size: 0.95rem; color: variables.$font-color; margin: 0.5rem 0; min-height: 2.2rem; }
+  .member-name {
+    font-size: 0.95rem;
+    color: variables.$font-color;
+    margin: 0.5rem 0;
+    min-height: 2.2rem;
+  }
 
   .member-btn {
     margin-top: 0;
@@ -172,35 +177,53 @@ $fixed-img-height: math.div($fixed-card-height * $member-img-height-desktop-perc
     background: #cd2d2c;
     border-color: #cd2d2c;
     position: relative;
-    z-index: 1; 
+    z-index: 1;
   }
-}
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .member-card {
-    width: 100%;
+  @media (max-width: 992px) {
     max-width: none;
     min-width: 0;
     height: auto;
     min-height: auto;
+
+    .card-img-wrap {
+      height: 220px;
+    }
   }
-  .card-img-wrap {
-    /* mobile fallback with reasonable height */
-    height: 220px;
+
+  @media (max-width: 767px) {
+    height: auto;
+
+    .card-img-wrap {
+      height: 180px;
+    }
+
+    img.member-photo,
+    .card-img-top.member-photo {
+      max-height: 160px;
+      height: auto;
+    }
+
+    .member-name {
+      font-size: 0.95rem;
+      margin: 0.5rem 0;
+    }
   }
 }
 
 @media (max-width: 767px) {
-  .member-card { height: auto; }
-  .member-card .card-img-wrap { height: 180px; }
-  .card img.member-photo,
-  .member-card img.member-photo,
-  .member-card .member-photo { max-height: 160px !important; height: auto !important; }
-  .subsection-block { margin-bottom: 2rem; padding-top: .5rem; }
-  .subsection-title { font-size: 1rem; margin-bottom: .5rem; }
-  .subsection-title-wrapper { padding-left: 0; margin-bottom: .5rem; }
-}
+  .subsection-block {
+    margin-bottom: 2rem;
+    padding-top: .5rem;
+  }
 
-/* fallback for older browsers */
-.card img { object-fit: cover; }
+  .subsection-title {
+    font-size: 1rem;
+    margin-bottom: .5rem;
+  }
+
+  .subsection-title-wrapper {
+    padding-left: 0;
+    margin-bottom: .5rem;
+  }
+}

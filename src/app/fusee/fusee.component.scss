@@ -20,7 +20,6 @@
 .grid {
   display: grid;
   justify-items: center;
-  // align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
@@ -30,7 +29,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 1.25rem;
 
-    > div {
+    >div {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -45,19 +44,31 @@
 
     @media (max-width: 1200px) {
       grid-template-columns: repeat(3, 1fr);
-      > div { min-height: 300px; }
+
+      >div {
+        min-height: 300px;
+      }
     }
+
     @media (max-width: 991px) {
       grid-template-columns: repeat(2, 1fr);
-      > div { min-height: 260px; }
+
+      >div {
+        min-height: 260px;
+      }
     }
+
     @media (max-width: 575px) {
-      grid-template-columns: repeat(1, 1fr);
-      > div { min-height: 200px; padding: 0.5rem; }
+      grid-template-columns: 1fr;
+
+      >div {
+        min-height: 200px;
+        padding: 0.5rem;
+      }
     }
   }
 
-  .fusee-grid .fusee-img {
+  .fusee-img {
     width: auto;
     max-width: 220px;
     max-height: 300px;
@@ -65,17 +76,13 @@
     display: block;
     object-fit: contain;
     margin: 0 auto;
-  }
 
-  /* responsive sizes */
-  @media (min-width: 992px) {
-    .fusee-grid .fusee-img {
+    @media (min-width: 992px) {
       max-width: 210px;
       max-height: 360px;
     }
-  }
-  @media (max-width: 576px) {
-    .fusee-grid .fusee-img {
+
+    @media (max-width: 576px) {
       max-width: 110px;
       max-height: 180px;
     }
@@ -89,7 +96,8 @@
     transition: transform 160ms ease, box-shadow 160ms ease;
     background: rgba(255,255,255,0.02);
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       transform: translateY(-6px);
       box-shadow: 0 10px 24px rgba(0,0,0,0.14);
     }
@@ -116,15 +124,30 @@
       border-radius: 8px;
       padding: 0.75rem 1rem;
       margin-top: 0.5rem;
-      li { display: flex; gap: 0.5rem; padding: 0.45rem 0; border-bottom: 1px dashed rgba(255,255,255,0.03); }
-      .attr-label { min-width: 9rem; color: variables.$muted-color; font-weight: 600; }
-      .attr-value { color: variables.$font-color; font-weight: 500; }
+
+      li {
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.45rem 0;
+        border-bottom: 1px dashed rgba(255,255,255,0.03);
+      }
+
+      .attr-label {
+        min-width: 9rem;
+        color: variables.$muted-color;
+        font-weight: 600;
+      }
+
+      .attr-value {
+        color: variables.$font-color;
+        font-weight: 500;
+      }
     }
 
-    .fusee-desc { 
-      color: variables.$muted-color; 
-      margin-top: 0.5rem; 
-      line-height: 1.45; 
+    .fusee-desc {
+      color: variables.$muted-color;
+      margin-top: 0.5rem;
+      line-height: 1.45;
     }
   }
 }
