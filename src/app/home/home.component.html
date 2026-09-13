@@ -55,103 +55,14 @@
     <div class="d-flex justify-content-center mt-5">
       <div class="card page-carousel w-lg-75">
         <ngb-carousel #pageCarousel>
-          <ng-template ngbSlide>
-            <img src="./assets/img/page-home/carousel20.webp" alt="Fusée 2025" loading="lazy">
-            <div class="carousel-caption">
-              <p>Fusée 2025</p>
-            </div>
-          </ng-template>
-
-          <ng-template ngbSlide>
-            <img src="./assets/img/page-home/carousel21.webp" alt="Fusée 2025" loading="lazy">
-            <div class="carousel-caption">
-              <p>Fusée 2025</p>
-            </div>
-          </ng-template>
-
-          <ng-template ngbSlide>
-            <img src="./assets/img/page-home/carousel2025.webp" alt="GAUL 2025" loading="lazy">
-            <div class="carousel-caption">
-              <p>GAUL 2025</p>
-            </div>
-          </ng-template>
-
-          <ng-template ngbSlide>
-            <img src="./assets/img/page-home/carousel2024maia.webp" alt="Fusée 2024" loading="lazy">
-            <div class="carousel-caption">
-              <p>Fusée 2024 - Maïa</p>
-            </div>
-          </ng-template>
-
-          <ng-template ngbSlide>
-            <img src="./assets/img/page-home/carousel2024merope.webp" alt="Fusée 2024" loading="lazy">
-            <div class="carousel-caption">
-              <p>Fusée 2024 - Mérope</p>
-            </div>
-          </ng-template>
-
-          <ng-template ngbSlide>
-            <img src="./assets/img/page-home/carousel1.webp" alt="GAUL 2023" loading="lazy">
-            <div class="carousel-caption">
-              <p>GAUL 2023</p>
-            </div>
-          </ng-template>
-
-          <ng-template ngbSlide>
-            <img src="./assets/img/page-home/carousel2.webp" alt="Fusée 2023" loading="lazy">
-            <div class="carousel-caption">
-              <p>Fusée 2023</p>
-            </div>
-          </ng-template>
-
-          <ng-template ngbSlide>
-            <img src="./assets/img/page-home/carousel3.webp" alt="Fusée 2019" loading="lazy">
-            <div class="carousel-caption">
-              <p>Fusée 2019</p>
-            </div>
-          </ng-template>
-
-          <ng-template ngbSlide>
-            <img src="./assets/img/page-home/carousel4.webp" alt="Fusée 2018" loading="lazy">
-            <div class="carousel-caption">
-              <p>Fusée 2018</p>
-            </div>
-          </ng-template>
-
-          <ng-template ngbSlide>
-            <img src="./assets/img/page-home/carousel5.webp" alt="Fusée 2017" loading="lazy">
-            <div class="carousel-caption">
-              <p>Fusée 2017</p>
-            </div>
-          </ng-template>
-
-          <ng-template ngbSlide>
-            <img src="./assets/img/page-home/carousel6.webp" alt="Fusée 2016" loading="lazy">
-            <div class="carousel-caption">
-              <p>Fusée 2016</p>
-            </div>
-          </ng-template>
-
-          <ng-template ngbSlide>
-            <img src="./assets/img/page-home/carousel7.webp" alt="Fusée 2015" loading="lazy">
-            <div class="carousel-caption">
-              <p>Fusée 2015</p>
-            </div>
-          </ng-template>
-
-          <ng-template ngbSlide>
-            <img src="./assets/img/page-home/carousel8.webp" alt="Espace" loading="lazy">
-            <div class="carousel-caption">
-              <p>Espace</p>
-            </div>
-          </ng-template>
-
-          <ng-template ngbSlide>
-            <img src="./assets/img/page-home/carousel9.webp" alt="Stratos" loading="lazy">
-            <div class="carousel-caption">
-              <p>Stratos</p>
-            </div>
-          </ng-template>
+          @for (image of carouselImages; track image) {
+            <ng-template ngbSlide>
+              <img
+                [src]="'./assets/img/page-home/carousel/' + image"
+                [alt]="image"
+                loading="lazy">
+            </ng-template>
+          }
         </ngb-carousel>
       </div>
     </div>

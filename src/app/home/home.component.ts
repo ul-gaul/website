@@ -4,6 +4,8 @@ import { NgbCarouselModule, NgbNavModule, NgbCarousel } from '@ng-bootstrap/ng-b
 import { HeaderComponent } from '../shared/header/header.component';
 import { TranslatePipe } from '../core/translate.pipe';
 import { Subscription } from 'rxjs';
+import { carouselImages } from './carousel-images';
+
 
 @Component({
     selector: 'app-home',
@@ -13,6 +15,7 @@ import { Subscription } from 'rxjs';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements AfterViewInit, OnDestroy {
+  readonly carouselImages = carouselImages;
   @ViewChild('pageCarousel', { read: ElementRef }) pageCarouselRef!: ElementRef;
 
   private mutationObs?: MutationObserver;
