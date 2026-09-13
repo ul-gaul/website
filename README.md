@@ -49,14 +49,14 @@ firebase login
 ```
 
 ```bash
-ng build --configuration production
+npm start
 ```
 
 ```bash
-firebase deploy
+npm run deploy
 ```
 
-## Gérer les données (Membres / Fusées / Événements)
+## Gérer les données (Membres / Fusées / Événements / Carousel)
 
 Les listes dynamiques du site sont stockées sous forme de CSV dans le dossier `src/assets/docs`. Après modification, les changements sont immédiatement visibles après un redéploiement.
 
@@ -92,6 +92,7 @@ Fichiers principaux :
   - Supprimer une ligne => suppression du membre.
   - Ajouter une ligne => ajout du nouveau membre.
   - Modifier une ligne => modification des informations du membre.
+    
 ---
 
 ### Fusées — Ajouter / Modifier / Supprimer
@@ -145,6 +146,11 @@ Fichiers principaux :
   - Supprimer une ligne => l’événement disparait du calendrier.
   - Ajouter une ligne => l'évènement apparaît dans le calendrier.
   - Modifier une ligne => l’événement est modifié au calendrier.
+
+---
+
+### Carousel — Ajouter / Modifier / Supprimer
+- Éditez le contenu du dossier [src\assets\img\page-home\carousel](src/assets/docs/rockets.csv).
 
 ---
 
