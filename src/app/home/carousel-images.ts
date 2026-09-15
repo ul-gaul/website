@@ -10,5 +10,7 @@ export const carouselImages = [
   "carousel4.webp",
   "carousel5.webp",
   "carousel6.webp",
-  "carousel7.webp"
+  "carousel7.webp",
+  "carousel8.webp",
+  "carousel9.webp"
 ] as const;
