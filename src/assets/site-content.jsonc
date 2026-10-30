@@ -1,0 +1,168 @@
+{
+  // Liens externes et documents utilisés par les boutons du site.
+  "links": {
+    // Page Facebook officielle.
+    "facebook": "https://www.facebook.com/groupeaerospatialul",
+    // Compte Instagram officiel.
+    "instagram": "https://www.instagram.com/gaul.ul/",
+    // Chaîne YouTube officielle.
+    "youtube": "https://www.youtube.com/@projetGAUL",
+    // Page de dons et de soutien.
+    "support": "https://www.zeffy.com/fr-CA/donation-form/propulsez-les-ingenieurs-de-demain",
+    // Site de l'Université Laval.
+    "ulaval": "https://www.ulaval.ca/",
+    // Page du modèle Paper Kit utilisé par le site.
+    "template": "https://www.creative-tim.com/product/paper-kit-2-angular",
+    // Page principale de la NASA utilisée par la vitrine.
+    "nasa": "https://solarsystem.nasa.gov/",
+    // URL de la vidéo affichée dans la page des événements.
+    "video": "https://www.youtube.com/embed/THQY0V3Uhkg?rel=0&modestbranding=1&playsinline=1",
+    // PDF du plan de partenariat en français.
+    "planFr": "./assets/docs/plan-partenariat-2027-fr.pdf",
+    // PDF du plan de partenariat en anglais.
+    "planEn": "./assets/docs/plan-partenariat-2027-en.pdf"
+  },
+  // Chemins des images fixes utilisées dans les pages et les composants partagés.
+  "images": {
+    // Petit logo affiché dans la barre de navigation.
+    "logoSmall": "./assets/img/shared/logo-small.webp",
+    // Logo complet affiché dans l'en-tête de la page d'accueil.
+    "logoFull": "./assets/img/page-home/logo-full.webp",
+    // Logo blanc de l'Université Laval.
+    "ulavalLogo": "./assets/img/shared/ulaval-full-white.svg",
+    // Image d'en-tête de l'accueil et des pages générales.
+    "homeHeader": "./assets/img/page-home/earth-horizon.webp",
+    // Image de la carte de la division Fusée.
+    "rocketDivision": "./assets/img/page-fusee/ozyman-liftoff.webp",
+    // Image de la carte de la division Espace.
+    "spaceDivision": "./assets/img/page-espace/main-espace.webp",
+    // Image de la carte de la division Stratos.
+    "stratosDivision": "./assets/img/page-stratos/main-stratos.webp",
+    // Image d'en-tête de la page Fusée.
+    "fuseeHeader": "./assets/img/page-fusee/equipe-2026.webp",
+    // Image du sous-système aérostructure.
+    "fuseeSubsystemRocket": "./assets/img/page-fusee/ozyman-launch.webp",
+    // Image du sous-système avionique.
+    "fuseeSubsystemAvionics": "./assets/img/page-fusee/elerrina-pad.webp",
+    // Logo de la compétition IREC.
+    "irecLogo": "./assets/img/page-fusee/logo-irec.webp",
+    // Logo de la compétition Launch Canada.
+    "launchCanadaLogo": "./assets/img/page-fusee/logo-lc.webp",
+    // Image d'en-tête de la page Espace.
+    "spaceHeader": "./assets/img/page-espace/main-espace.webp",
+    // Image du télescope.
+    "telescope": "./assets/img/page-espace/telescope.webp",
+    // Image d'une soirée d'observation.
+    "observation": "./assets/img/page-espace/soiree.webp",
+    // Image des instruments d'observation.
+    "instrument": "./assets/img/page-espace/instrument.webp",
+    // Image de galaxie.
+    "galaxy": "./assets/img/page-espace/galaxy.webp",
+    // Image d'en-tête de la page Stratos.
+    "stratosHeader": "./assets/img/page-stratos/main-stratos.webp",
+    // Logo SEDS.
+    "sedsLogo": "./assets/img/page-stratos/logo-seds.webp",
+    // Image de la phase 1 Stratos.
+    "phaseOne": "./assets/img/page-stratos/phaseI.webp",
+    // Logo CSDC.
+    "csdcLogo": "./assets/img/page-stratos/logo-csdc.webp",
+    // Image de la phase 2 Stratos.
+    "phaseTwo": "./assets/img/page-stratos/phaseII.webp",
+    // Image de la section haute altitude.
+    "highAltitude": "./assets/img/page-stratos/high-altitude.webp",
+    // Image d'en-tête de la page Équipes.
+    "teamsHeader": "./assets/img/page-teams/teams.webp",
+    // Image d'en-tête de la vitrine 3D.
+    "showcaseHeader": "./assets/img/page-espace/main-espace.webp",
+    // Image d'aperçu du modèle ISS NASA.
+    "nasaIss": "./assets/img/page-home/3d-iss.webp",
+    // Image d'aperçu du modèle Hubble NASA.
+    "nasaHubble": "./assets/img/page-home/3d-hubble.webp",
+    // Image d'aperçu du modèle Atlas NASA.
+    "nasaAtlas": "./assets/img/page-home/3d-atlas.webp",
+    // Image d'aperçu de l'antenne Deep Space NASA.
+    "nasaDeepSpace": "./assets/img/page-home/3d-deepspace.webp"
+  },
+  // Images et titres affichés dans le carrousel de la page d'accueil.
+  "carousel": [
+    // Première diapositive du carrousel.
+    { "file": "carousel1.webp", "title": "Titre de la première image" },
+    // Deuxième diapositive du carrousel.
+    { "file": "carousel2.webp", "title": "Titre de la deuxième image" },
+    // Troisième diapositive du carrousel.
+    { "file": "carousel20.webp", "title": "Titre de la troisième image" },
+    // Quatrième diapositive du carrousel.
+    { "file": "carousel2024maia.webp", "title": "Titre de la quatrième image" },
+    // Cinquième diapositive du carrousel.
+    { "file": "carousel2024merope.webp", "title": "Titre de la cinquième image" },
+    // Sixième diapositive du carrousel.
+    { "file": "carousel2025.webp", "title": "Titre de la sixième image" },
+    // Septième diapositive du carrousel.
+    { "file": "carousel21.webp", "title": "Titre de la septième image" },
+    // Huitième diapositive du carrousel.
+    { "file": "carousel3.webp", "title": "Titre de la huitième image" },
+    // Neuvième diapositive du carrousel.
+    { "file": "carousel4.webp", "title": "Titre de la neuvième image" },
+    // Dixième diapositive du carrousel.
+    { "file": "carousel5.webp", "title": "Titre de la dixième image" },
+    // Onzième diapositive du carrousel.
+    { "file": "carousel6.webp", "title": "Titre de la onzième image" },
+    // Douzième diapositive du carrousel.
+    { "file": "carousel7.webp", "title": "Titre de la douzième image" },
+    // Treizième diapositive du carrousel.
+    { "file": "carousel8.webp", "title": "Titre de la treizième image" },
+    // Quatorzième diapositive du carrousel.
+    { "file": "carousel9.webp", "title": "Titre de la quatorzième image" }
+  ],
+  // Modèles 3D affichés comme onglets dans la vitrine.
+  "showcaseModels": [
+    // Modèle de la Station spatiale internationale.
+    { "id": "ssi", "label": "SSI", "description": "Station Spatiale Internationale", "url": "https://solarsystem.nasa.gov/gltf_embed/2378" },
+    // Modèle du télescope Hubble.
+    { "id": "hubble", "label": "Hubble", "description": "Téléscope Spatial Hubble", "url": "https://solarsystem.nasa.gov/gltf_embed/2383" },
+    // Modèle de la planète Mars.
+    { "id": "mars", "label": "Mars", "description": "Mars, la planète rouge", "url": "https://solarsystem.nasa.gov/gltf_embed/2372" },
+    // Modèle des sondes Spirit et Opportunity.
+    { "id": "planetary-probe", "label": "Sonde planétaire", "description": "Sondes jumelles d'exploration martienne: Spirit et Opportunity", "url": "https://solarsystem.nasa.gov/gltf_embed/2370" },
+    // Modèle de la fusée Atlas V.
+    { "id": "atlas-v", "label": "Atlas V", "description": "Fusée Atlas V", "url": "https://solarsystem.nasa.gov/gltf_embed/2405" },
+    // Modèle de la sonde Parker.
+    { "id": "parker", "label": "Parker", "description": "Sonde solaire Parker", "url": "https://solarsystem.nasa.gov/gltf_embed/2356" },
+    // Modèle de la Terre.
+    { "id": "earth", "label": "Terre", "description": "Notre planète, la Terre", "url": "https://solarsystem.nasa.gov/gltf_embed/2392" }
+  ],
+  // Coordonnées et libellés affichés dans le pied de page.
+  "footer": {
+    // Nom de marque dans le bloc de contact.
+    "brand": "Groupe Aérospatial de l'Université Laval",
+    // Adresse postale affichée.
+    "address": "Pavillon Adrien-Pouliot (PLT), 1065 avenue de la Médecine, Québec, QC",
+    // Numéro de téléphone affiché.
+    "phone": "(418) 656-2131",
+    // Adresse courriel et destination du lien mailto.
+    "email": "gaul@fsg.ulaval.ca",
+    // Nom utilisé après l'année dans le copyright.
+    "copyright": "Groupe Aérospatial de l'Université Laval",
+    // Libellé du lien vers l'accueil.
+    "homeLabel": "Accueil",
+    // Libellé du lien vers les partenaires.
+    "partnersLabel": "Partenaires",
+    // Libellé du lien vers le modèle utilisé.
+    "templateLabel": "Template",
+    // Libellé accessible de la navigation du pied de page.
+    "ariaLabel": "Pied de page"
+  },
+  // Titre accessible de la vidéo des événements.
+  "videoTitle": "IREC 2025",
+  // Titres affichés pour chaque niveau de partenaire du CSV.
+  "partnerLevels": {
+    // Libellé du niveau intergalactique.
+    "intergalactique": "Niveau intergalactique 🌌",
+    // Libellé du niveau interstellaire.
+    "interstellaire": "Niveau interstellaire 💫",
+    // Libellé du niveau interplanétaire.
+    "interplanétaire": "Niveau interplanétaire 🪐",
+    // Libellé du niveau d'orbite terrestre.
+    "orbite terrestre": "Orbite terrestre 🌍"
+  }
+}

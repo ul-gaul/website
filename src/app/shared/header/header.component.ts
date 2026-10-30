@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SiteContentService } from '../../core/site-content.service';
 
 @Component({
     selector: 'app-header',
@@ -9,6 +10,7 @@ import { CommonModule } from '@angular/common';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  readonly siteContent = inject(SiteContentService);
   @Input() title = "";
   @Input() subTitle = "";
   @Input() backgroundImg = "";

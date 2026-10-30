@@ -1,6 +1,6 @@
 <!-- HEADER -->
-<app-header [backgroundImg]="'./assets/img/page-home/earth-horizon.webp'"
-  [title]="'./assets/img/page-home/logo-full.webp'" [subTitle]="'Groupe Aérospatial de l\'Université Laval'"
+<app-header [backgroundImg]="siteContent.content().images['homeHeader']"
+  [title]="siteContent.content().images['logoFull']" [subTitle]="('home.subtitle' | translate)"
   [logoUlaval]="true"></app-header>
 
 <!--À PROPOS-->
@@ -26,19 +26,19 @@
             <div class="hover">
               <h1>{{ 'home.rocket_title' | translate }}</h1>
             </div>
-            <img src="./assets/img/page-fusee/ozyman-liftoff.webp" alt="Division Fusée" class="img-rounded img-responsive">
+            <img [src]="siteContent.content().images['rocketDivision']" alt="Division Fusée" class="img-rounded img-responsive">
           </a>
           <a class="col-6 col-xs-12 col-md-4 mycard" routerLink="/espace">
             <div class="hover">
               <h1>{{ 'home.space_title' | translate }}</h1>
             </div>
-            <img src="./assets/img/page-espace/main-espace.webp" alt="Division Espace" class="img-rounded img-responsive">
+            <img [src]="siteContent.content().images['spaceDivision']" alt="Division Espace" class="img-rounded img-responsive">
           </a>
           <a class="col-6 col-xs-12 col-md-4 mycard" routerLink="/stratos">
             <div class="hover">
               <h1>{{ 'home.stratos_title' | translate }}</h1>
             </div>
-            <img src="./assets/img/page-stratos/main-stratos.webp" alt="Division Stratos" class="img-rounded img-responsive">
+            <img [src]="siteContent.content().images['stratosDivision']" alt="Division Stratos" class="img-rounded img-responsive">
           </a>
         </div>
       </div>
@@ -55,7 +55,7 @@
     <div class="d-flex justify-content-center mt-5">
       <div class="card page-carousel w-lg-75">
         <ngb-carousel #pageCarousel>
-          @for (image of carouselImages; track image.file) {
+          @for (image of siteContent.content().carousel; track image.file) {
             <ng-template ngbSlide>
               <img
                 [src]="'./assets/img/page-home/carousel/' + image.file"
@@ -124,7 +124,7 @@
 
         </p>
         <a routerLink="/showcase" class="btn btn-primary btn-round mt-2">Explorez les modèles</a>
-        <a href="https://solarsystem.nasa.gov/" class="btn btn-outline-primary btn-round mt-2" target="_blank">
+        <a [href]="siteContent.content().links['nasa']" class="btn btn-outline-primary btn-round mt-2" target="_blank">
           NASA's Solar System Exploration
         </a>
       </div>
@@ -132,16 +132,16 @@
         <div class="card page-carousel">
           <ngb-carousel>
             <ng-template ngbSlide>
-              <img src="./assets/img/page-home/3d-iss.webp" alt="Station Spatiale Internationale">
+              <img [src]="siteContent.content().images['nasaIss']" alt="Station Spatiale Internationale">
             </ng-template>
             <ng-template ngbSlide>
-              <img src="./assets/img/page-home/3d-hubble.webp" alt="Téléscope Spatial Hubble">
+              <img [src]="siteContent.content().images['nasaHubble']" alt="Téléscope Spatial Hubble">
             </ng-template>
             <ng-template ngbSlide>
-              <img src="./assets/img/page-home/3d-atlas.webp" alt="Fusée Atlas V">
+              <img [src]="siteContent.content().images['nasaAtlas']" alt="Fusée Atlas V">
             </ng-template>
             <ng-template ngbSlide>
-              <img src="./assets/img/page-home/3d-deepspace.webp" alt="Antenne Deepspace">
+              <img [src]="siteContent.content().images['nasaDeepSpace']" alt="Antenne Deepspace">
             </ng-template>
           </ngb-carousel>
         </div>

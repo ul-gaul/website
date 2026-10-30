@@ -11,6 +11,7 @@
     "contact": "Contact"
   },
   "home": {
+    "subtitle": "Université Laval Aerospace Group",
     "about_title": "About",
     "developpement_title": "Development of large-scale projects related to space sciences",
     "developpement_text": "Driven by a thirst for learning and a desire to work in the aerospace field, the members of the Université Laval Aerospace Group design, manufacture, and test various high-tech projects. Whether developing high-power rockets, building astronomical observation instruments, or designing a scientific payload destined for the stratosphere, GAUL seizes every opportunity to leverage the knowledge and resources of its members to accomplish its missions.",
@@ -38,7 +39,15 @@
       "July", "August", "September", "October", "November", "December"
     ],
     "day_names": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-    "last_event": "Latest Event."
+    "last_event": "Latest Event.",
+    "days_short": "d",
+    "hours_short": "h",
+    "minutes_short": "m",
+    "seconds_short": "s",
+    "previous_month": "Previous month",
+    "next_month": "Next month",
+    "range_start": "start",
+    "range_end": "end"
   },
   "fusee": {
     "title": "Rocket Division",
@@ -87,7 +96,9 @@
     "phase2_title": "Phase II: Advancing into Space",
     "phase2_text": "The objective of Phase II is to go beyond the limits of Earth’s atmosphere. Indeed, Canadian and international competitions provide a framework for university students to design and launch nanosatellites known as CubeSats. However, at the moment, no serious steps have been taken regarding the division’s involvement in such a competition.The projects developed in Phase I will therefore make it possible to acquire the expertise necessary to participate in such an endeavor, especially since financial and material resources are particularly difficult to obtain when attempting to send a vehicle beyond Earth’s atmosphere.",
     "phase3_title": "Educational Perspectives",
-    "phase3_text": "Over time, project members will deepen their knowledge in computer programming, electronics, flight theory and orbital mechanics, telecommunications, engineering project management, and more.The experience gained by students is a significant asset for their future careers. From the drawing board to launch, the knowledge acquired in the field of aerospace will help train the future engineers and scientists who will contribute to developing Canadian expertise in space."
+    "phase3_text": "Over time, project members will deepen their knowledge in computer programming, electronics, flight theory and orbital mechanics, telecommunications, engineering project management, and more.The experience gained by students is a significant asset for their future careers. From the drawing board to launch, the knowledge acquired in the field of aerospace will help train the future engineers and scientists who will contribute to developing Canadian expertise in space.",
+    "quote": "Logic will get you from A to B. Imagination will take you everywhere.",
+    "quote_author": "Albert Einstein"
   },
   "partenaires": {
     "title": "Our Partners",
@@ -117,6 +128,13 @@
   "contact": {
     "title": "Contact",
     "text": "Contact us through the form."
+  },
+  "meta": {
+    "title": "GAUL | Université Laval Aerospace Group",
+    "description": "Discover the Université Laval Aerospace Group and its aerospace projects."
+  },
+  "common": {
+    "partner": "Partner"
   },
   "notfound": {
     "title": "Page not found",

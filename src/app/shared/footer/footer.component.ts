@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { SiteContentService } from '../../core/site-content.service';
 
 
 @Component({
@@ -11,5 +12,6 @@ import { RouterLink } from '@angular/router';
     styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
+  readonly siteContent = inject(SiteContentService);
   myDate: Date = new Date();
 }

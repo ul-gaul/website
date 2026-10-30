@@ -6,6 +6,48 @@
 
 URL : https://gaulspace.web.app
 
+## Modifier le contenu sans coder
+
+Les textes, liens, images et données courantes peuvent être modifiés sans ouvrir les fichiers Angular (`.ts`, `.html` ou `.scss`). Les emplacements importants sont :
+
+- Configuration générale, liens, images fixes, footer, carrousel et modèles 3D : [src/assets/site-content.jsonc](src/assets/site-content.jsonc)
+- Textes français : [src/assets/i18n/fr.json](src/assets/i18n/fr.json)
+- Textes anglais : [src/assets/i18n/en.json](src/assets/i18n/en.json)
+- Membres et équipes : [src/assets/docs/members.csv](src/assets/docs/members.csv)
+- Fusées et spécifications : [src/assets/docs/rockets.csv](src/assets/docs/rockets.csv)
+- Événements : [src/assets/docs/events.csv](src/assets/docs/events.csv)
+- Partenaires : [src/assets/docs/parteners.csv](src/assets/docs/parteners.csv)
+- Documents PDF : [src/assets/docs](src/assets/docs)
+- Images partagées et images des pages : [src/assets/img](src/assets/img)
+- Images du carrousel : [src/assets/img/page-home/carousel](src/assets/img/page-home/carousel)
+
+### Modifier un lien ou une image fixe
+
+Ouvrir `site-content.jsonc`, chercher le commentaire qui décrit le champ, puis modifier uniquement la valeur entre guillemets. Pour une nouvelle image, la déposer dans le dossier approprié sous `src/assets/img`, puis remplacer le chemin dans le champ correspondant. Les commentaires `//` expliquent chaque champ et doivent être conservés.
+
+### Modifier une liste
+
+Ouvrir le CSV concerné dans `src/assets/docs`. Une ligne représente généralement un élément affiché sur le site : une personne, une fusée, un événement ou un partenaire. Ajouter une ligne ajoute un élément, modifier une ligne le met à jour et supprimer une ligne le retire. Les chemins d’images inscrits dans les CSV doivent commencer par `./assets/img/`.
+
+### Modifier un texte
+
+Modifier la même clé dans `fr.json` et `en.json`. La clé doit rester identique dans les deux fichiers; seule la valeur traduite change. Les titres du carrousel et de la vitrine 3D se trouvent plutôt dans `site-content.jsonc`.
+
+### Parcours recommandé
+
+1. Modifier le fichier de contenu approprié.
+2. Ajouter ou remplacer les images dans le dossier prévu.
+3. Double-cliquer sur [test-site.cmd](test-site.cmd) pour vérifier le résultat localement.
+4. Double-cliquer sur [publish-site.cmd](publish-site.cmd) pour construire et publier le site.
+
+## Scripts Windows
+
+- Double-cliquer sur [test-site.cmd](test-site.cmd) pour lancer le site localement et visualiser les changements avant la publication.
+- Double-cliquer sur [publish-site.cmd](publish-site.cmd) pour construire puis publier le site sur Firebase.
+- Les scripts PowerShell correspondants sont [test-site.ps1](test-site.ps1) et [publish-site.ps1](publish-site.ps1).
+
+Si Firebase n'est pas encore connecté, le script de publication ouvre automatiquement la page de connexion dans le navigateur. Cette étape est faite une seule fois par ordinateur. Laissez la console s'executer et appuyer sur une touche lorsque indiqué.
+
 ### Téléchargements et installations nécessaires
 
 - NodeJS: https://nodejs.org/en/
@@ -150,7 +192,8 @@ Fichiers principaux :
 ---
 
 ### Carousel — Ajouter / Modifier / Supprimer
-- Éditez le contenu du dossier [src\assets\img\page-home\carousel](src/assets/docs/rockets.csv).
+- Éditez le contenu du dossier [src/assets/img/page-home/carousel](src/assets/img/page-home/carousel).
+- Modifiez les fichiers et les titres dans [src/assets/site-content.jsonc](src/assets/site-content.jsonc), section `carousel`.
 
 ---
 

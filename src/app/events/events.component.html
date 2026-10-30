@@ -1,4 +1,4 @@
-<app-header [backgroundImg]="'./assets/img/page-home/earth-horizon.webp'" [title]="('events.title' | translate)"></app-header>
+<app-header [backgroundImg]="siteContent.content().images['homeHeader']" [title]="('events.title' | translate)"></app-header>
 
 <!-- INTRO -->
 <section class="section section-dark">
@@ -23,13 +23,13 @@
           <div class="event-name">{{ nextEvent.title }}</div>
         </div>
         <div class="pill-timer" aria-live="polite" aria-atomic="true">
-          <span class="timer-compact">{{ countdown.days }}j</span>
+          <span class="timer-compact">{{ countdown.days }}{{ 'events.days_short' | translate }}</span>
           <span class="timer-sep">:</span>
-          <span class="timer-compact">{{ countdown.hours }}h</span>
+          <span class="timer-compact">{{ countdown.hours }}{{ 'events.hours_short' | translate }}</span>
           <span class="timer-sep">:</span>
-          <span class="timer-compact">{{ countdown.minutes }}m</span>
+          <span class="timer-compact">{{ countdown.minutes }}{{ 'events.minutes_short' | translate }}</span>
           <span class="timer-sep">:</span>
-          <span class="timer-compact">{{ countdown.seconds }}s</span>
+          <span class="timer-compact">{{ countdown.seconds }}{{ 'events.seconds_short' | translate }}</span>
         </div>
       </div>
       <!-- <div class="mt-1 text-muted small d-md-none">{{ nextEventDate?.toLocaleDateString() }}</div> -->
@@ -41,7 +41,7 @@
 
     <!-- Calendar controls -->
     <div class="calendar-controls d-flex justify-content-center align-items-center mb-3">
-      <button class="btn btn-outline-secondary me-2 btn-icon" (click)="prevMonth()" aria-label="Mois précédent" type="button">
+      <button class="btn btn-outline-secondary me-2 btn-icon" (click)="prevMonth()" [attr.aria-label]="'events.previous_month' | translate" type="button">
         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
           <path d="M15 6 L9 12 L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         </svg>
@@ -49,7 +49,7 @@
 
       <div class="mx-2 fw-bold">{{ ( 'events.month_names' | translate )[viewMonth] }} {{ viewYear }}</div>
 
-      <button class="btn btn-outline-secondary ms-2 btn-icon" (click)="nextMonth()" aria-label="Mois suivant" type="button">
+      <button class="btn btn-outline-secondary ms-2 btn-icon" (click)="nextMonth()" [attr.aria-label]="'events.next_month' | translate" type="button">
         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
           <path d="M9 6 L15 12 L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         </svg>
@@ -100,8 +100,8 @@
       <h4 class="recent-title">{{ 'events.last_event' | translate }}</h4>
       <div class="video-wrap">
         <iframe
-          src="https://www.youtube.com/embed/THQY0V3Uhkg?rel=0&modestbranding=1&playsinline=1"
-          title="IREC 2025"
+          [src]="siteContent.resourceUrl(siteContent.content().links['video'])"
+          [title]="siteContent.content().videoTitle"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen>

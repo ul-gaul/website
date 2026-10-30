@@ -1,9 +1,10 @@
-import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../shared/header/header.component';
 import { TranslatePipe } from '../core/translate.pipe';
 import { TranslateService } from '../core/translate.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SiteContentService } from '../core/site-content.service';
 
 type Partner = {
   level: string;
@@ -22,6 +23,7 @@ type Section = { key: string; title: string; partners: Partner[] };
   styleUrls: ['./partenaires.component.scss']
 })
 export class PartenairesComponent implements OnInit, AfterViewInit {
+  readonly siteContent = inject(SiteContentService);
   partnersCount = 0;
   displayedCount = 0;
 
@@ -74,7 +76,7 @@ export class PartenairesComponent implements OnInit, AfterViewInit {
 
         this.sections = Array.from(groups.entries()).map(([k, v]) => ({
           key: k,
-          title: this.levelToTitle(k),
+          title: k,
           partners: v
         }));
 
@@ -91,12 +93,9 @@ export class PartenairesComponent implements OnInit, AfterViewInit {
     });
   }
 
-  private levelToTitle(key: string): string {
-    const k = key.toLowerCase();
-    if (k.includes('intergal')) return 'Niveau intergalactique 🌌';
-    if (k.includes('interstell')) return 'Niveau interstellaire 💫';
-    if (k.includes('interplan')) return 'Niveau interplanétaire 🪐';
-    if (k.includes('orbite') || k.includes('terrest')) return 'Orbite terreste 🌍';
+  levelTitle(key: string): string {
+    const configuredTitle = this.siteContent.content().partnerLevels[key.toLowerCase()];
+    if (configuredTitle) return configuredTitle;
     return key.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
   }
 
@@ -137,7 +136,9 @@ export class PartenairesComponent implements OnInit, AfterViewInit {
 
   // href
   get planHref(): string {
-    return this.translate.currentLang === 'fr' ? './assets/docs/plan-partenariat-2027-fr.pdf' : './assets/docs/plan-partenariat-2027-en.pdf';
+    return this.translate.currentLang === 'fr'
+      ? this.siteContent.content().links['planFr']
+      : this.siteContent.content().links['planEn'];
   }
 
   // label

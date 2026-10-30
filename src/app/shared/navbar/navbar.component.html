@@ -2,7 +2,7 @@
   <div class="container text-dark">
     <div class="navbar-translate">
       <a class="navbar-brand" routerLink="/home">
-        <img src="./assets/img/shared/logo-small.webp" height="48" alt="GAUL icon" class="me-2">GAUL
+        <img [src]="siteContent.content().images['logoSmall']" height="48" alt="GAUL icon" class="me-2">GAUL
       </a>
       <button class="navbar-toggler navbar-burger border-0 shadow-none" (click)="sidebarToggle()" [attr.aria-expanded]="navSidebarVisible" aria-label="Toggle navigation">
         <span class="navbar-toggler-bar"></span>
@@ -38,21 +38,21 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex" title="Page Facebook" href="https://www.facebook.com/groupeaerospatialul"
+          <a class="nav-link d-flex" title="Page Facebook" [href]="siteContent.content().links['facebook']"
             target="_blank">
             <fa-icon [icon]="['fab', 'facebook-square']"></fa-icon>
             <div class="d-lg-none mt-1">Facebook</div>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex" title="Suivre sur Instagram" href="https://www.instagram.com/gaul.ul/"
+          <a class="nav-link d-flex" title="Suivre sur Instagram" [href]="siteContent.content().links['instagram']"
             target="_blank">
             <fa-icon [icon]="['fab', 'instagram']"></fa-icon>
             <div class="d-lg-none mt-1">Instagram</div>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex" title="Suivre sur YouTube" href="https://www.youtube.com/@projetGAUL" target="_blank" rel="noopener">
+          <a class="nav-link d-flex" title="Suivre sur YouTube" [href]="siteContent.content().links['youtube']" target="_blank" rel="noopener">
             <fa-icon [icon]="['fab', 'youtube']"></fa-icon>
             <div class="d-lg-none mt-1">YouTube</div>
           </a>
@@ -65,7 +65,7 @@
         </li>
         <li class="nav-item">
           <!-- SUPPORT LINK -->
-          <a class="nav-link d-flex" href="https://www.zeffy.com/fr-CA/donation-form/propulsez-les-ingenieurs-de-demain"
+          <a class="nav-link d-flex" [href]="siteContent.content().links['support']"
              target="_blank" rel="noopener" title="Nous soutenir" aria-label="Nous soutenir">
             <fa-icon class="me-2 fa-heart" [icon]="['fas','heart']"></fa-icon>
             {{ 'nav.support' | translate }}

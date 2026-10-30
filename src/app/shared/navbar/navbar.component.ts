@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, Router } from '@angular/router';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
@@ -6,6 +6,7 @@ import { faCalendarAlt, faBookmark, faGlobe, faHeart } from '@fortawesome/free-s
 import { faFacebookSquare, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { TranslatePipe } from '../../core/translate.pipe';
 import { TranslateService } from '../../core/translate.service';
+import { SiteContentService } from '../../core/site-content.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,6 +16,7 @@ import { TranslateService } from '../../core/translate.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  readonly siteContent = inject(SiteContentService);
   @Input() navSidebarVisible = false;
   @Output() navSidebarVisibleChange = new EventEmitter<boolean>();
 

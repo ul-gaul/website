@@ -1,8 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../shared/header/header.component';
 import { TranslatePipe } from '../core/translate.pipe';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SiteContentService } from '../core/site-content.service';
+import { TranslateService } from '../core/translate.service';
 
 type EventItem = {
   // raw CSV
@@ -27,7 +29,8 @@ type DayCell = { d: number; iso?: string; events: EventItem[]; isToday: boolean 
     styleUrls: ['./events.component.scss']
 })
 export class EventsComponent implements OnInit, OnDestroy {
-  constructor(private http: HttpClient) { }
+  readonly siteContent = inject(SiteContentService);
+  constructor(private http: HttpClient, private translate: TranslateService) { }
 
   events: EventItem[] = [];
 
@@ -81,8 +84,8 @@ export class EventsComponent implements OnInit, OnDestroy {
     const ds = s.toISOString().slice(0,10);
     const de = en.toISOString().slice(0,10);
     if (ds !== de) {
-      if (iso === ds) return `${e.title} (start)`;
-      if (iso === de) return `${e.title} (end)`;
+      if (iso === ds) return `${e.title} (${this.translate.translate('events.range_start')})`;
+      if (iso === de) return `${e.title} (${this.translate.translate('events.range_end')})`;
     }
     return e.title;
   }

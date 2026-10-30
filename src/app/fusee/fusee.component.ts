@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from '../shared/header/header.component';
 import { TranslatePipe } from '../core/translate.pipe';
+import { SiteContentService } from '../core/site-content.service';
 
 interface Rocket {
   id: string;
@@ -41,6 +42,7 @@ interface Rocket {
   styleUrls: ['./fusee.component.scss']
 })
 export class FuseeComponent implements OnInit {
+  readonly siteContent = inject(SiteContentService);
   rockets: Rocket[] = [];
   selected: Rocket | null = null;
 

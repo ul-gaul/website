@@ -1,5 +1,5 @@
 <!-- HEADER -->
-<app-header [backgroundImg]="'./assets/img/page-fusee/equipe-2026.webp'" [title]="('fusee.title' | translate)"></app-header>
+<app-header [backgroundImg]="siteContent.content().images['fuseeHeader']" [title]="('fusee.title' | translate)"></app-header>
 
 <!--INTRODUCTION-->
 <section class="section">
@@ -26,14 +26,14 @@
       <div class="title">
         <div>
           <aside class="img-right border">
-            <img src="./assets/img/page-fusee/ozyman-launch.webp" alt="Ozyman en vol" height="450">
+            <img [src]="siteContent.content().images['fuseeSubsystemRocket']" alt="Ozyman en vol" height="450">
           </aside>
 
           <h3>{{ 'fusee.aerostructure_title' | translate }}</h3><br>
           {{ 'fusee.aerostructure_text' | translate }}<br><br>
 
           <aside class="img-left border">
-            <img src="./assets/img/page-fusee/elerrina-pad.webp" alt="Elerina au lancement" height="450">
+            <img [src]="siteContent.content().images['fuseeSubsystemAvionics']" alt="Elerrina au lancement" height="450">
           </aside>
 
           <h3>{{ 'fusee.avionique_title' | translate }}</h3><br>
@@ -56,8 +56,8 @@
     <div class="title">
       <h2>
         {{ 'fusee.competitions_title' | translate }}
-        <img src="./assets/img/page-fusee/logo-irec.webp" height="84" alt="Logo Spaceport America Cup">
-        <img src="./assets/img/page-fusee/logo-lc.webp" height="84" alt="Logo Launch Canada">
+        <img [src]="siteContent.content().images['irecLogo']" height="84" alt="Logo Spaceport America Cup">
+        <img [src]="siteContent.content().images['launchCanadaLogo']" height="84" alt="Logo Launch Canada">
       </h2>
     </div>
 

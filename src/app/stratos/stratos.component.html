@@ -1,5 +1,5 @@
 <!-- HEADER -->
-<app-header [backgroundImg]="'./assets/img/page-stratos/main-stratos.webp'" [title]="('stratos.title' | translate)"></app-header>
+<app-header [backgroundImg]="siteContent.content().images['stratosHeader']" [title]="('stratos.title' | translate)"></app-header>
 
 <!--INTRODUCTION-->
 <section class="section">
@@ -19,13 +19,13 @@
   <div class="container">
     <div class="title">
       <h2>{{ 'stratos.phase1_title' | translate }}
-        <img src="./assets/img/page-stratos/logo-seds.webp" height="75px" alt="Logo SEDS">
+        <img [src]="siteContent.content().images['sedsLogo']" height="75px" alt="Logo SEDS">
       </h2>
     </div>
     <div class="row">
       <div class="title">
         <div>
-          <img class="img-right" src="./assets/img/page-stratos/phaseI.webp">
+          <img class="img-right" [src]="siteContent.content().images['phaseOne']">
           {{ 'stratos.phase1_text' | translate }}<br><br>
         </div>
       </div>
@@ -34,13 +34,13 @@
     <!--PHASE 2-->
     <div class="title">
       <h2>{{ 'stratos.phase2_title' | translate }}
-        <img src="./assets/img/page-stratos/logo-csdc.webp" height="75px" alt="">
+        <img [src]="siteContent.content().images['csdcLogo']" height="75px" alt="">
       </h2>
     </div>
     <div class="row">
       <div class="title">
         <div>
-          <img class="img-left" src="./assets/img/page-stratos/phaseII.webp">
+          <img class="img-left" [src]="siteContent.content().images['phaseTwo']">
             {{ 'stratos.phase2_text' | translate }}<br><br>
         </div>
       </div>
@@ -60,9 +60,9 @@
         {{ 'stratos.phase3_text' | translate }}<br><br>
       </div>
       <div class="title">
-        <img src="./assets/img/page-stratos/high-altitude.webp" width="100%"><br>
-        «Logic will get you from A to B. Imagination will take you everywhere.»<br><br>
-        - Albert Einstein
+        <img [src]="siteContent.content().images['highAltitude']" width="100%"><br>
+        «{{ 'stratos.quote' | translate }}»<br><br>
+        - {{ 'stratos.quote_author' | translate }}
       </div>
     </div>
   </div>

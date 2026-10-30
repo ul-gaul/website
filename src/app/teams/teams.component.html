@@ -1,6 +1,6 @@
 <!-- HEADER -->
 <app-header
-  [backgroundImg]="'./assets/img/page-teams/teams.webp'"
+  [backgroundImg]="siteContent.content().images['teamsHeader']"
   [title]="(('teams.title' | translate) || '').replace(' ', '<br>')">
 </app-header>
 
@@ -109,7 +109,7 @@
       <div class="title">
         <p class="lead text-center">{{ 'teams.join_text' | translate }}</p>
         <div class="d-flex justify-content-center mt-3">
-          <a href="https://www.facebook.com/groupeaerospatialul"
+          <a [href]="siteContent.content().links['facebook']"
              target="_blank"
              rel="noopener"
              aria-label=""

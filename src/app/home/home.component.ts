@@ -1,10 +1,10 @@
-import { Component, AfterViewInit, OnDestroy, ViewChild, ElementRef, NgZone } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, ViewChild, ElementRef, NgZone, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgbCarouselModule, NgbNavModule, NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from '../shared/header/header.component';
 import { TranslatePipe } from '../core/translate.pipe';
 import { Subscription } from 'rxjs';
-import { carouselImages } from './carousel-images';
+import { SiteContentService } from '../core/site-content.service';
 
 
 @Component({
@@ -15,7 +15,7 @@ import { carouselImages } from './carousel-images';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements AfterViewInit, OnDestroy {
-  readonly carouselImages = carouselImages;
+  readonly siteContent = inject(SiteContentService);
   @ViewChild('pageCarousel', { read: ElementRef }) pageCarouselRef!: ElementRef;
 
   private mutationObs?: MutationObserver;

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
 import { TranslatePipe } from '../core/translate.pipe';
+import { SiteContentService } from '../core/site-content.service';
 
 @Component({
     selector: 'app-stratos',
@@ -10,5 +11,6 @@ import { TranslatePipe } from '../core/translate.pipe';
     styleUrls: ['./stratos.component.scss']
 })
 export class StratosComponent {
+    readonly siteContent = inject(SiteContentService);
 
 }

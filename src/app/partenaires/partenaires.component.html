@@ -1,5 +1,5 @@
 <!-- HEADER -->
-<app-header [backgroundImg]="'./assets/img/page-home/earth-horizon.webp'" [title]="('partenaires.title' | translate)"></app-header>
+<app-header [backgroundImg]="siteContent.content().images['homeHeader']" [title]="('partenaires.title' | translate)"></app-header>
 
 <!-- Intro texte -->
 <section class="section">
@@ -37,7 +37,7 @@
   <div *ngFor="let s of sections">
     <div class="container">
       <div class="title text-center">
-        <h2>{{ s.title }}</h2>
+        <h2>{{ levelTitle(s.key) }}</h2>
       </div>
     </div>
 
@@ -48,7 +48,7 @@
            class="btn btn-primary"
            target="_blank"
            rel="noopener">
-          {{ p.name || 'Partenaire' }}
+          {{ p.name || ('common.partner' | translate) }}
         </a>
       </div>
     </div>

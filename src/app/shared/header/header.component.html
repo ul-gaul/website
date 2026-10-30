@@ -16,8 +16,8 @@
     </div>
   </div>
   <h6 *ngIf="logoUlaval" class="category-absolute ml-auto mr-auto">
-    <a href="https://www.ulaval.ca/" target="_blank" rel="noopener">
-      <img src="./assets/img/shared/ulaval-full-white.svg" class="uni-laval-logo" alt="Université Laval" />
+    <a [href]="siteContent.content().links['ulaval']" target="_blank" rel="noopener">
+      <img [src]="siteContent.content().images['ulavalLogo']" class="uni-laval-logo" alt="Université Laval" />
     </a>
   </h6>
 </header>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../shared/header/header.component';
 import { TranslatePipe } from '../core/translate.pipe';
@@ -7,6 +7,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faRocket, faGlobe, faCloud, faUserTie, faUser } from '@fortawesome/free-solid-svg-icons';
+import { SiteContentService } from '../core/site-content.service';
 
 @Component({
     selector: 'app-team',
@@ -16,6 +17,7 @@ import { faRocket, faGlobe, faCloud, faUserTie, faUser } from '@fortawesome/free
     styleUrls: ['./teams.component.scss']
 })
 export class TeamComponent implements OnInit {
+  readonly siteContent = inject(SiteContentService);
   // Icons
   directorIcon: IconDefinition = faUserTie;
   iconMap: Record<string, IconDefinition> = {
