@@ -137,7 +137,7 @@ export class PartenairesComponent implements OnInit, AfterViewInit {
 
   // href
   get planHref(): string {
-    return this.translate.currentLang === 'fr' ? './assets/docs/plan-partenariat-2026-fr.pdf' : './assets/docs/plan-partenariat-2026-en.pdf';
+    return this.translate.currentLang === 'fr' ? './assets/docs/plan-partenariat-2027-fr.pdf' : './assets/docs/plan-partenariat-2027-en.pdf';
   }
 
   // label

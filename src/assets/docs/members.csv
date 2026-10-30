@@ -1,33 +1,24 @@
 section,subsection,titleKey,name,role,photo,linkedin,lead
-
-director,,teams.director_title,Justin Binette,Président • Lead Static Test Bench,./assets/img/page-teams/rocket/justin.webp,https://www.linkedin.com/in/justin-binette-2ba137332/,
-director,,teams.director_title,Loïc Gauthier-Heintz,Vice-président • Lead Composites • Lead Récupération,./assets/img/page-teams/rocket/loic.webp,https://www.linkedin.com/in/lo%C3%AFc-gauthier-heintz/,
-director,,teams.director_title,Mahélie Dubé,Directrice technique • Co-Lead Éjection • Lead Communications,./assets/img/page-teams/rocket/mahelie.webp,https://www.linkedin.com/in/mah%C3%A9lie-dub%C3%A9-b829952aa/,
-
-fusee,aerostructure,fusee.title,Jérémy Moreau,Directeur Aérostructure • Lead Simulation,./assets/img/page-teams/rocket/jeremy.webp,https://www.linkedin.com/in/j%C3%A9r%C3%A9my-moreau-51895227b/,
-fusee,aerostructure,fusee.title,Samy Ailas,Lead Structure Interne,./assets/img/page-teams/rocket/samy.webp,https://www.linkedin.com/in/samy-ailas-70ab592a5/,
-fusee,aerostructure,fusee.title,Alexis Giroux,Lead Intégration,./assets/img/page-teams/rocket/alexis.webp,https://www.linkedin.com/in/alexis-giroux-530968255/,
-
-fusee,propulsion,fusee.title,Émile Blais,Co-Directeur Propulsion • Lead Igniter,./assets/img/page-teams/rocket/emile.webp,https://www.linkedin.com/in/emile-blais/,
-fusee,propulsion,fusee.title,Christopher Smith,Co-Directeur Propulsion • Lead GSE • Lead Fluid Systems,./assets/img/page-teams/rocket/christopher.webp,https://www.linkedin.com/in/jchristopher-smith-/,
-fusee,propulsion,fusee.title,Nicola Roy,Co-Lead Thrust Chamber,./assets/img/page-teams/rocket/nicola.webp,https://www.linkedin.com/in/nicola-roy-26ba612b2/,
-fusee,propulsion,fusee.title,Jacob Nardoni,Co-Lead Thrust Chamber,./assets/img/page-teams/rocket/jacob.webp,https://www.linkedin.com/in/jacob-nardoni-810361313/,
-
-fusee,avionique,fusee.title,Victor Deschênes,Directeur Avionique,./assets/img/page-teams/rocket/victor.webp,https://www.linkedin.com/in/victor-desch%C3%AAnes-66159429b/,
-fusee,avionique,fusee.title,Mathias Boudreau,Vice-Directeur Avionique • Lead SAS,./assets/img/page-teams/rocket/mathias.webp,https://www.linkedin.com/in/mathias-boudreau/,
-fusee,avionique,fusee.title,Samuel Gagnon,Lead ODB • Co-Lead Propulsion Avionique,./assets/img/page-teams/rocket/samuel.webp,https://www.linkedin.com/in/samuel-gagnon-61aaab2b8/,
-fusee,avionique,fusee.title,Nathan Armishaw,Co-Lead Propulsion Avionique,./assets/img/page-teams/rocket/nathan.webp,https://www.linkedin.com/in/nathan-armishaw-173963258/
-fusee,avionique,fusee.title,Brieuc Soriano-Loheac,Lead COTS,./assets/img/page-teams/rocket/brieuc.webp,https://www.linkedin.com/in/brieuc-soriano-loheac/,
-
-fusee,payload,fusee.title,Clodelle Beaudry,Directrice Payload • Co-Lead Éjection,./assets/img/page-teams/rocket/clodelle.webp,https://www.linkedin.com/in/clodelle-beaudry-0b0251325/,
-fusee,payload,fusee.title,Alexander Monsalve,Lead Électronique,./assets/img/page-teams/rocket/alexander.webp,,
-fusee,payload,fusee.title,Anne Hurtubise,Lead Design Mécanique,./assets/img/page-teams/rocket/anne.webp,https://www.linkedin.com/in/anne-hurtubise/,
-fusee,payload,fusee.title,Patrick Lamontagne,Lead Instrumentation,/assets/img/page-teams/rocket/patrick.webp,https://www.linkedin.com/in/patrick-lamontagne-943701253/,
-
-fusee,marketing,fusee.title,Marguerite Ricard,Directrice Marketing,./assets/img/page-teams/rocket/marguerite.webp,https://www.linkedin.com/in/marguerite-ricard-401940302/,
-fusee,marketing,fusee.title,Claudie Rodrigue,Lead Réseaux Sociaux,./assets/img/page-teams/rocket/claudie.webp,https://www.linkedin.com/in/claudie-rodrigue-895883346/,
-fusee,marketing,fusee.title,Marylou Giguère,Lead Design,./assets/img/page-teams/rocket/marylou.webp,https://www.linkedin.com/in/marylou-gigu%C3%A8re-94b0882ab/,
-
+director,,teams.director_title,Ulysse Fournier,Président • Directeur Aérostructure • Responsable Simulation • Responsable Récupération,./assets/img/page-teams/rocket/ulysse-fournier.webp,https://www.linkedin.com/in/ulysse-fournier-52b640394/,
+director,,teams.director_title,Maggie Leclair,Vice-présidente,./assets/img/page-teams/rocket/maggie-leclair.webp,https://www.linkedin.com/in/maggie-leclair-8aa850340/,
+director,,teams.director_title,Anne Hurtubise,Directrice Technique,./assets/img/page-teams/rocket/anne-hurtubise.webp,https://www.linkedin.com/in/anne-hurtubise/,
+director,,teams.director_title,Lilian Salace,Trésorier,./assets/img/page-teams/rocket/lilian-salace.webp,https://www.linkedin.com/in/lilian-salace-147194265/?locale=fr,
+fusee,aerostructure,fusee.title,Philippe Côte,Responsable Rampe de lancement • Responsable Intégration avionique,./assets/img/page-teams/rocket/philippe-cote.webp,https://www.linkedin.com/in/philippe-c%C3%B4te-aa605635a/,
+fusee,aerostructure,fusee.title,Audrey-Anne Laramée,Co-responsable Composites • Co-responsable GSE,"./assets/img/page-teams/rocket/audrey-anne-laramee.webp",https://www.linkedin.com/in/audrey-anne-laram%C3%A9e-669179351/,
+fusee,aerostructure,fusee.title,Julianne Vincent,Responsable Structure interne,./assets/img/page-teams/rocket/julianne-vincent.webp,https://www.linkedin.com/in/julianne-vincent-a78080358/,
+fusee,propulsion,fusee.title,Émile Blais,Co-Directeur Propulsion,./assets/img/page-teams/rocket/emile-blais.webp,https://www.linkedin.com/in/emile-blais/,
+fusee,propulsion,fusee.title,Jérémy Moreau,Co-Directeur Propulsion,./assets/img/page-teams/rocket/jeremy-moreau.webp,https://www.linkedin.com/in/j%C3%A9r%C3%A9my-moreau-51895227b/,
+fusee,propulsion,fusee.title,Nicola Roy,Responsable Systèmes propulsion,./assets/img/page-teams/rocket/nicola-roy.webp,https://www.linkedin.com/in/nicola-roy-26ba612b2/,
+fusee,propulsion,fusee.title,Justin Binette,Responsable Systèmes propulsion,./assets/img/page-teams/rocket/justin-binette.webp,https://www.linkedin.com/in/justin-binette-2ba137332/,
+fusee,avionique,fusee.title,Victor Deschênes,Co-Directeur Avionique • Co-Lead Propulsion électronique,./assets/img/page-teams/rocket/victor-deschenes.webp,https://www.linkedin.com/in/victor-desch%C3%AAnes-66159429b/,
+fusee,avionique,fusee.title,Samuel Gagnon,Co-Directeur Avionique • Co-Lead Propulsion électronique,./assets/img/page-teams/rocket/samuel-gagnon.webp,https://www.linkedin.com/in/samuel-gagnon-61aaab2b8/,
+fusee,avionique,fusee.title,Grégoire Larouche,Directeur Avionique (en formation),./assets/img/page-teams/rocket/gregoire-larouche.webp,https://www.linkedin.com/in/gregoire-larouche/,
+fusee,avionique,fusee.title,Raphaël Girard,Responsable Logiciel,./assets/img/page-teams/rocket/raphael-girard.webp,,
+fusee,avionique,fusee.title,Louis-Charles Blais,Responsable Hardware,./assets/img/page-teams/rocket/louis-charles-blais.webp,,
+fusee,avionique,fusee.title,Samuel Gauthier,Responsable Systèmes avionique,./assets/img/page-teams/rocket/samuel-gauthier.webp,,
+fusee,payload,fusee.title,Clodelle Beaudry,Directrice Payload,./assets/img/page-teams/rocket/clodelle-beaudry.webp,,
+fusee,marketing,fusee.title,Marguerite Ricard,Directrice Marketing,./assets/img/page-teams/rocket/marguerite-ricard.webp,https://www.linkedin.com/in/marguerite-ricard-401940302/,
+fusee,marketing,fusee.title,Claudie Rodrigue,Responsable Réseaux sociaux • Co-responsable composites,./assets/img/page-teams/rocket/claudie-rodrigue.webp,https://www.linkedin.com/in/claudie-rodrigue-895883346/,
+fusee,marketing,fusee.title,Marylou Giguère,Responsable Design,./assets/img/page-teams/rocket/marylou-giguere.webp,https://www.linkedin.com/in/marylou-gigu%C3%A8re-94b0882ab/,
 espace,,espace.title,Gabriel Marie Lavois-St-Gelais,Directeur Espace,./assets/img/page-teams/space/gabriel.webp,https://www.linkedin.com/in/gabriel-lavois-st-gelais/,
-
 stratos,,stratos.title,à venir,Directeur(e) Stratos,./assets/img/page-teams/stratos/àvenir.webp,https://www.linkedin.com/in/placeholder/,

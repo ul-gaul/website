@@ -51,6 +51,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
 
     const img = activeItem.querySelector('img') as HTMLImageElement | null;
     if (!img) return;
+    const title = activeItem.querySelector('.carousel-image-title') as HTMLElement | null;
 
     const applyHeight = () => {
       // compute displayed height preserving aspect ratio
@@ -59,6 +60,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
         const displayedWidth = img.clientWidth || activeItem.clientWidth;
         height = Math.round((img.naturalHeight / img.naturalWidth) * displayedWidth);
       }
+      height += title?.offsetHeight ?? 0;
       carouselInner.style.transition = 'height 450ms ease';
       carouselInner.style.height = height + 'px';
     };

@@ -58,7 +58,7 @@
         <div class="row align-items-start">
           <div class="col-12 col-md-3 d-flex align-items-start">
             <div class="subsection-title-wrapper">
-              <h3 class="subsection-title">{{ sub.title }}</h3>
+              <h3 class="subsection-title">{{ ('teams.' + sub.key + '_title') | translate }}</h3>
               <p class="subsection-lead" *ngIf="section.lead">{{ section.lead | translate }}</p>
             </div>
           </div>

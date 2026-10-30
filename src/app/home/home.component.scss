@@ -5,6 +5,16 @@
   }
 }
 
+.carousel-image-title {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: #fff;
+  background-color: #d62828;
+  border-radius: 0 0 8px 8px;
+}
+
 // Partenaires
 .center {
   display: flex;
@@ -83,4 +93,9 @@
     object-fit: cover;
     display: block;
   }
+}
+
+:host ::ng-deep .page-carousel .carousel-indicators {
+  position: static !important;
+  margin: 0.75rem 0 0 !important;
 }

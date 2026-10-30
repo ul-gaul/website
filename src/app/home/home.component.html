@@ -26,7 +26,7 @@
             <div class="hover">
               <h1>{{ 'home.rocket_title' | translate }}</h1>
             </div>
-            <img src="./assets/img/page-fusee/main-fusee-2024.webp" alt="Division Fusée" class="img-rounded img-responsive">
+            <img src="./assets/img/page-fusee/ozyman-liftoff.webp" alt="Division Fusée" class="img-rounded img-responsive">
           </a>
           <a class="col-6 col-xs-12 col-md-4 mycard" routerLink="/espace">
             <div class="hover">
@@ -55,12 +55,16 @@
     <div class="d-flex justify-content-center mt-5">
       <div class="card page-carousel w-lg-75">
         <ngb-carousel #pageCarousel>
-          @for (image of carouselImages; track image) {
+          @for (image of carouselImages; track image.file) {
             <ng-template ngbSlide>
               <img
-                [src]="'./assets/img/page-home/carousel/' + image"
-                [alt]="image"
+                [src]="'./assets/img/page-home/carousel/' + image.file"
+                [alt]="image.title"
                 loading="lazy">
+
+              <p class="carousel-image-title">
+                {{ image.title }}
+              </p>
             </ng-template>
           }
         </ngb-carousel>
