@@ -68,7 +68,7 @@ $card-size-medium: 320px;
 }
 
 .btn-partenaires {
-  font-size: medium;
+  font-size: 0.9rem;
   font-weight: bold;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
@@ -77,7 +77,7 @@ $card-size-medium: 320px;
 
 @media screen and (max-width: 767px) {
   .btn-partenaires {
-    font-size: 12px;
+    font-size: 0.85rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }

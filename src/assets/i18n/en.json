@@ -46,6 +46,7 @@
     "seconds_short": "s",
     "previous_month": "Previous month",
     "next_month": "Next month",
+    "date_label": "Date",
     "range_start": "start",
     "range_end": "end"
   },
@@ -117,6 +118,7 @@
     "teams.propulsion_title": "Propulsion",
     "teams.payload_title": "Payload",
     "teams.marketing_title": "Marketing and Communication",
+    "view_profile": "View profile of",
     "join_title": "Join us",
     "join_text": "To join GAUL: email us at gaul@fsg.ulaval.ca or attend our weekly meetings. Students from all programs and levels are welcome.",
     "join_cta": "I want to be part of the GAUL team!"

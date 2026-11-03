@@ -1,4 +1,3 @@
-@use "sass:color" as color;
 @use "../../assets/paper-kit/variables" as variables;
 
 .section {
@@ -80,7 +79,7 @@ fa-icon {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #cd2d2c;
+  background: var(--gaul-accent);
   box-shadow: 0 0 6px rgba(205,45,44,0.35);
   z-index: 2;
 }
@@ -130,7 +129,7 @@ fa-icon {
     align-items: center;
     gap: 1.25rem;
     padding: 1rem 2rem;
-    background: #cd2d2c;
+    background: var(--gaul-accent);
     color: variables.$white-color;
     border-radius: 999px;
     text-transform: uppercase;
@@ -138,7 +137,7 @@ fa-icon {
     font-size: 1.05rem;
     letter-spacing: 0.6px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    border: 1px solid color.adjust(#cd2d2c, $lightness: -10%);
+    border: 1px solid var(--gaul-accent-dark);
     line-height: 1;
   }
 
@@ -169,7 +168,7 @@ fa-icon {
     align-items: center;
     gap: 0.45rem;
     background: variables.$white-color;
-    color: #cd2d2c;
+    color: var(--gaul-accent);
     padding: 0.35rem 0.75rem;
     border-radius: 999px;
     font-weight: 800;

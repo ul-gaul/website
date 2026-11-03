@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
+import { Component, HostListener, Input, Output, EventEmitter, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, Router } from '@angular/router';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
@@ -25,9 +25,13 @@ export class NavbarComponent {
 
   constructor(library: FaIconLibrary, private ts: TranslateService, private router: Router) {
     library.addIcons(faBookmark, faFacebookSquare, faInstagram, faYoutube, faGlobe, faCalendarAlt, faHeart);
-    window.onscroll = () => { this.navbarTransparent = window.scrollY < 150; };
     this.currentLang = this.ts.currentLang;
     document.documentElement.lang = this.currentLang;
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    this.navbarTransparent = window.scrollY < 150;
   }
 
   onEventsClick(ev?: MouseEvent) {

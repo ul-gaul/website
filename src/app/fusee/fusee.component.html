@@ -65,7 +65,7 @@
     <div class="row fusee-split">
       <div class="col-lg-8">
         <div class="grid fusee-grid">
-          <div class="fusee-card" *ngFor="let r of rockets" (click)="selectRocket(r)" role="button" tabindex="0" [attr.aria-pressed]="selected?.id === r.id">
+          <div class="fusee-card" *ngFor="let r of rockets" (click)="selectRocket(r)" (keydown.enter)="selectRocket(r)" (keydown.space)="$event.preventDefault(); selectRocket(r)" role="button" tabindex="0" [attr.aria-pressed]="selected?.id === r.id">
             <img class="fusee-img" [src]="r.image" [alt]="'Photo ' + r.name">
             <h6 class="fusee-text">
               {{ r.year }} - {{ r.competition ? r.competition : '' }}<br>

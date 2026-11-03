@@ -37,14 +37,16 @@ Modifier la même clé dans `fr.json` et `en.json`. La clé doit rester identiqu
 
 1. Modifier le fichier de contenu approprié.
 2. Ajouter ou remplacer les images dans le dossier prévu.
+3. Double-cliquer sur [update-dependencies-site.cmd](update-dependencies-site.cmd) pour mettre à jour les dépendances du site.
 3. Double-cliquer sur [test-site.cmd](test-site.cmd) pour vérifier le résultat localement.
 4. Double-cliquer sur [publish-site.cmd](publish-site.cmd) pour construire et publier le site.
 
 ## Scripts Windows
 
+- Double-cliquer sur [update-dependencies-site.cmd](update-dependencies-site.cmd) pour installer les dépendances et appliquer les correctifs de sécurité npm.
 - Double-cliquer sur [test-site.cmd](test-site.cmd) pour lancer le site localement et visualiser les changements avant la publication.
 - Double-cliquer sur [publish-site.cmd](publish-site.cmd) pour construire puis publier le site sur Firebase.
-- Les scripts PowerShell correspondants sont [test-site.ps1](test-site.ps1) et [publish-site.ps1](publish-site.ps1).
+- Les scripts PowerShell correspondants sont [test-site.ps1](test-site.ps1), [publish-site.ps1](publish-site.ps1) et [update-site.ps1](update-site.ps1).
 
 Si Firebase n'est pas encore connecté, le script de publication ouvre automatiquement la page de connexion dans le navigateur. Cette étape est faite une seule fois par ordinateur. Laissez la console s'executer et appuyer sur une touche lorsque indiqué.
 

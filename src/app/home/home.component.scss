@@ -8,11 +8,12 @@
 .carousel-image-title {
   margin: 0;
   padding: 0.75rem 1rem;
+  min-height: 3rem;
   text-align: center;
   font-weight: 600;
   color: #fff;
-  background-color: #d62828;
-  border-radius: 0 0 8px 8px;
+  background-color: var(--gaul-accent);
+  border-radius: 8px;
 }
 
 // Partenaires
@@ -23,11 +24,11 @@
 }
 
 #btn-partenaires {
-  font-size: medium;
+  font-size: 0.9rem;
   font-weight: bold;
 
   @media screen and (max-width: 767px) {
-    font-size: 12px;
+    font-size: 0.85rem;
   }
 }
 
@@ -39,12 +40,6 @@
 
 // Photos divisions
 #divisions {
-  @media screen and (max-width: 300px) {
-    .col-xs-12 {
-      width: 100%;
-    }
-  }
-
   .mycard {
     position: relative;
     margin-bottom: 1rem;
@@ -81,6 +76,8 @@
 }
 
 .page-carousel {
+  position: relative;
+
   .carousel-inner {
     transition: height 220ms ease;
     overflow: hidden;
@@ -93,9 +90,4 @@
     object-fit: cover;
     display: block;
   }
-}
-
-:host ::ng-deep .page-carousel .carousel-indicators {
-  position: static !important;
-  margin: 0.75rem 0 0 !important;
 }

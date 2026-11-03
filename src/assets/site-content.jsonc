@@ -143,12 +143,12 @@
   // Titles displayed for each partner level from the CSV.
   "partnerLevels": {
     // Intergalactic tier label.
-    "intergalactique": "Niveau intergalactique 🌌",
+    "intergalactic": "Niveau intergalactique 🌌",
     // Interstellar tier label.
-    "interstellaire": "Niveau interstellaire 💫",
+    "interstellar": "Niveau interstellaire 💫",
     // Interplanetary tier label.
-    "interplanétaire": "Niveau interplanétaire 🪐",
+    "interplanetary": "Niveau interplanétaire 🪐",
     // Earth orbit tier label.
-    "orbite terrestre": "Orbite terrestre 🌍"
+    "revolution": "Orbite terrestre 🌍"
   }
 }

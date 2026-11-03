@@ -174,8 +174,8 @@ $img-height: math.div($card-height * 62, 100);
     font-weight: variables.$font-weight-bold;
     text-transform: uppercase;
     letter-spacing: 0.6px;
-    background: #cd2d2c;
-    border-color: #cd2d2c;
+    background: var(--gaul-accent);
+    border-color: var(--gaul-accent);
     position: relative;
     z-index: 1;
   }

@@ -46,6 +46,7 @@
     "seconds_short": "s",
     "previous_month": "Mois précédent",
     "next_month": "Mois suivant",
+    "date_label": "Date",
     "range_start": "début",
     "range_end": "fin"
   },
@@ -117,6 +118,7 @@
     "teams.propulsion_title": "Propulsion",
     "teams.payload_title": "Charge Utile",
     "teams.marketing_title": "Marketing et Communication",
+    "view_profile": "Voir le profil de",
     "join_title": "Nous joindre",
     "join_text": "Pour nous rejoindre : écrivez-nous à gaul@fsg.ulaval.ca ou venez à nos réunions hebdomadaires. Nous accueillons les étudiant·e·s de tous les programmes et niveaux.",
     "join_cta": "Je veux faire partie de l'équipe du GAUL!"

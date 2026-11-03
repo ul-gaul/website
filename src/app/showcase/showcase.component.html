@@ -11,7 +11,7 @@
             <button ngbNavLink>{{ model.label }}</button>
             <ng-template ngbNavContent>
               <p>{{ model.description }}</p>
-              <iframe [src]="siteContent.resourceUrl(model.url)" frameborder="0" scrolling="no"></iframe>
+              <iframe [src]="siteContent.resourceUrl(model.url)" title="{{ model.label }}"></iframe>
             </ng-template>
           </li>
           }

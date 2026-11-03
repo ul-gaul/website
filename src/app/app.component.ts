@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DestroyRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { Scroll, Router, RouterOutlet } from '@angular/router';
@@ -7,6 +7,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { OnInit, OnDestroy } from '@angular/core';
 import { TranslateService } from './core/translate.service';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
     selector: 'app-root',
@@ -15,6 +16,7 @@ import { TranslateService } from './core/translate.service';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy{
+  private readonly destroyRef = inject(DestroyRef);
   // État de la sidebar (true = ouverte, false = fermée)
   // Pour ouvrir la sidebar, <app-route> doit avoir la classe 'nav-open'
   // La variable a un bind avec la classe 'nav-open' sur <app-route>
@@ -28,8 +30,8 @@ export class AppComponent implements OnInit, OnDestroy{
   // .pipe ne garde que les event de type Scroll (quand on interagit avec RouterLink)
   constructor(private router: Router, private translate: TranslateService, private title: Title, private meta: Meta) {
     // this.router.events.subscribe(console.log);
-    this.router.events.pipe(filter((event) => event instanceof Scroll)).subscribe(() => { this.sidebarVisible = false });
-    this.translate.lang$.subscribe(() => this.updateMetadata());
+    this.router.events.pipe(filter((event) => event instanceof Scroll), takeUntilDestroyed(this.destroyRef)).subscribe(() => { this.sidebarVisible = false });
+    this.translate.lang$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(() => this.updateMetadata());
     this.updateMetadata();
   }
 
