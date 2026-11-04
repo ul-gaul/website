@@ -4,6 +4,13 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 export interface SiteContent {
   links: Record<string, string>;
+  emailjs: {
+    publicKey: string;
+    serviceId: string;
+    templateId: string;
+    adminEmail: string;
+    interacEmail: string;
+  };
   images: Record<string, string>;
   carousel: Array<{ file: string; title: string }>;
   showcaseModels: Array<{ id: string; label: string; description: string; url: string }>;
@@ -14,6 +21,13 @@ export interface SiteContent {
 
 const emptyContent: SiteContent = {
   links: {},
+  emailjs: {
+    publicKey: '',
+    serviceId: '',
+    templateId: '',
+    adminEmail: '',
+    interacEmail: ''
+  },
   images: {},
   carousel: [],
   showcaseModels: [],

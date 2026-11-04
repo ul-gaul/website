@@ -22,6 +22,14 @@
     // English partnership plan PDF.
     "planEn": "./assets/docs/plan-partenariat-2027-en.pdf"
   },
+  // Client-side EmailJS configuration for the shop order form.
+  "emailjs": {
+    "publicKey": "J6BiCJTtKKEQP3NnX",
+    "serviceId": "service_gve17oh",
+    "templateId": "template_9a287vs",
+    "adminEmail": "groupe.aerospatial.ul@gmail.com",
+    "interacEmail": "gaul@fsg.ulaval.ca"
+  },
   // Paths to static images used in pages and shared components.
   "images": {
     // Small logo displayed in the navigation bar.
@@ -30,8 +38,12 @@
     "logoFull": "./assets/img/page-home/logo-full.webp",
     // White Université Laval logo.
     "ulavalLogo": "./assets/img/shared/ulaval-full-white.svg",
-    // Header image for the home and general pages.
+    // Header image for the Home page.
     "homeHeader": "./assets/img/page-home/earth-horizon.webp",
+    // Header image for the Events page.
+    "eventsHeader": "./assets/img/page-home/earth-horizon.webp",
+    // Header image for the Partners page.
+    "partenairesHeader": "./assets/img/page-home/earth-horizon.webp",
     // Image for the Rocket division card.
     "rocketDivision": "./assets/img/page-fusee/ozyman-liftoff.webp",
     // Image for the Space division card.
@@ -72,6 +84,8 @@
     "highAltitude": "./assets/img/page-stratos/high-altitude.webp",
     // Header image for the Teams page.
     "teamsHeader": "./assets/img/page-teams/teams.webp",
+    // Header image for the Merch page.
+    "merchHeader": "./assets/img/page-teams/teams.webp",
     // Header image for the 3D showcase.
     "showcaseHeader": "./assets/img/page-espace/main-espace.webp",
     // Preview image of the NASA ISS model.

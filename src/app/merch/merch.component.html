@@ -1,0 +1,151 @@
+<app-header
+  [backgroundImg]="siteContent.content().images['merchHeader']"
+  [title]="'merch.title' | translate">
+</app-header>
+
+<main class="merch-page">
+  <section class="section merch-intro-section">
+    <div class="container">
+      <div class="title">
+        <p class="merch-intro">{{ 'merch.intro' | translate }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pickup-section" aria-live="polite">
+    <div class="container">
+      <div class="pickup-alert">
+        <strong>{{ 'merch.pickup_warning' | translate }}</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="section catalog-section">
+    <div class="container">
+      <div class="title">
+        <h2>{{ 'merch.catalog_title' | translate }}</h2>
+      </div>
+
+      <ng-container *ngIf="catalog$ | async as catalog">
+        <div class="container grid product-grid">
+          <article class="card product-card" *ngFor="let product of catalog.products">
+            <div class="product-image"><img [src]="product.image" [alt]="product.name" loading="lazy"></div>
+            <div class="card-body">
+              <p class="product-type">{{ product.type }}</p>
+              <h3>{{ product.name }}</h3>
+              <p class="product-description">{{ product.description }}</p>
+              <div class="variant-list">
+                <div class="variant-row" *ngFor="let variant of variantsFor(catalog, product.id)">
+                  <div>
+                    <strong>{{ variant.label }}</strong>
+                    <small>{{ formatPrice(variant.price, variant.currency) }}</small>
+                  </div>
+                  <button type="button" class="btn btn-primary" [disabled]="!variant.available || !product.available" (click)="addToCart(product, variant)">
+                    {{ 'merch.add' | translate }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </ng-container>
+      <p class="cart-message" *ngIf="cartMessage">{{ cartMessage | translate }}</p>
+    </div>
+  </section>
+
+  <section class="section order-section">
+    <div class="container order-layout">
+      <div class="cart-panel">
+        <h2>{{ 'merch.cart_title' | translate }}</h2>
+        <div *ngIf="lines$ | async as lines; else emptyCart">
+          <div class="cart-line" *ngFor="let line of lines">
+            <div><strong>{{ line.product.name }}</strong><span>{{ line.variant.label }}</span></div>
+            <label class="quantity-control">
+              <span class="visually-hidden">{{ 'merch.quantity' | translate }}</span>
+              <input type="number" min="1" [value]="line.quantity" (change)="updateQuantity(line.variant.id, $any($event.target).value)">
+            </label>
+            <strong>{{ formatPrice(line.variant.price * line.quantity) }}</strong>
+            <button type="button" class="remove-button" (click)="cart.remove(line.variant.id)" [attr.aria-label]="'merch.remove' | translate">×</button>
+          </div>
+          <div class="cart-total"><span>{{ 'merch.subtotal' | translate }}</span><strong>{{ formatPrice(subtotal$ | async) }}</strong></div>
+        </div>
+        <ng-template #emptyCart><p class="empty-state">{{ 'merch.empty_cart' | translate }}</p></ng-template>
+      </div>
+
+      <div class="checkout-panel">
+        <h2>{{ 'merch.checkout_title' | translate }}</h2>
+        <div class="success-panel" *ngIf="successfulOrderNumber; else checkoutForm" aria-live="polite">
+          <p class="status-pill">{{ 'merch.pending_payment' | translate }}</p>
+          <h3>{{ 'merch.success_title' | translate }}</h3>
+          <p>{{ 'merch.order_number' | translate }} <strong>{{ successfulOrderNumber }}</strong></p>
+          <div class="order-steps">
+            <section class="order-step">
+              <span class="step-number">1</span>
+              <div>
+                <h4>{{ 'merch.step_order_title' | translate }}</h4>
+                <p>{{ 'merch.step_order_text' | translate }}</p>
+              </div>
+            </section>
+            <section class="order-step">
+              <span class="step-number">2</span>
+              <div>
+                <h4>{{ 'merch.step_payment_title' | translate }}</h4>
+                <p>{{ 'merch.step_payment_text' | translate }}</p>
+                <p><strong>{{ siteContent.content().footer['email'] }}<br>{{ 'merch.payment_deadline' | translate }}</strong></p>
+              </div>
+            </section>
+            <section class="order-step">
+              <span class="step-number">3</span>
+              <div>
+                <h4>{{ 'merch.step_confirmation_title' | translate }}</h4>
+                <p><strong>{{ 'merch.step_confirmation_text' | translate }}</strong></p>
+              </div>
+            </section>
+            <section class="order-step">
+              <span class="step-number">4</span>
+              <div>
+                <h4>{{ 'merch.step_pickup_title' | translate }}</h4>
+                <p>{{ 'merch.step_pickup_text' | translate }}</p>
+                <p><strong>{{ siteContent.content().footer['address'] }}<br>{{ 'merch.pickup_hours' | translate }}</strong></p>
+              </div>
+            </section>
+          </div>
+          <p class="pickup-reminder"><strong>{{ 'merch.pickup_reminder' | translate }}</strong></p>
+        </div>
+        <ng-template #checkoutForm>
+          <form [formGroup]="orderForm" (ngSubmit)="submitOrder()" novalidate>
+            <label>{{ 'merch.full_name' | translate }} *<input formControlName="fullName" autocomplete="name"></label>
+            <p class="field-error" *ngIf="hasError('fullName', 'required')">{{ 'merch.required' | translate }}</p>
+            <label>{{ 'merch.email' | translate }} *<input type="email" formControlName="email" autocomplete="email"></label>
+            <p class="field-error" *ngIf="hasError('email', 'required') || hasError('email', 'email')">{{ 'merch.email_invalid' | translate }}</p>
+            <label>
+              {{ 'merch.phone' | translate }}
+              <input
+                type="tel"
+                formControlName="phone"
+                autocomplete="tel"
+                inputmode="numeric"
+                maxlength="10"
+                (input)="sanitizePhone($event)">
+            </label>
+            <p class="field-error" *ngIf="hasError('phone', 'pattern')">
+              {{ 'merch.phone_invalid' | translate }}
+            </p>
+            <div class="support-box">
+              <h3>{{ 'merch.support_title' | translate }}</h3>
+              <p>{{ 'merch.support_text' | translate }}</p>
+              <label>{{ 'merch.support_amount' | translate }}<input type="number" formControlName="supportAmount" min="0" max="10000" step="1" inputmode="decimal"></label>
+              <p class="field-error" *ngIf="hasError('supportAmount', 'min') || hasError('supportAmount', 'max')">{{ 'merch.support_invalid' | translate }}</p>
+            </div>
+            <label>{{ 'merch.comments' | translate }}<textarea formControlName="comments" rows="4" maxlength="1000"></textarea></label>
+            <p class="field-error" *ngIf="hasError('comments', 'maxlength')">{{ 'merch.comments_invalid' | translate }}</p>
+            <div class="order-total"><span>{{ 'merch.total' | translate }}</span><strong>{{ formatPrice(orderTotal(subtotal$ | async)) }}</strong></div>
+            <label class="agreement"><input type="checkbox" formControlName="agreement"> <span>{{ 'merch.agreement' | translate }} *</span></label>
+            <p class="field-error" *ngIf="hasError('agreement', 'required')">{{ 'merch.agreement_required' | translate }}</p>
+            <p class="submit-error" *ngIf="errorMessage">{{ errorMessage | translate }}</p>
+            <button class="btn btn-primary submit-button" type="submit" [disabled]="submitting">{{ submitting ? ('merch.sending' | translate) : ('merch.submit' | translate) }}</button>
+          </form>
+        </ng-template>
+      </div>
+    </div>
+  </section>

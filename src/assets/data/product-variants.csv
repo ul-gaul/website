@@ -1,0 +1,8 @@
+id,product_id,label,size,price,currency,available
+hoodie-gaul-s,hoodie-gaul,Noir - S,S,55.00,CAD,true
+hoodie-gaul-m,hoodie-gaul,Noir - M,M,55.00,CAD,true
+hoodie-gaul-l,hoodie-gaul,Noir - L,L,55.00,CAD,true
+tshirt-gaul-s,tshirt-gaul,Blanc - S,S,28.00,CAD,true
+tshirt-gaul-m,tshirt-gaul,Blanc - M,M,28.00,CAD,true
+tshirt-gaul-l,tshirt-gaul,Blanc - L,L,28.00,CAD,true
+gourde-gaul-750,gourde-gaul,Acier - 750 ml,750 ml,24.00,CAD,true

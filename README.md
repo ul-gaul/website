@@ -17,8 +17,13 @@ Les textes, liens, images et données courantes peuvent être modifiés sans ouv
 - Fusées et spécifications : [src/assets/docs/rockets.csv](src/assets/docs/rockets.csv)
 - Événements : [src/assets/docs/events.csv](src/assets/docs/events.csv)
 - Partenaires : [src/assets/docs/parteners.csv](src/assets/docs/parteners.csv)
+- Produits Merch : [src/assets/data/products.csv](src/assets/data/products.csv)
+- Variantes, prix et disponibilités Merch : [src/assets/data/product-variants.csv](src/assets/data/product-variants.csv)
+- Configuration des commandes Merch et du paiement Interac : [src/assets/site-content.jsonc](src/assets/site-content.jsonc), section `emailjs`
 - Documents PDF : [src/assets/docs](src/assets/docs)
 - Images partagées et images des pages : [src/assets/img](src/assets/img)
+- Images d'en-tête de chaque page : clés `images.<page>Header` dans [src/assets/site-content.jsonc](src/assets/site-content.jsonc) (`homeHeader`, `fuseeHeader`, `spaceHeader`, `stratosHeader`, `teamsHeader`, `showcaseHeader`, `eventsHeader`, `partenairesHeader`, `merchHeader`)
+- Images des produits Merch : [src/assets/img/page-merch/inventory](src/assets/img/page-merch/inventory)
 - Images du carrousel : [src/assets/img/page-home/carousel](src/assets/img/page-home/carousel)
 
 ### Modifier un lien ou une image fixe
@@ -27,7 +32,7 @@ Ouvrir `site-content.jsonc`, chercher le commentaire qui décrit le champ, puis 
 
 ### Modifier une liste
 
-Ouvrir le CSV concerné dans `src/assets/docs`. Une ligne représente généralement un élément affiché sur le site : une personne, une fusée, un événement ou un partenaire. Ajouter une ligne ajoute un élément, modifier une ligne le met à jour et supprimer une ligne le retire. Les chemins d’images inscrits dans les CSV doivent commencer par `./assets/img/`.
+Ouvrir le CSV concerné dans le dossier indiqué dans la liste ci-dessus. Une ligne représente généralement un élément affiché sur le site : une personne, une fusée, un événement, un partenaire, un produit Merch ou une variante Merch. Ajouter une ligne ajoute un élément, modifier une ligne le met à jour et supprimer une ligne le retire. Pour les fichiers sous `src/assets/docs`, les chemins d'images commencent par `./assets/img/`; pour les fichiers Merch sous `src/assets/data`, ils commencent par `assets/img/`.
 
 ### Modifier un texte
 
@@ -38,8 +43,8 @@ Modifier la même clé dans `fr.json` et `en.json`. La clé doit rester identiqu
 1. Modifier le fichier de contenu approprié.
 2. Ajouter ou remplacer les images dans le dossier prévu.
 3. Double-cliquer sur [update-dependencies-site.cmd](update-dependencies-site.cmd) pour mettre à jour les dépendances du site.
-3. Double-cliquer sur [test-site.cmd](test-site.cmd) pour vérifier le résultat localement.
-4. Double-cliquer sur [publish-site.cmd](publish-site.cmd) pour construire et publier le site.
+4. Double-cliquer sur [test-site.cmd](test-site.cmd) pour vérifier le résultat localement.
+5. Double-cliquer sur [publish-site.cmd](publish-site.cmd) pour construire et publier le site.
 
 ## Scripts Windows
 
@@ -100,14 +105,16 @@ npm start
 npm run deploy
 ```
 
-## Gérer les données (Membres / Fusées / Événements / Carousel)
+## Gérer les données (Membres / Fusées / Événements / Carousel / Merch)
 
-Les listes dynamiques du site sont stockées sous forme de CSV dans le dossier `src/assets/docs`. Après modification, les changements sont immédiatement visibles après un redéploiement.
+Les listes dynamiques du site sont stockées sous forme de CSV dans `src/assets/docs` et `src/assets/data`. Après modification, les changements sont immédiatement visibles après un redéploiement.
 
 Fichiers principaux :
 - Membres : [src/assets/docs/members.csv](src/assets/docs/members.csv)  
 - Fusées : [src/assets/docs/rockets.csv](src/assets/docs/rockets.csv)  
 - Événements : [src/assets/docs/events.csv](src/assets/docs/events.csv)  
+- Produits Merch : [src/assets/data/products.csv](src/assets/data/products.csv)
+- Variantes, prix et disponibilités Merch : [src/assets/data/product-variants.csv](src/assets/data/product-variants.csv)
 
 ---
 
@@ -199,6 +206,79 @@ Fichiers principaux :
 
 ---
 
+## Boutique Merch — Ajouter / Modifier / Supprimer
+
+La page Merch affiche le catalogue, permet d'ajouter des articles au panier et envoie les commandes par courriel via EmailJS. Les données du catalogue sont chargées depuis :
+
+- Produits : [src/assets/data/products.csv](src/assets/data/products.csv)
+- Variantes, prix et stocks : [src/assets/data/product-variants.csv](src/assets/data/product-variants.csv)
+- Configuration EmailJS et informations de paiement : [src/assets/site-content.jsonc](src/assets/site-content.jsonc), section `emailjs`
+
+### Produits
+
+Éditez [src/assets/data/products.csv](src/assets/data/products.csv). L'en-tête est :
+
+```
+id,name,type,description,image,available
+```
+
+Règles :
+
+- `id` : identifiant unique du produit; il doit être réutilisé dans `product_id` du fichier des variantes.
+- `name` : nom affiché du produit.
+- `type` : catégorie affichée, par exemple `vêtement` ou `accessoire`.
+- `description` : description courte affichée dans le catalogue. Entourer de guillemets les valeurs contenant une virgule.
+- `image` : chemin de l'image depuis `src`, par exemple `assets/img/shared/logo-small.webp`.
+- `available` : `true` pour afficher le produit comme disponible, `false` pour désactiver ses boutons d'ajout.
+
+### Variantes, prix et disponibilités
+
+Éditez [src/assets/data/product-variants.csv](src/assets/data/product-variants.csv). L'en-tête est :
+
+```
+id,product_id,label,size,price,currency,available
+```
+
+Règles :
+
+- `id` : identifiant unique de la variante.
+- `product_id` : valeur de `id` du produit parent.
+- `label` : libellé affiché, par exemple `Noir - M`.
+- `size` : taille ou format transmis dans le courriel de commande.
+- `price` : prix numérique, sans symbole monétaire.
+- `currency` : code de devise ISO, généralement `CAD`.
+- `available` : `true` pour permettre l'ajout, `false` pour désactiver la variante.
+
+Pour ajouter un article, ajoutez d'abord une ligne dans `products.csv`, puis une ou plusieurs lignes correspondantes dans `product-variants.csv`. Pour retirer temporairement un article ou une variante, mettez `available` à `false`. La quantité commandée est saisie par le client et n'est pas limitée par un inventaire dans le CSV; vérifiez donc la disponibilité réelle avant de confirmer la commande.
+
+### Images de produits
+
+Les images générales utilisées par la page Merch doivent être placées dans [src/assets/img/page-merch](src/assets/img/page-merch). Les photos des objets vendus (hoodie, t-shirt, gourde, etc.) doivent être placées dans [src/assets/img/page-merch/inventory](src/assets/img/page-merch/inventory). Utilisez un chemin relatif dans la colonne `image` de `products.csv`, par exemple `assets/img/page-merch/inventory/hoodie-gaul.webp`, et privilégiez le format WebP. Vérifiez que le chemin commence par `assets/img/`; il ne doit pas commencer par `./assets/` dans ces CSV.
+
+### Parcours de commande
+
+- Le panier est conservé localement dans le navigateur sous la clé `gaul-merch-cart`.
+- Le nom et le courriel sont obligatoires; le téléphone, le montant de soutien et les commentaires sont facultatifs.
+- Le numéro de téléphone accepte exactement 10 chiffres.
+- Le montant de soutien est compris entre 0 et 10 000 CAD et est ajouté au total.
+- La case d'accord doit être cochée avant l'envoi.
+- Une commande ne peut être envoyée que si le panier contient au moins un article.
+- Après l'envoi, le client reçoit un numéro de commande `GAUL-XXXX` et les instructions de paiement et de récupération.
+
+Le paiement n'est pas automatisé. L'équipe doit vérifier manuellement le dépôt Interac à l'adresse indiquée dans `site-content.jsonc`, comparer le numéro de commande, le nom et le montant, puis confirmer le paiement avant de remettre la commande. Les coordonnées de récupération affichées proviennent de la section `footer` du même fichier.
+
+### EmailJS
+
+La section `emailjs` de [src/assets/site-content.jsonc](src/assets/site-content.jsonc) contient la clé publique, le service, le modèle, l'adresse administrative et l'adresse Interac utilisés par la boutique. La clé publique EmailJS peut être exposée dans l'application cliente; ne placez jamais de clé privée ou de secret dans ce fichier. Si le service ou le modèle EmailJS change, mettez à jour les identifiants correspondants et vérifiez que le modèle conserve les variables envoyées par la page (`order_number`, `customer_name`, `order_items`, `order_total`, `interac_email`, etc.).
+
+Après toute modification de la boutique, lancez [test-site.cmd](test-site.cmd), testez l'ajout d'une variante, la modification de quantité, la suppression d'une ligne et l'envoi d'une commande de test avant de publier avec [publish-site.cmd](publish-site.cmd).
+
+### Validation manuelle d'un virement Interac
+
+L'équipe du GAUL doit comparer le numéro de commande reçu par courriel, le nom du client et le montant avec le dépôt automatique reçu dans le compte Interac. Après confirmation du montant, marquez la commande comme payée dans votre suivi interne et communiquez au client le moment et le lieu de récupération. Ne remettez pas de matériel avant que le dépôt soit confirmé; le courriel de commande reste à l'état « En attente de paiement » jusqu'à cette vérification humaine.
+
+---
+
 ## Traductions — Ajouter / Modifier / Supprimer
 
 Fichiers de traduction :
@@ -228,7 +308,9 @@ Procédure pour modifier une clé
 ---
 
 ### Images (Assets)
-- Placer les images dans `src/assets/img/...` et utiliser les chemins relatifs dans les CSV (`./assets/img/...`).
+- Placer les images dans le dossier de la page concernée sous `src/assets/img/...`.
+- Dans les CSV sous `src/assets/docs`, utiliser des chemins relatifs commençant par `./assets/img/...`.
+- Dans les CSV Merch sous `src/assets/data`, utiliser des chemins commençant par `assets/img/...`; les photos des produits vont dans `src/assets/img/page-merch/inventory`.
 - Préférer le format WebP pour taille et performance.
 - Tailles recommandées :
   - Photos membres : ~300×300 (carré), compressées.

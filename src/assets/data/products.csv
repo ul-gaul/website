@@ -1,0 +1,4 @@
+id,name,type,description,image,available
+hoodie-gaul,Hoodie officiel GAUL,vêtement,"Hoodie chaud avec le logo officiel du GAUL.",assets/img/shared/logo-small.webp,true
+tshirt-gaul,T-shirt technique GAUL,vêtement,"T-shirt léger pour les journées de lancement et les entraînements.",assets/img/shared/logo-small.webp,true
+gourde-gaul,Gourde isotherme GAUL,accessoire,"Gourde isotherme en acier pour garder votre boisson à la bonne température.",assets/img/shared/logo-small.webp,true
