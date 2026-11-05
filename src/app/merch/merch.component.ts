@@ -32,13 +32,15 @@ export class MerchComponent implements OnInit {
     email: ['', [Validators.required, Validators.email]],
     phone: ['', [Validators.pattern(/^\d{10}$/)]],
     supportAmount: [0, [Validators.min(0), Validators.max(10000)]],
+    promoCode: ['', [Validators.maxLength(80)]],
     comments: ['', [Validators.maxLength(1000)]],
     agreement: [false, Validators.requiredTrue]
   });
 
   submitting = false;
   errorMessage = '';
-  cartMessage = '';
+  toastMessage = '';
+  toastTimer?: ReturnType<typeof setTimeout>;
   successfulOrderNumber = '';
 
   ngOnInit(): void {
@@ -50,12 +52,18 @@ export class MerchComponent implements OnInit {
   }
 
   addToCart(product: MerchProduct, variant: ProductVariant): void {
-    this.cartMessage = this.cart.add(product, variant) ? 'merch.added' : 'merch.quantity_error';
+    if (this.cart.add(product, variant)) this.showToast('merch.added');
+    else this.showToast(this.cart.hasCurrencyConflict(variant) ? 'merch.currency_error' : 'merch.quantity_error');
   }
 
   updateQuantity(variantId: string, value: string): void {
     const quantity = Number(value);
-    if (!this.cart.setQuantity(variantId, quantity)) this.cartMessage = 'merch.quantity_error';
+    if (!this.cart.setQuantity(variantId, quantity)) this.showToast('merch.quantity_error');
+  }
+
+  removeFromCart(variantId: string): void {
+    this.cart.remove(variantId);
+    this.showToast('merch.removed');
   }
 
   sanitizePhone(event: Event): void {
@@ -79,7 +87,7 @@ export class MerchComponent implements OnInit {
     }
 
     this.submitting = true;
-    const orderNumber = `GAUL-${Math.random().toString(36).slice(2, 6).toUpperCase()}`;
+    const orderNumber = `GAUL-${globalThis.crypto.randomUUID().toUpperCase()}`;
     const form = this.orderForm.getRawValue();
     const subtotal = this.cart.subtotal(lines);
     const supportAmount = Number(form.supportAmount) || 0;
@@ -88,7 +96,7 @@ export class MerchComponent implements OnInit {
     this.email.sendOrder(orderNumber, { ...form, supportAmount, comments: form.comments }, lines, subtotal, total).then(() => {
       this.successfulOrderNumber = orderNumber;
       this.cart.clear();
-      this.orderForm.reset({ fullName: '', email: '', phone: '', supportAmount: 0, comments: '', agreement: false });
+      this.orderForm.reset({ fullName: '', email: '', phone: '', supportAmount: 0, promoCode: '', comments: '', agreement: false });
       this.errorMessage = '';
     }).catch(() => {
       this.errorMessage = 'merch.email_error';
@@ -101,6 +109,23 @@ export class MerchComponent implements OnInit {
 
   orderTotal(subtotal: number | null): number {
     return (subtotal ?? 0) + (Number(this.orderForm.controls.supportAmount.value) || 0);
+  }
+
+  cartCurrency(): string {
+    return this.cart.currency();
+  }
+
+  copyToClipboard(value: string, successMessage = 'merch.copied'): void {
+    navigator.clipboard.writeText(value).then(
+      () => this.showToast(successMessage),
+      () => this.showToast('merch.copy_error')
+    );
+  }
+
+  private showToast(message: string): void {
+    this.toastMessage = message;
+    if (this.toastTimer) clearTimeout(this.toastTimer);
+    this.toastTimer = setTimeout(() => this.toastMessage = '', 3500);
   }
 
   hasError(controlName: string, error: string): boolean {

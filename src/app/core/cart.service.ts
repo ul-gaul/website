@@ -15,11 +15,16 @@ export class CartService {
     const existing = lines.find(line => line.variant.id === variant.id);
     const nextQuantity = (existing?.quantity ?? 0) + 1;
     if (!variant.available || !product.available) return false;
+    if (lines.length > 0 && lines.some(line => line.variant.currency !== variant.currency)) return false;
 
     if (existing) existing.quantity = nextQuantity;
     else lines.push({ product, variant, quantity: 1 });
     this.update(lines);
     return true;
+  }
+
+  hasCurrencyConflict(variant: ProductVariant): boolean {
+    return this.linesSubject.value.some(line => line.variant.currency !== variant.currency);
   }
 
   setQuantity(variantId: string, quantity: number): boolean {
@@ -45,6 +50,10 @@ export class CartService {
 
   subtotal(lines = this.linesSubject.value): number {
     return lines.reduce((total, line) => total + line.variant.price * line.quantity, 0);
+  }
+
+  currency(lines = this.linesSubject.value): string {
+    return lines[0]?.variant.currency || 'CAD';
   }
 
   private update(lines: CartLine[]): void {

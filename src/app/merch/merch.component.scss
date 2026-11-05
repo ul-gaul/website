@@ -107,10 +107,22 @@
   font-size: 0.7rem;
   white-space: nowrap;
 }
-.cart-message {
-  margin-top: 1.2rem;
-  color: #cd2d2c;
+.cart-toast {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 20;
+  max-width: min(420px, calc(100vw - 2.5rem));
+  padding: 0.9rem 1.1rem;
+  border-left: 4px solid var(--gaul-accent);
+  background: #222;
+  color: #fff;
   font-weight: 700;
+}
+.promo-note {
+  margin: -0.5rem 0 1rem;
+  color: #666;
+  font-size: 0.82rem;
 }
 .order-section {
   padding-top: 3rem;
@@ -246,6 +258,29 @@ form textarea {
 }
 .success-panel h3 {
   margin-top: 1.2rem;
+}
+.copy-row {
+  display: flex;
+  align-items: center;
+}
+.copy-button {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.35rem;
+  border: 1px solid #d5d0ca;
+  border-radius: 4px;
+  background: #fff;
+  color: #cd2d2c;
+  cursor: pointer;
+}
+.copy-button svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
 }
 .order-steps {
   display: grid;

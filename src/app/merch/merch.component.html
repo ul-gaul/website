@@ -49,7 +49,7 @@
           </article>
         </div>
       </ng-container>
-      <p class="cart-message" *ngIf="cartMessage">{{ cartMessage | translate }}</p>
+      <div class="cart-toast" *ngIf="toastMessage" role="status" aria-live="polite">{{ toastMessage | translate }}</div>
     </div>
   </section>
 
@@ -64,10 +64,10 @@
               <span class="visually-hidden">{{ 'merch.quantity' | translate }}</span>
               <input type="number" min="1" [value]="line.quantity" (change)="updateQuantity(line.variant.id, $any($event.target).value)">
             </label>
-            <strong>{{ formatPrice(line.variant.price * line.quantity) }}</strong>
-            <button type="button" class="remove-button" (click)="cart.remove(line.variant.id)" [attr.aria-label]="'merch.remove' | translate">×</button>
+            <strong>{{ formatPrice(line.variant.price * line.quantity, line.variant.currency) }}</strong>
+            <button type="button" class="remove-button" (click)="removeFromCart(line.variant.id)" [attr.aria-label]="'merch.remove' | translate">×</button>
           </div>
-          <div class="cart-total"><span>{{ 'merch.subtotal' | translate }}</span><strong>{{ formatPrice(subtotal$ | async) }}</strong></div>
+          <div class="cart-total"><span>{{ 'merch.subtotal' | translate }}</span><strong>{{ formatPrice(subtotal$ | async, cartCurrency()) }}</strong></div>
         </div>
         <ng-template #emptyCart><p class="empty-state">{{ 'merch.empty_cart' | translate }}</p></ng-template>
       </div>
@@ -77,7 +77,12 @@
         <div class="success-panel" *ngIf="successfulOrderNumber; else checkoutForm" aria-live="polite">
           <p class="status-pill">{{ 'merch.pending_payment' | translate }}</p>
           <h3>{{ 'merch.success_title' | translate }}</h3>
-          <p>{{ 'merch.order_number' | translate }} <strong>{{ successfulOrderNumber }}</strong></p>
+          <p class="copy-row">
+            <span>{{ 'merch.order_number' | translate }} <strong>{{ successfulOrderNumber }}</strong></span>
+            <button type="button" class="copy-button" (click)="copyToClipboard(successfulOrderNumber)" [attr.aria-label]="'merch.copy_order_number' | translate" [title]="'merch.copy_order_number' | translate">
+              <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M9 9h10v12H9zM5 15H3V3h12v2" /></svg>
+            </button>
+          </p>
           <div class="order-steps">
             <section class="order-step">
               <span class="step-number">1</span>
@@ -91,7 +96,12 @@
               <div>
                 <h4>{{ 'merch.step_payment_title' | translate }}</h4>
                 <p>{{ 'merch.step_payment_text' | translate }}</p>
-                <p><strong>{{ siteContent.content().footer['email'] }}<br>{{ 'merch.payment_deadline' | translate }}</strong></p>
+                <p class="copy-row">
+                  <strong>{{ siteContent.content().footer['email'] }}<br>{{ 'merch.payment_deadline' | translate }}</strong>
+                  <button type="button" class="copy-button" (click)="copyToClipboard(siteContent.content().footer['email'], 'merch.copy_email')" [attr.aria-label]="'merch.copy_email' | translate" [title]="'merch.copy_email' | translate">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M9 9h10v12H9zM5 15H3V3h12v2" /></svg>
+                  </button>
+                </p>
               </div>
             </section>
             <section class="order-step">
@@ -137,9 +147,11 @@
               <label>{{ 'merch.support_amount' | translate }}<input type="number" formControlName="supportAmount" min="0" max="10000" step="1" inputmode="decimal"></label>
               <p class="field-error" *ngIf="hasError('supportAmount', 'min') || hasError('supportAmount', 'max')">{{ 'merch.support_invalid' | translate }}</p>
             </div>
+            <label>{{ 'merch.promo_code' | translate }}<input formControlName="promoCode" maxlength="80" autocomplete="off"></label>
+            <p class="promo-note">{{ 'merch.promo_note' | translate }}</p>
             <label>{{ 'merch.comments' | translate }}<textarea formControlName="comments" rows="4" maxlength="1000"></textarea></label>
             <p class="field-error" *ngIf="hasError('comments', 'maxlength')">{{ 'merch.comments_invalid' | translate }}</p>
-            <div class="order-total"><span>{{ 'merch.total' | translate }}</span><strong>{{ formatPrice(orderTotal(subtotal$ | async)) }}</strong></div>
+            <div class="order-total"><span>{{ 'merch.total' | translate }}</span><strong>{{ formatPrice(orderTotal(subtotal$ | async), cartCurrency()) }}</strong></div>
             <label class="agreement"><input type="checkbox" formControlName="agreement"> <span>{{ 'merch.agreement' | translate }} *</span></label>
             <p class="field-error" *ngIf="hasError('agreement', 'required')">{{ 'merch.agreement_required' | translate }}</p>
             <p class="submit-error" *ngIf="errorMessage">{{ errorMessage | translate }}</p>
